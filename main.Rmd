@@ -9,18 +9,23 @@ bibliography: sim_refs.bib
 
 Overall aim: To set our view about how the field of spatial interaction modelling should evolve.
 
+Key argument: Spatial interaction models are great, yet, not progress has been made over the last two/three decades. Key challenges have prevented progress:
+
+1\. reproducibility
+
+2\. calibration <!--# AD - can you elaborate this idea of calibration -->
+
+3\. large volumes of granular spatial data <!--# FR - my argument here is that up to recently we did not have the need to deal with large data sets capturing movement. I argue that this imposes two additional challenges: (1) need to capture heterogeneity/variability across different populations and places, and (2) need for new and scalable models (where machine learning and other modelling frameworks come in) -->.
+
 Context: spatial interaction modelling in a world of big data, machine learning, open science, digital technology and uncertainty.
 
 # Definition and Uses
 
-Objective of the section: To describe what spatial <!--# RL: we should add a citation here --> interaction modelling is (including its key components), how it is used, why it is important and how it relates to gravity modelling.
-
-@wilson_statistical_1967 said ...
+Objective of the section: To conceptually describe what spatial interaction modelling is (including its key components), how it is used, why it is important and how it relates to gravity modelling. I conceive this section to provide a brief, gentle, intuitive introduction to spatial interaction models, emphasising its importance and how it is used.
 
 -   Mention of key SIM paradigms
 
-SIMs cover a wide range of methods and applications.
-According to @rodrigue_geography_2013, there are 3 broad types of SIM:
+SIMs cover a wide range of methods and applications. According to @rodrigue_geography_2013, there are 3 broad types of SIM:
 
 -   Gravity models, in which interaction is estimated as a function of size/attractiveness of start/end points and some impedance function; this is the original and 'traditional' SIM.
 
@@ -28,8 +33,7 @@ According to @rodrigue_geography_2013, there are 3 broad types of SIM:
 
 -   Retail models, which seek to identify the 'market boundary' between economic hubs.
 
-For the majority of this paper we will focus on gravity models.
-There are four main types of traditional SIMs [@wilson_family_1971] :
+For the majority of this paper we will focus on gravity models. There are four main types of traditional SIMs [@wilson_family_1971] :
 
 -   Unconstrained
 
@@ -43,8 +47,7 @@ The basic unconstrained SIM can be defined was follows, in a paper that explored
 
 $$
 T_{i j}=K \frac{W_{i}^{(1)} W_{j}^{(2)}}{c_{i j}^{n}}
-$$ "where $T_{i j}$ is a measure of the interaction between zones $i$ and $W_{i}^{(1)}$ is a measure of the 'mass term' associated with zone $z_i$, $W_{j}^{(2)}$ is a measure of the 'mass term' associated with zone $z_j$, and $c_{ij}$ is a measure of the distance, or generalised cost of travel, between zone $i$ and zone $j$".
-$K$ is a 'constant of proportionality' and $n$ is a parameter to be estimated.
+$$ "where $T_{i j}$ is a measure of the interaction between zones $i$ and $W_{i}^{(1)}$ is a measure of the 'mass term' associated with zone $z_i$, $W_{j}^{(2)}$ is a measure of the 'mass term' associated with zone $z_j$, and $c_{ij}$ is a measure of the distance, or generalised cost of travel, between zone $i$ and zone $j$". $K$ is a 'constant of proportionality' and $n$ is a parameter to be estimated.
 
 Redefining the $W$ terms as $m$ and $n$ for origins and destinations respectively [@simini_universal_2012], this classic definition of the 'gravity model' can be written as follows:
 
@@ -54,8 +57,7 @@ $$
 
 # Multiple forms of spatial interaction modelling
 
-Objective of the section: To discuss ways in which spatial interaction modelling can be expanded.
-I am particularly interested in advocating for (1) seeing spatial interaction models in a context of uncertainty, rather than as mathematical models; and, (2) discussing how mixed-linear modelling can offer ways to capture variability across places and populations.
+Objective of the section: To discuss ways in which spatial interaction modelling can be expanded. I am particularly interested in advocating for (1) seeing spatial interaction models in a context of uncertainty, rather than as mathematical models; and, (2) discussing how mixed-linear modelling can offer ways to capture variability across places and populations.
 
 # Reproducible SIMs <!--# update section title? -->
 
