@@ -1,7 +1,5 @@
 ---
 # output: bookdown::github_document2
-title: "Spatial Interaction Modelling: A Manifesto"
-author: "Francisco Rowe, Robin Lovelace, Adam Dennett"
 output:
   bookdown::pdf_document2:
     template: template.tex
@@ -29,7 +27,9 @@ Objective of the section: To conceptually describe what spatial interaction mode
 
 -   Mention of key SIM paradigms
 
-<!--# FR: I would say let's introduce the intuition of traditional gravity models and then what progress has been made. --> SIMs cover a wide range of methods and applications. According to @rodrigue_geography_2013, there are 3 broad types of SIM:
+<!--# FR: I would say let's introduce the intuition of traditional gravity models and then what progress has been made. -->
+
+SIMs cover a wide range of methods and applications. According to @rodrigue_geography_2013, there are 3 broad types of SIM:
 
 -   Gravity models, in which interaction is estimated as a function of size/attractiveness of start/end points and some impedance function; this is the original and 'traditional' SIM.
 
