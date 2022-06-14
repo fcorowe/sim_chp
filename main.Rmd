@@ -1,0 +1,77 @@
+---
+# output: bookdown::github_document2
+output:
+  bookdown::pdf_document2:
+    template: template.tex
+    keep_tex: true
+bibliography: sim_refs.bib
+---
+
+Overall aim: To set our view about how the field of spatial interaction modelling should evolve.
+
+Context: spatial interaction modelling in a world of big data, machine learning, open science, digital technology and uncertainty.
+
+# Definition and Uses
+
+Objective of the section: To describe what spatial <!--# RL: we should add a citation here --> interaction modelling is (including its key components), how it is used, why it is important and how it relates to gravity modelling.
+
+@wilson_statistical_1967 said ...
+
+-   Mention of key SIM paradigms
+
+SIMs cover a wide range of methods and applications.
+According to @rodrigue_geography_2013, there are 3 broad types of SIM:
+
+-   Gravity models, in which interaction is estimated as a function of size/attractiveness of start/end points and some impedance function; this is the original and 'traditional' SIM.
+
+-   Radiation models or 'potential models', in which interaction is estimated as a function of size/attractiveness of start/end points but mediated by a function of intervening opportunities [@simini_universal_2012].
+
+-   Retail models, which seek to identify the 'market boundary' between economic hubs.
+
+For the majority of this paper we will focus on gravity models.
+There are four main types of traditional SIMs [@wilson_family_1971] :
+
+-   Unconstrained
+
+-   Production-constrained
+
+-   Attraction-constrained
+
+-   Doubly-constrained
+
+The basic unconstrained SIM can be defined was follows, in a paper that explored many iterations on this formulation:
+
+$$
+T_{i j}=K \frac{W_{i}^{(1)} W_{j}^{(2)}}{c_{i j}^{n}}
+$$ "where $T_{i j}$ is a measure of the interaction between zones $i$ and $W_{i}^{(1)}$ is a measure of the 'mass term' associated with zone $z_i$, $W_{j}^{(2)}$ is a measure of the 'mass term' associated with zone $z_j$, and $c_{ij}$ is a measure of the distance, or generalised cost of travel, between zone $i$ and zone $j$".
+$K$ is a 'constant of proportionality' and $n$ is a parameter to be estimated.
+
+Redefining the $W$ terms as $m$ and $n$ for origins and destinations respectively [@simini_universal_2012], this classic definition of the 'gravity model' can be written as follows:
+
+$$
+T_{i j}=K \frac{m_{i} n_{j}}{c_{i j}^{n}}
+$$
+
+# Multiple forms of spatial interaction modelling
+
+Objective of the section: To discuss ways in which spatial interaction modelling can be expanded.
+I am particularly interested in advocating for (1) seeing spatial interaction models in a context of uncertainty, rather than as mathematical models; and, (2) discussing how mixed-linear modelling can offer ways to capture variability across places and populations.
+
+# Reproducible SIMs <!--# update section title? -->
+
+Objective of the section: To discuss the opportunities and challenges of estimating spatial interacting modelling in the context of reproducible research
+
+```{r, eval=FALSE}
+install.packages("remotes")
+remotes::install_github("robinlovelace/si")
+```
+
+# Spatial interaction modelling using machine learning
+
+Objective of the section: To discuss how machine learning can enhance flow count inference and prediction
+
+# Facilitating future progress of spatial interaction modelling
+
+Objective of the section: To identify and discuss the key pillars that will enable progress on all the proposed fronts - open science, important and new questions and digital infrastructure.
+
+# References
