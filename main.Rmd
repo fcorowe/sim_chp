@@ -1,5 +1,7 @@
 ---
 # output: bookdown::github_document2
+title: "Spatial Interaction Modelling: A Manifesto"
+author: "Francisco Rowe, Robin Lovelace, Adam Dennett"
 output:
   bookdown::pdf_document2:
     template: template.tex
