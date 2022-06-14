@@ -160,14 +160,28 @@ F.Rowe-Gonzalez@liverpool.ac.uk; Robin Lovelace at R.Lovelace@leeds.ac.uk or Ada
 
 Overall aim: To set our view about how the field of spatial interaction modelling should evolve.
 
+Key argument: Spatial interaction models are great, yet, not progress has been made over the last two/three decades (though we should recognise the work LeSage on spatial econometrics, Dan Griffith on spatial filtering, Kanaroglou et al on spatial discrete choice modelling, radiation models).
+Key challenges have prevented progress:
+
+1.
+reproducibility
+
+2.
+calibration
+
+3.
+large volumes of granular spatial data .
+
 Context: spatial interaction modelling in a world of big data, machine learning, open science, digital technology and uncertainty.
+
+The text included here is for our own benefit.
+The idea of challenges
 
 \hypertarget{definition-and-uses}{%
 \section{Definition and Uses}\label{definition-and-uses}}
 
-Objective of the section: To describe what spatial interaction modelling is (including its key components), how it is used, why it is important and how it relates to gravity modelling.
-
-Wilson (1967) said \ldots{}
+Objective of the section: To conceptually describe what spatial interaction modelling is (including its key components), how it is used, why it is important and how it relates to gravity modelling.
+I conceive this section to provide a brief, gentle, intuitive introduction to spatial interaction models, emphasising its importance and the various context of applications of SIMs i.e.~retail, population, transport, etc.
 
 \begin{itemize}
 \tightlist
@@ -214,21 +228,55 @@ Redefining the \(W\) terms as \(m\) and \(n\) for origins and destinations respe
 T_{i j}=K \frac{m_{i} n_{j}}{c_{i j}^{n}}
 \]
 
-\hypertarget{multiple-forms-of-spatial-interaction-modelling}{%
-\section{Multiple forms of spatial interaction modelling}\label{multiple-forms-of-spatial-interaction-modelling}}
+Identify reproducibility, calibration and big data as key challenges as noted above.
+If we frame these as key challenges, I think it would make sense to map the rest of the sections onto these challenges.
+The issue I have on doing this is that the issues of calibration and big data may entail similar or the same challenges.
+
+\hypertarget{expanding-spatial-interaction-modelling}{%
+\section{Expanding spatial interaction modelling}\label{expanding-spatial-interaction-modelling}}
 
 Objective of the section: To discuss ways in which spatial interaction modelling can be expanded.
-I am particularly interested in advocating for (1) seeing spatial interaction models in a context of uncertainty, rather than as mathematical models; and, (2) discussing how mixed-linear modelling can offer ways to capture variability across places and populations.
+I am particularly interested in advocating for (1) seeing spatial interaction models in a context of uncertainty, rather than as mathematical models; and, (2) discussing how hierarchical / generalised linear mixed modelling can offer ways to capture variability across places and populations.
 
 \hypertarget{reproducible-sims}{%
 \section{\texorpdfstring{Reproducible SIMs }{Reproducible SIMs }}\label{reproducible-sims}}
 
-Objective of the section: To discuss the opportunities and challenges of estimating spatial interacting modelling in the context of reproducible research
+\emph{Objective of the section: To discuss the opportunities and challenges of estimating spatial interacting modelling in the context of reproducible research}
+
+Reproducibility has not been prominent in research developing and using SIMs outlined in the previous sections.
+This is understandable, because computer hardware, software and know-how needed to develop and run SIMs was simply unavailable to most people (let alone lowly and often cash-strapped students!) for most of field's history.
+Even when consumer laptops became widely available and more affordable during the 2000s, there were few well-known user-friendly off-the-shelf options implementing SIMs other than MATLAB and arguably Excel, unless you were willing to dive into programming.
+
+Fast-forward to the 2020s and computer hardware, and perhaps more importantly software, is much easier to obtain.
+In terms of affordability, a second-hand laptop whose processing power would have been considered a supercomputer by 1990s standards (and impossibly powerful when seminal SIM papers were published) can be obtained for around \$100 dollars in most countries.\footnote{See \url{https://ebay.com/b/Laptops-Netbooks/175672/bn_1648276} for an example of the huge international market for second-hand laptops.}
+Tutorials teaching you to code with popular languages for data science abound, with R and Python particularly prominent in the fields (including Quantitative Geography, Social Physics, Statistics and more recently Urban Analytics) where much SIM research is undertaken.
+It has never been easier to write reproducible code implementing SIMs yet, despite notable exceptions (Dennett 2018), most SIMs and the findings they produce, are not reproducible.
+
+One could argue that reproducibility is a `nice to have', an optional and potentially onerous extra thing to think about during the research process.
+Yet increasingly it is becoming apparent that reproducibility is \emph{vital} for research to be falsifiable (Popper 1934) and therefore scientifically sound.
+In this broader context, reproducibility is a ``challenge to adjust scholarly communication to today's level of digitisation and diversity of scientific outputs'' (Nüst and Pebesma 2021).
+A key message in our manifesto for SIM research in the 2020s, therefore, is for the models to be open and the results they create to be reproducible using published code and data (example synthetic data when the raw data cannot be published).
+We urge readers implementing SIMs to make their work reproducible not only for philosophical reasons.
+There are tangible benefits of making your SIM work reproducible:
+
+\begin{itemize}
+\item
+  People are more likely to cite your work if they can reproduce it.
+\item
+  Reproducible results based on open source software discourages reinvention of wheels and associated wasting of time.
+\item
+  Reproducible research encourages innovation, both of your work and the work of others, because you can focus on what is new and novel rather than (for example) writing a paper implementing an existing SIM in a slightly new context (as many SIM papers have).
+\end{itemize}
+
+To highlight the ease with which reproducible SIMs can now be developed, we present below reproducible R code that implements a simple SIM.
+It is notable that open source software continues to evolve: the code presented below uses the \texttt{simodels} R package, the development of which was partly motivated by this book chapter (the primary motivation was the need to develop SIMs to represent trips for purposes other than commuting and travel to school in Ireland as part of a contract with Transport Infrastructure Ireland, highlighting the applied nature of SIM research).
+\texttt{simodels} enables to develop SIMs starting with geographic datasets in fewer lines of code than was possible a few years ago (Dennett 2018).
+Naturally, the starting point is to install the package (and R and a modern IDE such as RStudio or \href{https://marketplace.visualstudio.com/items?itemName=REditorSupport.r}{VS Code} if the software is not already installed on your computer), with the following lines of code:
 
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{install.packages}\NormalTok{(}\StringTok{"remotes"}\NormalTok{)}
-\NormalTok{remotes}\SpecialCharTok{::}\FunctionTok{install\_github}\NormalTok{(}\StringTok{"robinlovelace/si"}\NormalTok{)}
+\NormalTok{remotes}\SpecialCharTok{::}\FunctionTok{install\_github}\NormalTok{(}\StringTok{"robinlovelace/simodels"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -241,6 +289,7 @@ Objective of the section: To discuss how machine learning can enhance flow count
 \section{Facilitating future progress of spatial interaction modelling}\label{facilitating-future-progress-of-spatial-interaction-modelling}}
 
 Objective of the section: To identify and discuss the key pillars that will enable progress on all the proposed fronts - open science, important and new questions and digital infrastructure.
+I see this as our conclusion - probably one or two short paragraph summarising what has been discussed with a forward looking approach.
 
 \hypertarget{references}{%
 \section*{References}\label{references}}
@@ -248,17 +297,23 @@ Objective of the section: To identify and discuss the key pillars that will enab
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-dennett_modelling_2018}{}}%
+Dennett, Adam. 2018. {``Modelling Population Flows Using Spatial Interaction Models.''} \emph{Australian Population Studies} 2 (2): 33--58. \url{https://doi.org/10.37970/aps.v2i2.38}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-nust_practical_2021}{}}%
+Nüst, Daniel, and Edzer Pebesma. 2021. {``Practical Reproducibility in Geography and Geosciences.''} \emph{Annals of the American Association of Geographers} 111 (5): 1300--1310. \url{https://doi.org/10.1080/24694452.2020.1806028}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-popper_logic_1934}{}}%
+Popper, Karl. 1934. \emph{The Logic of Scientific Discovery}. Hutchinson. \url{http://books.google.com/books?id=MdvaSAAACAAJ\&pgis=1}.
+
 \leavevmode\vadjust pre{\hypertarget{ref-rodrigue_geography_2013}{}}%
 Rodrigue, Jean-Paul, Claude Comtois, and Brian Slack. 2013. \emph{The Geography of Transport Systems}. 3 edition. London ; New York: Routledge.
 
 \leavevmode\vadjust pre{\hypertarget{ref-simini_universal_2012}{}}%
 Simini, Filippo, Marta C González, Amos Maritan, and Albert-László Barabási. 2012. {``A Universal Model for Mobility and Migration Patterns.''} \emph{Nature}, February, 812. \url{https://doi.org/10.1038/nature10856}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-wilson_statistical_1967}{}}%
-Wilson, AG. 1967. {``A Statistical Theory of Spatial Distribution Models.''} \emph{Transportation Research} 1 (3): 253269.
-
 \leavevmode\vadjust pre{\hypertarget{ref-wilson_family_1971}{}}%
----------. 1971. {``A Family of Spatial Interaction Models, and Associated Developments.''} \emph{Environment and Planning} 3 (January): 132. https://doi.org/\url{https://doi.org/10.1068/a030001}.
+Wilson, AG. 1971. {``A Family of Spatial Interaction Models, and Associated Developments.''} \emph{Environment and Planning} 3 (January): 132. https://doi.org/\url{https://doi.org/10.1068/a030001}.
 
 \end{CSLReferences}
 

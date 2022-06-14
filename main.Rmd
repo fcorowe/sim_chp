@@ -5,31 +5,41 @@ output:
     template: template.tex
     keep_tex: true
 bibliography: sim_refs.bib
+editor_options:
+  markdown:
+    wrap: sentence
 ---
 
 Overall aim: To set our view about how the field of spatial interaction modelling should evolve.
 
-Key argument: Spatial interaction models are great, yet, not progress has been made over the last two/three decades (though we should recognise the work LeSage on spatial econometrics, Dan Griffith on spatial filtering, Kanaroglou et al on spatial discrete choice modelling, radiation models). Key challenges have prevented progress:
+Key argument: Spatial interaction models are great, yet, not progress has been made over the last two/three decades (though we should recognise the work LeSage on spatial econometrics, Dan Griffith on spatial filtering, Kanaroglou et al on spatial discrete choice modelling, radiation models).
+Key challenges have prevented progress:
 
-1\. reproducibility
+1\.
+reproducibility
 
-2\. calibration <!--# AD - to elaborate this idea of calibration. I have long struggled with the term calibration in the context of spatial interaction modelling. In the olden days,  people used calibration to describe curve fitting parameters in a mathemathical framework. In a statistical context, I would understand this as the steps taken for a model to converge. -->
+2\.
+calibration <!--# AD - to elaborate this idea of calibration. I have long struggled with the term calibration in the context of spatial interaction modelling. In the olden days,  people used calibration to describe curve fitting parameters in a mathemathical framework. In a statistical context, I would understand this as the steps taken for a model to converge. -->
 
-3\. large volumes of granular spatial data <!--# FR - my argument here is that up to recently we did not have the need to deal with large data sets capturing movement. I argue that this imposes two additional challenges: (1) need to capture heterogeneity/variability across different populations and places, and (2) need for new and scalable models (where machine learning and other modelling frameworks come in) -->.
+3\.
+large volumes of granular spatial data <!--# FR - my argument here is that up to recently we did not have the need to deal with large data sets capturing movement. I argue that this imposes two additional challenges: (1) need to capture heterogeneity/variability across different populations and places, and (2) need for new and scalable models (where machine learning and other modelling frameworks come in) -->.
 
 Context: spatial interaction modelling in a world of big data, machine learning, open science, digital technology and uncertainty.
 
-The text included here is for our own benefit. The idea of challenges
+The text included here is for our own benefit.
+The idea of challenges
 
 # Definition and Uses
 
-Objective of the section: To conceptually describe what spatial interaction modelling is (including its key components), how it is used, why it is important and how it relates to gravity modelling. I conceive this section to provide a brief, gentle, intuitive introduction to spatial interaction models, emphasising its importance and the various context of applications of SIMs i.e. retail, population, transport, etc.
+Objective of the section: To conceptually describe what spatial interaction modelling is (including its key components), how it is used, why it is important and how it relates to gravity modelling.
+I conceive this section to provide a brief, gentle, intuitive introduction to spatial interaction models, emphasising its importance and the various context of applications of SIMs i.e. retail, population, transport, etc.
 
 -   Mention of key SIM paradigms
 
 <!--# FR: I would say let's introduce the intuition of traditional gravity models and then what progress has been made. -->
 
-SIMs cover a wide range of methods and applications. According to @rodrigue_geography_2013, there are 3 broad types of SIM:
+SIMs cover a wide range of methods and applications.
+According to @rodrigue_geography_2013, there are 3 broad types of SIM:
 
 -   Gravity models, in which interaction is estimated as a function of size/attractiveness of start/end points and some impedance function; this is the original and 'traditional' SIM.
 
@@ -37,7 +47,8 @@ SIMs cover a wide range of methods and applications. According to @rodrigue_geog
 
 -   Retail models, which seek to identify the 'market boundary' between economic hubs.
 
-For the majority of this paper we will focus on gravity models. There are four main types of traditional SIMs [@wilson_family_1971] :
+For the majority of this paper we will focus on gravity models.
+There are four main types of traditional SIMs [@wilson_family_1971] :
 
 -   Unconstrained
 
@@ -51,7 +62,8 @@ The basic unconstrained SIM can be defined was follows, in a paper that explored
 
 $$
 T_{i j}=K \frac{W_{i}^{(1)} W_{j}^{(2)}}{c_{i j}^{n}}
-$$ "where $T_{i j}$ is a measure of the interaction between zones $i$ and $W_{i}^{(1)}$ is a measure of the 'mass term' associated with zone $z_i$, $W_{j}^{(2)}$ is a measure of the 'mass term' associated with zone $z_j$, and $c_{ij}$ is a measure of the distance, or generalised cost of travel, between zone $i$ and zone $j$". $K$ is a 'constant of proportionality' and $n$ is a parameter to be estimated.
+$$ "where $T_{i j}$ is a measure of the interaction between zones $i$ and $W_{i}^{(1)}$ is a measure of the 'mass term' associated with zone $z_i$, $W_{j}^{(2)}$ is a measure of the 'mass term' associated with zone $z_j$, and $c_{ij}$ is a measure of the distance, or generalised cost of travel, between zone $i$ and zone $j$".
+$K$ is a 'constant of proportionality' and $n$ is a parameter to be estimated.
 
 Redefining the $W$ terms as $m$ and $n$ for origins and destinations respectively [@simini_universal_2012], this classic definition of the 'gravity model' can be written as follows:
 
@@ -59,19 +71,51 @@ $$
 T_{i j}=K \frac{m_{i} n_{j}}{c_{i j}^{n}}
 $$
 
-Identify reproducibility, calibration and big data as key challenges as noted above. If we frame these as key challenges, I think it would make sense to map the rest of the sections onto these challenges. The issue I have on doing this is that the issues of calibration and big data may entail similar or the same challenges.
+Identify reproducibility, calibration and big data as key challenges as noted above.
+If we frame these as key challenges, I think it would make sense to map the rest of the sections onto these challenges.
+The issue I have on doing this is that the issues of calibration and big data may entail similar or the same challenges.
 
 # Expanding spatial interaction modelling
 
-Objective of the section: To discuss ways in which spatial interaction modelling can be expanded. I am particularly interested in advocating for (1) seeing spatial interaction models in a context of uncertainty, rather than as mathematical models; and, (2) discussing how hierarchical / generalised linear mixed modelling can offer ways to capture variability across places and populations.
+Objective of the section: To discuss ways in which spatial interaction modelling can be expanded.
+I am particularly interested in advocating for (1) seeing spatial interaction models in a context of uncertainty, rather than as mathematical models; and, (2) discussing how hierarchical / generalised linear mixed modelling can offer ways to capture variability across places and populations.
 
-# Reproducible SIMs <!--# update section title? -->
+# Reproducible SIMs <!--# RL to lead -->
 
-Objective of the section: To discuss the opportunities and challenges of estimating spatial interacting modelling in the context of reproducible research
+*Objective of the section: To discuss the opportunities and challenges of estimating spatial interacting modelling in the context of reproducible research*
+
+Reproducibility has not been prominent in research developing and using SIMs outlined in the previous sections.
+This is understandable, because computer hardware, software and know-how needed to develop and run SIMs was simply unavailable to most people (let alone lowly and often cash-strapped students!) for most of field's history.
+Even when consumer laptops became widely available and more affordable during the 2000s, there were few well-known user-friendly off-the-shelf options implementing SIMs other than MATLAB and arguably Excel, unless you were willing to dive into programming.
+
+Fast-forward to the 2020s and computer hardware, and perhaps more importantly software, is much easier to obtain.
+In terms of affordability, a second-hand laptop whose processing power would have been considered a supercomputer by 1990s standards (and impossibly powerful when seminal SIM papers were published) can be obtained for around \$100 dollars in most countries.[^1]
+Tutorials teaching you to code with popular languages for data science abound, with R and Python particularly prominent in the fields (including Quantitative Geography, Social Physics, Statistics and more recently Urban Analytics) where much SIM research is undertaken.
+It has never been easier to write reproducible code implementing SIMs yet, despite notable exceptions [@dennett_modelling_2018], most SIMs and the findings they produce, are not reproducible.
+
+[^1]: See <https://ebay.com/b/Laptops-Netbooks/175672/bn_1648276> for an example of the huge international market for second-hand laptops.
+
+One could argue that reproducibility is a 'nice to have', an optional and potentially onerous extra thing to think about during the research process.
+Yet increasingly it is becoming apparent that reproducibility is *vital* for research to be falsifiable [@popper_logic_1934] and therefore scientifically sound.
+In this broader context, reproducibility is a "challenge to adjust scholarly communication to today's level of digitisation and diversity of scientific outputs" [@nust_practical_2021].
+A key message in our manifesto for SIM research in the 2020s, therefore, is for the models to be open and the results they create to be reproducible using published code and data (example synthetic data when the raw data cannot be published).
+We urge readers implementing SIMs to make their work reproducible not only for philosophical reasons.
+There are tangible benefits of making your SIM work reproducible:
+
+-   People are more likely to cite your work if they can reproduce it.
+
+-   Reproducible results based on open source software discourages reinvention of wheels and associated wasting of time.
+
+-   Reproducible research encourages innovation, both of your work and the work of others, because you can focus on what is new and novel rather than (for example) writing a paper implementing an existing SIM in a slightly new context (as many SIM papers have).
+
+To highlight the ease with which reproducible SIMs can now be developed, we present below reproducible R code that implements a simple SIM.
+It is notable that open source software continues to evolve: the code presented below uses the `simodels` R package, the development of which was partly motivated by this book chapter (the primary motivation was the need to develop SIMs to represent trips for purposes other than commuting and travel to school in Ireland as part of a contract with Transport Infrastructure Ireland, highlighting the applied nature of SIM research).
+`simodels` enables to develop SIMs starting with geographic datasets in fewer lines of code than was possible a few years ago [@dennett_modelling_2018].
+Naturally, the starting point is to install the package (and R and a modern IDE such as RStudio or [VS Code](https://marketplace.visualstudio.com/items?itemName=REditorSupport.r) if the software is not already installed on your computer), with the following lines of code: <!--# Hopefully we can replace the second line below with # install.packages("simodels") before the chapter is published! -->
 
 ```{r, eval=FALSE}
 install.packages("remotes")
-remotes::install_github("robinlovelace/si")
+remotes::install_github("robinlovelace/simodels")
 ```
 
 # Spatial interaction modelling using machine learning
@@ -80,6 +124,7 @@ Objective of the section: To discuss how machine learning can enhance flow count
 
 # Facilitating future progress of spatial interaction modelling
 
-Objective of the section: To identify and discuss the key pillars that will enable progress on all the proposed fronts - open science, important and new questions and digital infrastructure. I see this as our conclusion - probably one or two short paragraph summarising what has been discussed with a forward looking approach.
+Objective of the section: To identify and discuss the key pillars that will enable progress on all the proposed fronts - open science, important and new questions and digital infrastructure.
+I see this as our conclusion - probably one or two short paragraph summarising what has been discussed with a forward looking approach.
 
 # References
