@@ -80,13 +80,42 @@ The issue I have on doing this is that the issues of calibration and big data ma
 Objective of the section: To discuss ways in which spatial interaction modelling can be expanded.
 I am particularly interested in advocating for (1) seeing spatial interaction models in a context of uncertainty, rather than as mathematical models; and, (2) discussing how hierarchical / generalised linear mixed modelling can offer ways to capture variability across places and populations.
 
-# Reproducible SIMs <!--# update section title? -->
+# Reproducible SIMs <!--# RL to lead -->
 
-Objective of the section: To discuss the opportunities and challenges of estimating spatial interacting modelling in the context of reproducible research
+*Objective of the section: To discuss the opportunities and challenges of estimating spatial interacting modelling in the context of reproducible research*
+
+Reproducibility has not been prominent in research developing and using SIMs outlined in the previous sections.
+This is understandable, because computer hardware, software and know-how needed to develop and run SIMs was simply unavailable to most people (let alone lowly and often cash-strapped students!) for most of field's history.
+Even when consumer laptops became widely available and more affordable during the 2000s, there were few well-known user-friendly off-the-shelf options implementing SIMs other than MATLAB and arguably Excel, unless you were willing to dive into programming.
+
+Fast-forward to the 2020s and computer hardware, and perhaps more importantly software, is much easier to obtain.
+In terms of affordability, a second-hand laptop whose processing power would have been considered a supercomputer by 1990s standards (and impossibly powerful when seminal SIM papers were published) can be obtained for around \$100 dollars in most countries.[^1]
+Tutorials teaching you to code with popular languages for data science abound, with R and Python particularly prominent in the fields (including Quantitative Geography, Social Physics, Statistics and more recently Urban Analytics) where much SIM research is undertaken.
+It has never been easier to write reproducible code implementing SIMs yet, despite notable exceptions [@dennett_modelling_2018], most SIMs and the findings they produce, are not reproducible.
+
+[^1]: See <https://ebay.com/b/Laptops-Netbooks/175672/bn_1648276> for an example of the huge international market for second-hand laptops.
+
+One could argue that reproducibility is a 'nice to have', an optional and potentially onerous extra thing to think about during the research process.
+Yet increasingly it is becoming apparent that reproducibility is *vital* for research to be falsifiable [@popper_logic_1934] and therefore scientifically sound.
+In this broader context, reproducibility is a "challenge to adjust scholarly communication to today's level of digitisation and diversity of scientific outputs" [@nust_practical_2021].
+A key message in our manifesto for SIM research in the 2020s, therefore, is for the models to be open and the results they create to be reproducible using published code and data (example synthetic data when the raw data cannot be published).
+We urge readers implementing SIMs to make their work reproducible not only for philosophical reasons.
+There are tangible benefits of making your SIM work reproducible:
+
+-   People are more likely to cite your work if they can reproduce it.
+
+-   Reproducible results based on open source software discourages reinvention of wheels and associated wasting of time.
+
+-   Reproducible research encourages innovation, both of your work and the work of others, because you can focus on what is new and novel rather than (for example) writing a paper implementing an existing SIM in a slightly new context (as many SIM papers have).
+
+To highlight the ease with which reproducible SIMs can now be developed, we present below reproducible R code that implements a simple SIM.
+It is notable that open source software continues to evolve: the code presented below uses the `simodels` R package, the development of which was partly motivated by this book chapter (the primary motivation was the need to develop SIMs to represent trips for purposes other than commuting and travel to school in Ireland as part of a contract with Transport Infrastructure Ireland, highlighting the applied nature of SIM research).
+`simodels` enables to develop SIMs starting with geographic datasets in fewer lines of code than was possible a few years ago [@dennett_modelling_2018].
+Naturally, the starting point is to install the package (and R and a modern IDE such as RStudio or [VS Code](https://marketplace.visualstudio.com/items?itemName=REditorSupport.r) if the software is not already installed on your computer), with the following lines of code: <!--# Hopefully we can replace the second line below with # install.packages("simodels") before the chapter is published! -->
 
 ```{r, eval=FALSE}
 install.packages("remotes")
-remotes::install_github("robinlovelace/si")
+remotes::install_github("robinlovelace/simodels")
 ```
 
 # Spatial interaction modelling using machine learning
