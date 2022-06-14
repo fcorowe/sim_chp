@@ -2,7 +2,7 @@
 # output: bookdown::github_document2
 output:
   bookdown::pdf_document2:
-    template: template.tex
+    template: main.tex
     keep_tex: true
 bibliography: sim_refs.bib
 ---
@@ -55,9 +55,9 @@ $$
 T_{i j}=K \frac{m_{i} n_{j}}{c_{i j}^{n}}
 $$
 
-# Multiple forms of spatial interaction modelling
+# Expanding spatial interaction modelling
 
-Objective of the section: To discuss ways in which spatial interaction modelling can be expanded. I am particularly interested in advocating for (1) seeing spatial interaction models in a context of uncertainty, rather than as mathematical models; and, (2) discussing how mixed-linear modelling can offer ways to capture variability across places and populations.
+Objective of the section: To discuss ways in which spatial interaction modelling can be expanded. I am particularly interested in advocating for (1) seeing spatial interaction models in a context of uncertainty, rather than as mathematical models; and, (2) discussing how hierarchical / generalised linear mixed modelling can offer ways to capture variability across places and populations.
 
 # Reproducible SIMs <!--# update section title? -->
 
