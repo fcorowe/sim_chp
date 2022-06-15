@@ -21,6 +21,8 @@ reproducibility
 2\.
 calibration <!--# AD - to elaborate this idea of calibration. I have long struggled with the term calibration in the context of spatial interaction modelling. In the olden days,  people used calibration to describe curve fitting parameters in a mathemathical framework. In a statistical context, I would understand this as the steps taken for a model to converge. -->
 
+<!--# AD - sounds good - just testing by adding my own comment here and will try and commit and push now -->
+
 3\.
 large volumes of granular spatial data <!--# FR - my argument here is that up to recently we did not have the need to deal with large data sets capturing movement. I argue that this imposes two additional challenges: (1) need to capture heterogeneity/variability across different populations and places, and (2) need for new and scalable models (where machine learning and other modelling frameworks come in) -->.
 
