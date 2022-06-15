@@ -31,6 +31,16 @@ The idea of challenges
 
 # Definition and Uses
 
+-   What are spatial interaction models?
+    Spatial interaction models (SIMs) definition - first intuitive definition / explanation - conceptually describe what spatial interaction modelling is (including its key components - talk about unconstrained and constrained models. But I don't think we need to spend tons of words on this.
+
+-   Why are SIMs important?
+    Applications and context - what they allow us to do: retail (delineating market areas), migration, human mobility, transport (factors influencing the size of people travelling), urban planning (), what if scenarios (forecasting)
+
+-   Progress on SIMs - recognise the work LeSage on spatial econometrics, Dan Griffith on spatial filtering, Kanaroglou et al on spatial discrete choice modelling, radiation models
+
+-   Remaining challenges - reproducibility (technical infrastructure)
+
 Objective of the section: To conceptually describe what spatial interaction modelling is (including its key components), how it is used, why it is important and how it relates to gravity modelling.
 I conceive this section to provide a brief, gentle, intuitive introduction to spatial interaction models, emphasising its importance and the various context of applications of SIMs i.e. retail, population, transport, etc.
 
@@ -83,6 +93,8 @@ I am particularly interested in advocating for (1) seeing spatial interaction mo
 # Reproducible SIMs <!--# RL to lead -->
 
 *Objective of the section: To discuss the opportunities and challenges of estimating spatial interacting modelling in the context of reproducible research*
+
+<!--# FR: I think this is good . The only suggestion I would make is to make this a bit broader to encapsulate the ideas of open science and enabling infrastructure. I see open science as a key enabler of reproducibility. As you identified in the text, there are options to fit SIMs but these options are commercial and not widely available, and are not fully transparent. It is challenging to know how SIMs are estimated, and therefore difficult to replicate. Also I would use the concept of enabling infrastructure because I see software as one of the components enabling the development of reproducible SIMs, but I don't think it is the only one. Again, as you wuite rightly identied below, practical tutorials to be able to apply SIMs are lacking. The work by Adam is probably an exception. Tutorials tend to focus on the theory, but the jump from the theory to the application of SIMs is quite dramatic. People often struggle to see the switch from an origin-destination matrix to a vector of origin-destination pair of flows -->
 
 Reproducibility has not been prominent in research developing and using SIMs outlined in the previous sections.
 This is understandable, because computer hardware, software and know-how needed to develop and run SIMs was simply unavailable to most people (let alone lowly and often cash-strapped students!) for most of field's history.
