@@ -131,6 +131,63 @@ Naturally, the starting point is to install the package (and R and a modern IDE 
 install.packages("simodels")
 ```
 
+The package installed with the previous command, which is called `simodels` (short for spatial interaction models) does not just provide functions for running and fitting (finding parameters to minimise model-observation differences): it provides a framework for developing SIMs and creating new functions implementing different types of SIM and using a variety of pre-existing modelling tools in SIMs.
+We will also install `tidyverse` (if not already) for intuitive data processing functionality, and load (technically attach) the packages so their functions are available:
+
+```{r, eval=FALSE}
+install.packages("tidyverse")
+```
+
+```{r, message=FALSE}
+library(simodels)
+library(tidyverse)
+```
+
+The starting 'point' (pun intended!) of all SIMs is geographic entities representing trip start, end or (for 'multi-partite' models) or intermediate points.
+We use the word 'features' because almost all SIMs use input datsets that are compliant with the 'simple features' open specification [@ogcopengeospatialconsortiuminc_opengis_2011], typically imported from files encoded in proprietary the Shapefile (`.shp`) or open GeoPackage (`.gpkg`), GeoJSON (`.geojson`) or other geographic file formats.
+R has a mature ecosystem for working with geographic file formats, so we can use existing function for this data import stage, using the `sf` package:
+
+```{r urls}
+u_origins = "origin_zones.geojson"
+f_origins = basename(u_origins)
+u_destinations = "destination_points.geojson"
+f_destinations = basename(u_destinations)
+```
+
+```{r, eval=FALSE}
+download.file(u_origins, destfile = f_origins)
+download.file(u_destinations, destfile = f_destinations)
+```
+
+```{r, echo=FALSE, eval=FALSE}
+sf::write_sf(simodels::si_zones, "origin_zones.geojson")
+sf::write_sf(simodels::si_pubs, "destination_points.geojson")
+```
+
+```{r}
+origin_zones = sf::read_sf("origin_zones.geojson")
+destination_points = sf::read_sf("destination_points.geojson")
+```
+
+The code chunk above demonstrates importing specific data objects:
+
+-   A simple features object with 'multipolygon' geometries representing administrative zones that constitute trip origins in the subsequent reproducible SIMs.
+
+-   Another simple features object with 'point' geometries representing two popular pubs in Leeds that are trip destinations in the SIMs below.
+
+-   
+
+-    patial interaction modelling using machine learning
+
+Before creating SIMs representing travel to these two pubs in Leeds, a deliberately minimal and simple input dataset to aid understanding, it is worth doing a small amount of exploratory data analysis (EDA) to check the input datasets.
+This is undertaken with the following commands:
+
+```{r}
+hist(origin_zones$all)
+plot(sf::st_geometry(origin_zones))
+plot(sf::st_geometry(destination_points), add = TRUE)
+```
+
 # Spatial interaction modelling using machine learning
 
 Objective of the section: To discuss how machine learning can enhance flow count inference and prediction

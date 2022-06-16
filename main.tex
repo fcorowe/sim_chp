@@ -292,6 +292,81 @@ Naturally, the starting point is to install the package (and R and a modern IDE 
 \end{Highlighting}
 \end{Shaded}
 
+The package installed with the previous command, which is called \texttt{simodels} (short for spatial interaction models) does not just provide functions for running and fitting (finding parameters to minimise model-observation differences): it provides a framework for developing SIMs and creating new functions implementing different types of SIM and using a variety of pre-existing modelling tools in SIMs.
+We will also install \texttt{tidyverse} (if not already) for intuitive data processing functionality, and load (technically attach) the packages so their functions are available:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{install.packages}\NormalTok{(}\StringTok{"tidyverse"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(simodels)}
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+The starting `point' (pun intended!) of all SIMs is geographic entities representing trip start, end or (for `multi-partite' models) or intermediate points.
+We use the word `features' because almost all SIMs use input datsets that are compliant with the `simple features' open specification ((OGC) Open Geospatial Consortium Inc 2011), typically imported from files encoded in proprietary the Shapefile (\texttt{.shp}) or open GeoPackage (\texttt{.gpkg}), GeoJSON (\texttt{.geojson}) or other geographic file formats.
+R has a mature ecosystem for working with geographic file formats, so we can use existing function for this data import stage, using the \texttt{sf} package:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{u\_origins }\OtherTok{=} \StringTok{"origin\_zones.geojson"}
+\NormalTok{f\_origins }\OtherTok{=} \FunctionTok{basename}\NormalTok{(u\_origins)}
+\NormalTok{u\_destinations }\OtherTok{=} \StringTok{"destination\_points.geojson"}
+\NormalTok{f\_destinations }\OtherTok{=} \FunctionTok{basename}\NormalTok{(u\_destinations)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{download.file}\NormalTok{(u\_origins, }\AttributeTok{destfile =}\NormalTok{ f\_origins)}
+\FunctionTok{download.file}\NormalTok{(u\_destinations, }\AttributeTok{destfile =}\NormalTok{ f\_destinations)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{origin\_zones }\OtherTok{=}\NormalTok{ sf}\SpecialCharTok{::}\FunctionTok{read\_sf}\NormalTok{(}\StringTok{"origin\_zones.geojson"}\NormalTok{)}
+\NormalTok{destination\_points }\OtherTok{=}\NormalTok{ sf}\SpecialCharTok{::}\FunctionTok{read\_sf}\NormalTok{(}\StringTok{"destination\_points.geojson"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+The code chunk above demonstrates importing specific data objects:
+
+\begin{itemize}
+\item
+  A simple features object with `multipolygon' geometries representing administrative zones that constitute trip origins in the subsequent reproducible SIMs.
+\item
+  Another simple features object with `point' geometries representing two popular pubs in Leeds that are trip destinations in the SIMs below.
+\item
+\item
+  patial interaction modelling using machine learning
+\end{itemize}
+
+Before creating SIMs representing travel to these two pubs in Leeds, a deliberately minimal and simple input dataset to aid understanding, it is worth doing a small amount of exploratory data analysis (EDA) to check the input datasets.
+This is undertaken with the following commands:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{hist}\NormalTok{(origin\_zones}\SpecialCharTok{$}\NormalTok{all)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{main_files/figure-latex/unnamed-chunk-7-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{plot}\NormalTok{(sf}\SpecialCharTok{::}\FunctionTok{st\_geometry}\NormalTok{(origin\_zones))}
+\FunctionTok{plot}\NormalTok{(sf}\SpecialCharTok{::}\FunctionTok{st\_geometry}\NormalTok{(destination\_points), }\AttributeTok{add =} \ConstantTok{TRUE}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{main_files/figure-latex/unnamed-chunk-7-2.pdf}
+
 \hypertarget{spatial-interaction-modelling-using-machine-learning}{%
 \section{Spatial interaction modelling using machine learning}\label{spatial-interaction-modelling-using-machine-learning}}
 
@@ -314,6 +389,9 @@ Dennett, Adam. 2018. {``Modelling Population Flows Using Spatial Interaction Mod
 
 \leavevmode\vadjust pre{\hypertarget{ref-nust_practical_2021}{}}%
 Nüst, Daniel, and Edzer Pebesma. 2021. {``Practical Reproducibility in Geography and Geosciences.''} \emph{Annals of the American Association of Geographers} 111 (5): 1300--1310. \url{https://doi.org/10.1080/24694452.2020.1806028}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-ogcopengeospatialconsortiuminc_opengis_2011}{}}%
+(OGC) Open Geospatial Consortium Inc. 2011. {``OpenGIS Implementation Specification for Geographic Information - Simple Feature Access - Part 1: Common Architecture.''} \url{https://www.ogc.org/standards/sfa}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-popper_logic_1934}{}}%
 Popper, Karl. 1934. \emph{The Logic of Scientific Discovery}. Hutchinson. \url{http://books.google.com/books?id=MdvaSAAACAAJ\&pgis=1}.
