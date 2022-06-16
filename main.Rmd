@@ -160,8 +160,12 @@ download.file(u_destinations, destfile = f_destinations)
 ```
 
 ```{r, echo=FALSE, eval=FALSE}
+pubs_example = si_pubs %>% 
+  filter(grepl(pattern = "Chemic|Nag", x = name)) %>% 
+  transmute(name, size = c(100, 80))
+
 sf::write_sf(simodels::si_zones, "origin_zones.geojson")
-sf::write_sf(simodels::si_pubs, "destination_points.geojson")
+sf::write_sf(pubs_example, "destination_points.geojson", delete_dsn = TRUE)
 ```
 
 ```{r}
@@ -182,10 +186,19 @@ The code chunk above demonstrates importing specific data objects:
 Before creating SIMs representing travel to these two pubs in Leeds, a deliberately minimal and simple input dataset to aid understanding, it is worth doing a small amount of exploratory data analysis (EDA) to check the input datasets.
 This is undertaken with the following commands:
 
-```{r}
-hist(origin_zones$all)
+```{r, out.width="50%", fig.show='hold'}
+origin_zones %>% 
+  ggplot() +
+  geom_histogram(aes(x = all), binwidth = 500)
+origin_zones %>% 
+  ggplot() +
+  geom_sf(aes(fill = all), alpha = 0.5) +
+  geom_sf(data = destination_points)
+```
+
+```{r, echo=FALSE, eval=FALSE}
 plot(sf::st_geometry(origin_zones))
-plot(sf::st_geometry(destination_points), add = TRUE)
+plot(sf::st_geometry(destination_points), pch = 15, add = TRUE)
 ```
 
 # Spatial interaction modelling using machine learning

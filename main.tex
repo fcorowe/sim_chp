@@ -352,20 +352,17 @@ This is undertaken with the following commands:
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\FunctionTok{hist}\NormalTok{(origin\_zones}\SpecialCharTok{$}\NormalTok{all)}
+\NormalTok{origin\_zones }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ all), }\AttributeTok{binwidth =} \DecValTok{500}\NormalTok{)}
+\NormalTok{origin\_zones }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{geom\_sf}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill =}\NormalTok{ all), }\AttributeTok{alpha =} \FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_sf}\NormalTok{(}\AttributeTok{data =}\NormalTok{ destination\_points)}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{main_files/figure-latex/unnamed-chunk-7-1.pdf}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{plot}\NormalTok{(sf}\SpecialCharTok{::}\FunctionTok{st\_geometry}\NormalTok{(origin\_zones))}
-\FunctionTok{plot}\NormalTok{(sf}\SpecialCharTok{::}\FunctionTok{st\_geometry}\NormalTok{(destination\_points), }\AttributeTok{add =} \ConstantTok{TRUE}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics{main_files/figure-latex/unnamed-chunk-7-2.pdf}
+\includegraphics[width=0.5\linewidth]{main_files/figure-latex/unnamed-chunk-7-1} \includegraphics[width=0.5\linewidth]{main_files/figure-latex/unnamed-chunk-7-2}
 
 \hypertarget{spatial-interaction-modelling-using-machine-learning}{%
 \section{Spatial interaction modelling using machine learning}\label{spatial-interaction-modelling-using-machine-learning}}
