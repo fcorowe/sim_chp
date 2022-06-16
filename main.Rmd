@@ -128,8 +128,7 @@ It is notable that open source software continues to evolve: the code presented 
 Naturally, the starting point is to install the package (and R and a modern IDE such as RStudio or [VS Code](https://marketplace.visualstudio.com/items?itemName=REditorSupport.r) if the software is not already installed on your computer), with the following lines of code: <!--# Hopefully we can replace the second line below with # install.packages("simodels") before the chapter is published! -->
 
 ```{r, eval=FALSE}
-install.packages("remotes")
-remotes::install_github("robinlovelace/simodels")
+install.packages("simodels")
 ```
 
 # Spatial interaction modelling using machine learning
