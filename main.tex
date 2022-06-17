@@ -342,9 +342,6 @@ The code chunk above demonstrates importing specific data objects:
   A simple features object with `multipolygon' geometries representing administrative zones that constitute trip origins in the subsequent reproducible SIMs.
 \item
   Another simple features object with `point' geometries representing two popular pubs in Leeds that are trip destinations in the SIMs below.
-\item
-\item
-  patial interaction modelling using machine learning
 \end{itemize}
 
 Before creating SIMs representing travel to these two pubs in Leeds, a deliberately minimal and simple input dataset to aid understanding, it is worth doing a small amount of exploratory data analysis (EDA) to check the input datasets.
@@ -354,15 +351,146 @@ This is undertaken with the following commands:
 \begin{Highlighting}[]
 \NormalTok{origin\_zones }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{geom\_histogram}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ all), }\AttributeTok{binwidth =} \DecValTok{500}\NormalTok{)}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ to\_pubs), }\AttributeTok{binwidth =} \DecValTok{10}\NormalTok{)}
 \NormalTok{origin\_zones }\SpecialCharTok{\%\textgreater{}\%} 
   \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
-  \FunctionTok{geom\_sf}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill =}\NormalTok{ all), }\AttributeTok{alpha =} \FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_sf}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{fill =}\NormalTok{ to\_pubs), }\AttributeTok{alpha =} \FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}
   \FunctionTok{geom\_sf}\NormalTok{(}\AttributeTok{data =}\NormalTok{ destination\_points)}
 \end{Highlighting}
 \end{Shaded}
 
 \includegraphics[width=0.5\linewidth]{main_files/figure-latex/unnamed-chunk-7-1} \includegraphics[width=0.5\linewidth]{main_files/figure-latex/unnamed-chunk-7-2}
+
+For many applications the most important function in the \texttt{simodels} package as \texttt{si\_to\_od()}, as demonstrated below:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{od\_zones\_to\_points }\OtherTok{=} \FunctionTok{si\_to\_od}\NormalTok{(origin\_zones, destination\_points)}
+\FunctionTok{class}\NormalTok{(od\_zones\_to\_points)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "sf"         "data.frame"
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{nrow}\NormalTok{(od\_zones\_to\_points)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 94
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{names}\NormalTok{(od\_zones\_to\_points)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] "O"                  "D"                  "distance_euclidean"
+## [4] "origin_to_pubs"     "destination_size"   "geometry"
+\end{verbatim}
+
+As shown in the output above, the result is a data frame with 94 rows (representing the full combination of trips from every one of the 47 origin zone to each of the 2 destinations).
+The names of the data frame refer to variables for each origin and each destination.
+When working on large input datasets, this `full matrix' of combinations can get unhelpfully large: an OD dataset from every MSOA to every pub in England, for example, would results in a dataset with 350,000,000 (350 million) rows, for example.
+To reduce dataset sizes, by orders of magnitude in some cases, the `sparse matrix' representing only OD pairs below a certain distance threshold can be created instead of the full matrix, by adding a \texttt{max\_dist} argument as follows, which sets the maximum Euclidean distance between zone centroids and point destinations to be included in the OD dataset at 5 km in this case:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{od\_zones\_to\_points }\OtherTok{=} \FunctionTok{si\_to\_od}\NormalTok{(origin\_zones, destination\_points, }\AttributeTok{max\_dist =} \DecValTok{5000}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 79 OD pairs remaining after removing those with a distance greater than 5000 meters:
+## 84% of all possible OD pairs
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{nrow}\NormalTok{(od\_zones\_to\_points)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 79
+\end{verbatim}
+
+This updated OD dataset is only a bit smaller (79 rows compared with 94 rows previously) of the size of the original because the example dataset is samll but in other cases setting a maximum distance can greatly speed-up SIM processing, modelling and visualisation run times in cases where you are happy to treat trips more than a threshold distance as negligible (in the case of trips to pubs 5 km is probably reasonable for distances to `the local' pub in urban areas but the distance threshold should be based on evidence where possible).
+
+From this point, we can specific a SIM model as a function as follows:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{gravity\_model }\OtherTok{=} \ControlFlowTok{function}\NormalTok{(beta, d, m, n) \{}
+\NormalTok{  m }\SpecialCharTok{*}\NormalTok{ n }\SpecialCharTok{*} \FunctionTok{exp}\NormalTok{(}\SpecialCharTok{{-}}\NormalTok{beta }\SpecialCharTok{*}\NormalTok{ d }\SpecialCharTok{/} \DecValTok{1000}\NormalTok{)}
+\NormalTok{\} }
+\end{Highlighting}
+\end{Shaded}
+
+and implement it with the following command:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{od\_to\_pubs\_result }\OtherTok{=}\NormalTok{ od\_zones\_to\_points }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{si\_calculate}\NormalTok{(}\AttributeTok{fun =}\NormalTok{ gravity\_model, }
+               \AttributeTok{m =}\NormalTok{ origin\_to\_pubs,}
+               \AttributeTok{n =}\NormalTok{ destination\_size,}
+               \AttributeTok{d =}\NormalTok{ distance\_euclidean,}
+               \AttributeTok{beta =} \FloatTok{0.5}\NormalTok{,}
+               \AttributeTok{constraint\_production =}\NormalTok{ origin\_to\_pubs)}
+\end{Highlighting}
+\end{Shaded}
+
+We can check the results as follows:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sum}\NormalTok{(od\_to\_pubs\_result}\SpecialCharTok{$}\NormalTok{interaction)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2903
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{sum}\NormalTok{(origin\_zones}\SpecialCharTok{$}\NormalTok{to\_pubs)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 2903
+\end{verbatim}
+
+As shown above, the total number of trips is the same in the OD data as in the zone level data.
+We can visualise the result as follows, resulting in Figure \ref{fig:pubresmap}:
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(ggspatial)}
+\CommentTok{\# rosm::osm.types()}
+\NormalTok{od\_to\_pubs\_result }\SpecialCharTok{\%\textgreater{}\%} 
+  \FunctionTok{ggplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{annotation\_map\_tile}\NormalTok{(}\AttributeTok{type =} \StringTok{"cartolight"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_sf}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{lwd =}\NormalTok{ interaction, }\AttributeTok{colour =}\NormalTok{ D), }\AttributeTok{alpha =} \FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{scale\_size\_continuous}\NormalTok{(}\AttributeTok{range =} \FunctionTok{c}\NormalTok{(}\FloatTok{0.3}\NormalTok{, }\DecValTok{3}\NormalTok{)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_sf}\NormalTok{(}\AttributeTok{data =}\NormalTok{ origin\_zones, }\AttributeTok{fill =} \ConstantTok{NA}\NormalTok{, }\AttributeTok{lty =} \DecValTok{2}\NormalTok{, }\AttributeTok{alpha =} \FloatTok{0.5}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{theme\_void}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{main_files/figure-latex/pubresmap-1.pdf}
+\caption{\label{fig:pubresmap}Results of a reproducible SIM undertaken on a minimal example based on synthetic data representing hypothetical trips to 2 pubs in Leeds, UK.}
+\end{figure}
 
 \hypertarget{spatial-interaction-modelling-using-machine-learning}{%
 \section{Spatial interaction modelling using machine learning}\label{spatial-interaction-modelling-using-machine-learning}}

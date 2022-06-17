@@ -163,8 +163,15 @@ download.file(u_destinations, destfile = f_destinations)
 pubs_example = si_pubs %>% 
   filter(grepl(pattern = "Chemic|Nag", x = name)) %>% 
   transmute(name, size = c(100, 80))
-
-sf::write_sf(simodels::si_zones, "origin_zones.geojson")
+origin_zones = si_zones %>% 
+  mutate(to_pubs = round(all / runif(nrow(si_zones), min = 30, max = 70)) ) %>% 
+  select(geo_code, to_pubs) 
+origin_centroids = sf::st_centroid(origin_zones)
+pubs_example_5km = sf::st_buffer(pubs_example, 5000)
+origin_centroids_to_keep = origin_centroids[pubs_example_5km, ]
+origin_zones = origin_zones %>% 
+  filter(geo_code %in% origin_centroids_to_keep$geo_code)
+sf::write_sf(origin_zones, "origin_zones.geojson", delete_dsn = TRUE)
 sf::write_sf(pubs_example, "destination_points.geojson", delete_dsn = TRUE)
 ```
 
@@ -179,26 +186,92 @@ The code chunk above demonstrates importing specific data objects:
 
 -   Another simple features object with 'point' geometries representing two popular pubs in Leeds that are trip destinations in the SIMs below.
 
--   
-
--    patial interaction modelling using machine learning
-
 Before creating SIMs representing travel to these two pubs in Leeds, a deliberately minimal and simple input dataset to aid understanding, it is worth doing a small amount of exploratory data analysis (EDA) to check the input datasets.
 This is undertaken with the following commands:
 
 ```{r, out.width="50%", fig.show='hold'}
 origin_zones %>% 
   ggplot() +
-  geom_histogram(aes(x = all), binwidth = 500)
+  geom_histogram(aes(x = to_pubs), binwidth = 10)
 origin_zones %>% 
   ggplot() +
-  geom_sf(aes(fill = all), alpha = 0.5) +
+  geom_sf(aes(fill = to_pubs), alpha = 0.5) +
   geom_sf(data = destination_points)
 ```
 
 ```{r, echo=FALSE, eval=FALSE}
 plot(sf::st_geometry(origin_zones))
 plot(sf::st_geometry(destination_points), pch = 15, add = TRUE)
+```
+
+For many applications the most important function in the `simodels` package as `si_to_od()`, as demonstrated below:
+
+```{r}
+od_zones_to_points = si_to_od(origin_zones, destination_points)
+class(od_zones_to_points)
+nrow(od_zones_to_points)
+names(od_zones_to_points)
+```
+
+As shown in the output above, the result is a data frame with 94 rows (representing the full combination of trips from every one of the 47 origin zone to each of the 2 destinations).
+The names of the data frame refer to variables for each origin and each destination.
+When working on large input datasets, this 'full matrix' of combinations can get unhelpfully large: an OD dataset from every MSOA to every pub in England, for example, would results in a dataset with `r format(7000 * 50000, big.mark = ",", scientific = FALSE)` (350 million) rows, for example.
+To reduce dataset sizes, by orders of magnitude in some cases, the 'sparse matrix' representing only OD pairs below a certain distance threshold can be created instead of the full matrix, by adding a `max_dist` argument as follows, which sets the maximum Euclidean distance between zone centroids and point destinations to be included in the OD dataset at 5 km in this case:
+
+```{r}
+od_zones_to_points = si_to_od(origin_zones, destination_points, max_dist = 5000)
+nrow(od_zones_to_points)
+```
+
+This updated OD dataset is only a bit smaller (79 rows compared with 94 rows previously) of the size of the original because the example dataset is samll but in other cases setting a maximum distance can greatly speed-up SIM processing, modelling and visualisation run times in cases where you are happy to treat trips more than a threshold distance as negligible (in the case of trips to pubs 5 km is probably reasonable for distances to 'the local' pub in urban areas but the distance threshold should be based on evidence where possible).
+
+From this point, we can specific a SIM model as a function as follows:
+
+```{r}
+gravity_model = function(beta, d, m, n) {
+  m * n * exp(-beta * d / 1000)
+} 
+```
+
+and implement it with the following command:
+
+```{r}
+od_to_pubs_result = od_zones_to_points %>% 
+  si_calculate(fun = gravity_model, 
+               m = origin_to_pubs,
+               n = destination_size,
+               d = distance_euclidean,
+               beta = 0.5,
+               constraint_production = origin_to_pubs)
+```
+
+We can check the results as follows:
+
+```{r}
+sum(od_to_pubs_result$interaction)
+sum(origin_zones$to_pubs)
+```
+
+As shown above, the total number of trips is the same in the OD data as in the zone level data.
+We can visualise the result as follows, resulting in Figure \@ref(fig:pubresmap):
+
+```{r pubresmap, message=FALSE, fig.cap="Results of a reproducible SIM undertaken on a minimal example based on synthetic data representing hypothetical trips to 2 pubs in Leeds, UK."}
+library(ggspatial)
+# rosm::osm.types()
+od_to_pubs_result %>% 
+  ggplot() +
+  annotation_map_tile(type = "cartolight") +
+  geom_sf(aes(lwd = interaction, colour = D), alpha = 0.5) +
+  scale_size_continuous(range = c(0.3, 3)) +
+  geom_sf(data = origin_zones, fill = NA, lty = 2, alpha = 0.5) +
+  theme_void()
+```
+
+```{r, echo=FALSE, eval=FALSE}
+# commented out as not helpful result: we would need more destinations for this to be useful:
+od_to_pubs_result %>% 
+  ggplot() +
+  geom_point(aes(distance_euclidean, interaction, colour = D))
 ```
 
 # Spatial interaction modelling using machine learning
