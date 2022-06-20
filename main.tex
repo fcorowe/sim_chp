@@ -183,14 +183,17 @@ The idea of challenges
 \begin{itemize}
 \item
   What are spatial interaction models?
-  Spatial interaction models (SIMs) definition - first intuitive definition / explanation - conceptually describe what spatial interaction modelling is (including its key components - talk about unconstrained and constrained models. But I don't think we need to spend tons of words on this.
+  Spatial interaction models (SIMs) definition - first intuitive definition / explanation - introduce the idea that it captures interaction between places e.g.~human, information, knowledge and trade flows -conceptually describe what spatial interaction modelling is (including its key components: distance and gravity forces).
+  Describe what is needed in practice - origin-destination data.
 \item
   Why are SIMs important?
-  Applications and context - what they allow us to do: retail (delineating market areas), migration, human mobility, transport (factors influencing the size of people travelling), urban planning (), what if scenarios (forecasting)
+  Applications and context - what they allow us to do: retail (delineating market areas), migration, human mobility, transport (factors influencing the size of people travelling), urban planning (), what if scenarios (forecasting) - forecasting/prediction applications to plan for new services, critical distance thresholds to delineate geographical areas of service,
 \item
-  Progress on SIMs - recognise the work LeSage on spatial econometrics, Dan Griffith on spatial filtering, Kanaroglou et al on spatial discrete choice modelling, radiation models
+  Different types of SIMs - the gravity model emerging are the most widely used - to capture the idea of relativity between places - talk about unconstrained and constrained models.
 \item
-  Remaining challenges - reproducibility (technical infrastructure)
+  Progress on SIMs - recognise expansions on (1) the development of the potential concept; (2) the separation of origin and destination attributes; (3) the identification of intervening opportunity and agglomeration impacts; and (4) a realization of the effects of spatial structure on interactions- and the work LeSage on spatial econometrics, Dan Griffith on spatial filtering, Kanaroglou et al on spatial discrete choice modelling, radiation models - competing destinations model Fotheringham (1983a, 1983b, 1984a)
+\item
+  Remaining challenges - reproducibility (technical enabling infrastructure), calibration and leverage on the potential opportunities offered by big data - traditional and new forms of data - leverage on properties -- real-time information, large volumes and temporal frequency - machine learning to improve inference and prediction as well as address issues of scalability (suggest broad approaches: parallel computing, slicing the data), inference (discuss how p-value is not a useful indicator anymore) and capturing heterogeneity.
 \end{itemize}
 
 Objective of the section: To conceptually describe what spatial interaction modelling is (including its key components), how it is used, why it is important and how it relates to gravity modelling.
@@ -491,6 +494,10 @@ We can visualise the result as follows, resulting in Figure \ref{fig:pubresmap}:
 \includegraphics{main_files/figure-latex/pubresmap-1.pdf}
 \caption{\label{fig:pubresmap}Results of a reproducible SIM undertaken on a minimal example based on synthetic data representing hypothetical trips to 2 pubs in Leeds, UK.}
 \end{figure}
+
+\begin{verbatim}
+##   |                                                                              |                                                                      |   0%  |                                                                              |==================                                                    |  25%  |                                                                              |===================================                                   |  50%  |                                                                              |====================================================                  |  75%  |                                                                              |======================================================================| 100%
+\end{verbatim}
 
 \hypertarget{spatial-interaction-modelling-using-machine-learning}{%
 \section{Spatial interaction modelling using machine learning}\label{spatial-interaction-modelling-using-machine-learning}}
