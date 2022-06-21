@@ -90,11 +90,6 @@ Identify reproducibility, calibration and big data as key challenges as noted ab
 If we frame these as key challenges, I think it would make sense to map the rest of the sections onto these challenges.
 The issue I have on doing this is that the issues of calibration and big data may entail similar or the same challenges.
 
-# Expanding spatial interaction modelling
-
-Objective of the section: To discuss ways in which spatial interaction modelling can be expanded.
-I am particularly interested in advocating for (1) seeing spatial interaction models in a context of uncertainty, rather than as mathematical models; and, (2) discussing how hierarchical / generalised linear mixed modelling can offer ways to capture variability across places and populations.
-
 # Reproducible SIMs <!--# RL to lead -->
 
 *Objective of the section: To discuss the opportunities and challenges of estimating spatial interacting modelling in the context of reproducible research*
@@ -183,7 +178,7 @@ origin_zones = sf::read_sf("origin_zones.geojson")
 destination_points = sf::read_sf("destination_points.geojson")
 ```
 
-The code chunk above demonstrates importing specific data objects:
+The code chunk above demonstrates importing specific data objects <!--# FR: It may be a good idea to explain the structure of the input data as to whether the `simodels` requires a data file organised in a certain way i.e. origin-destination matrix format or can handle alternative structures.  -->:
 
 -   A simple features object with 'multipolygon' geometries representing administrative zones that constitute trip origins in the subsequent reproducible SIMs.
 
@@ -276,6 +271,11 @@ od_to_pubs_result %>%
   ggplot() +
   geom_point(aes(distance_euclidean, interaction, colour = D))
 ```
+
+# Expanding spatial interaction modelling
+
+Objective of the section: To discuss ways in which spatial interaction modelling can be expanded.
+I am particularly interested in advocating for (1) seeing spatial interaction models in a context of uncertainty, rather than as mathematical models; and, (2) discussing how hierarchical / generalised linear mixed modelling can offer ways to capture variability across places and populations.
 
 # Spatial interaction modelling using machine learning
 
