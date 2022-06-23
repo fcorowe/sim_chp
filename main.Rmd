@@ -36,8 +36,8 @@ The idea of challenges
 For over 70 years, spatial interaction models (SIMs) have been the workmodel to understand spatial interactions between entities at different locations in physical space.
 SIMs represent mathematical formulations through which the spatial interaction between geographic places through flows of people, information and goods can be represented.
 Intuitively, these models seek to represent the spatial interaction between places as a function of three components: origin characteristics, destination characteristics and the separation between origins and destinations.
-Characteristics of origins and destinations are used to represent gravitational forces pushing and/or pulling people, information and goods from and to specific locations.
-In practice, information to operationalise SIMs is encoded in a matrix of flows between a set of origins, a set of destinations and a measure of spatial separation between origins and destinations.
+Originally adapted from physics, spatial flows between an origin and a destination were concieved to be proportional to their gravitational force and inversely related to their spatial separation.
+Characteristics of origins and destinations are used to represent gravitational forces pushing and/or pulling people, information and goods from and to specific locations, and different forms of distance and cost are used to represent the deterring effects of spatial separation on spatial flows.
 
 SIMs have been instrumental and applied in a wide range of contexts to support data analysis and decision making in retail, transport, housing, public health, land use, urban planning and population projection and forecasting contexts.
 SIMs are generally used for two key purposes.
@@ -49,8 +49,21 @@ SIMs have been used to determine and understand the influence of retail store on
 SIMs have also been used to delineate geographical areas of service and retail catchment areas.
 
 Formally SIMs take different forms.
-Newtonian gravity models are probably the most widely known and used.
-Adapted from physics to
+Newtonian gravity models are probably the most widely known and used in social sciences.
+Adapted from physics, the basic gravity model assumes that the interactions $T_{i j}$ between an origin $i$ and a destination $j$ in the form of flows can be understood as a function of driving forces like masses $W_{i}$ and $W_{j}$ , and a measure of spatial separation $c_{ij}$ .
+Areas are assumed to interact in a positively reinforcing way that is multiplicative of their masses, and at the same time their interactions are expected to diminish with the intervening role of spatial separation.
+Spatial separation is generally measred by distance, cost or time involved in the interaction, and is often represented by a distance-decay function.
+The model also requires a $k$ factor to proportionality between expected and observed flows, and $\beta$ parameter representing the deterring effect of spatial separation, or distance.
+The key task in a gravity model is to estimate these parameters.
+A typical notation for the model is:
+
+$$
+T_{i j}=k \frac{W_{i} W_{j}}{c_{i j}^{\beta}}
+$$
+
+This original "unconstrained" formulation of the model has been extended to
+
+is known as 'unconstrained model'
 
 -   Different types of SIMs - the gravity model emerging are the most widely used - to capture the idea of relativity between places - talk about unconstrained and constrained models.
 
@@ -101,6 +114,8 @@ $$
 Identify reproducibility, calibration and big data as key challenges as noted above.
 If we frame these as key challenges, I think it would make sense to map the rest of the sections onto these challenges.
 The issue I have on doing this is that the issues of calibration and big data may entail similar or the same challenges.
+
+\> In practice, information to operationalise SIMs is encoded in a matrix of flows between a set of origins, a set of destinations and a measure of spatial separation between origins and destinations.
 
 # Reproducible SIMs <!--# RL to lead -->
 
@@ -306,7 +321,7 @@ themselves.
 For example, the one parameter that appears in all spatial
 interaction models relates to the cost exponent.
 Almost universally described in
-the literature with the symbol beta and almost always negative, the
+the literature with the symbol $\beta$ and almost always negative, the
 value of the beta parameter in a given system reveals the frictional effect
 that the cost of interaction has on the flows being observed, with higher
 negative values indicating a more severe deterrent.
