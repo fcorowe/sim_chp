@@ -306,7 +306,7 @@ themselves.
 For example, the one parameter that appears in all spatial
 interaction models relates to the cost exponent.
 Almost universally described in
-the literature with the symbol *β,* and almost always negative, the
+the literature with the symbol beta and almost always negative, the
 value of the beta parameter in a given system reveals the frictional effect
 that the cost of interaction has on the flows being observed, with higher
 negative values indicating a more severe deterrent.
