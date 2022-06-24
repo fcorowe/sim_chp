@@ -186,7 +186,7 @@ Intuitively, these models seek to represent the spatial interaction between plac
 Originally adapted from physics, spatial flows between an origin and a destination were concieved to be proportional to their gravitational force and inversely related to their spatial separation.
 Characteristics of origins and destinations are used to represent gravitational forces pushing and/or pulling people, information and goods from and to specific locations, and different forms of distance and cost are used to represent the deterring effects of spatial separation on spatial flows.
 
-SIMs have been instrumental and applied in a wide range of contexts to support data analysis and decision making in retail, transport, housing, public health, land use, urban planning and population projection and forecasting contexts.
+SIMs have been instrumental and applied in a wide range of contexts to support data analysis and decision making in retail, transport, housing, epidemiology, public health, land use, urban and population modelling and planningprojection and forecasting contexts.
 SIMs are generally used for two key purposes.
 A key purpose is the \emph{prediction} of the size and direction of spatial flows.
 SIMs have been widely used to predict the impact of the development of new service units, such as shopping stores, healthcare facilities and housing units on the potential demand for associated services and traffic patterns.
@@ -209,7 +209,7 @@ T_{i j}=k \frac{V_{i} W_{j}}{c_{i j}^{\beta}}
 \]
 
 In practice, a matrix of flows between a set of origins, a set of destinations and a measure of spatial separation between origins and destinations is the key input for SIMs.
-A family of SIMs taking four distinctive shapes is typically considered Wilson (1971).
+A family of SIMs taking four distinctive shapes is typically considered (Wilson 1971).
 A \emph{unconstrained} formulation of the model to ensure that the total sum of the predicted flows from a gravity model be equal the total sum of the observed flows across all origins and destinations.
 \emph{Constrained} versions are used to ensure that specific restrictions are met.
 Three general formulations of constrained models are used: production-constrained, attraction-constrained and doubly constrained models.
@@ -217,17 +217,30 @@ Production-constrained forms are used to constrain a model so that the predicted
 Attraction-constrained forms are used to constrain a model so that the predicted number of trips terminating at each destination is equal to the observed number of trips.
 Doubly constrained models combine these two sets of constraints.
 
-SIMs have been extended in four key ways.
+SIMs have been extended in five key ways.
+First, social science theory has been infused to underpin and enrich SIMs.
+SIMs were originally conceptualised as a mathematical formulation to represent observed relationships between origins and destinations encoded in a origin-destination matrix, and generate accurate prediction of spatial flows.
+Field-specific theories have been used to develop initial mathematical formulations of SIMs to understand retail, trade, transport, communication, migration and mobility patterns.
+Second, more sophisticated measures to capture the influence of origins and destinations have been developed.
+The specification of SIMs has moved away from relying on population size to approximate the propulsive effect of origins and attractive force of destinations, to capture local economic, political, cultural and social differences across origins and destination, and recognise propulsive and attractive effects at play in both origins and destinations.
+Third, measures of spatial separation have also been sophisticated to more appropriately reflect the geographical, physiological and financial distance and costs between origins and destinations (Schwartz 1973).
+Fourth, considerable methodological work has been done to conceptualise and operationalise the influence of spatial structure in SIMs (Oshan 2021).
+
+statistical framework - estimation using OLS based on logs formulations, then Poisson and more sophisticated count models.
 
 \begin{enumerate}
 \def\labelenumi{(\arabic{enumi})}
+\tightlist
 \item
-  conceptualising - was not until that a theory relating to human behavior was developed for gravity model concepts and interpretations moving away from a mathemathical relationship not only predictive capability
+  capture the effects of spatial structure on interactions - LeSage, Fotheringham, - Oshan (2021) four generalizable approaches were proposed to account for the spatial structure effect: the CD model, the Box--Cox transform, spatial econometric models,and eigenvector spatial filtering (ESF).
+\end{enumerate}
+
+\begin{enumerate}
+\def\labelenumi{(\arabic{enumi})}
+\tightlist
 \item
   alternative developments - frameworks e.g.~radiation model to account what?
   discrete choice modelling to account for micro behaviour
-\item
-  capture the effects of spatial structure on interactions - LeSage, Fotheringham, - Oshan (2021) four generalizable approaches were proposed to account for the spatial structure effect: the CD model, the Box--Cox transform, spatial econometric models,and eigenvector spatial filtering (ESF).
 \end{enumerate}
 
 \begin{itemize}
@@ -572,6 +585,9 @@ Objective of the section: To discuss how machine learning can enhance flow count
 Objective of the section: To identify and discuss the key pillars that will enable progress on all the proposed fronts - open science, important and new questions and digital infrastructure.
 I see this as our conclusion - probably one or two short paragraph summarising what has been discussed with a forward looking approach.
 
+These are the challenges.
+We therefore need software to enhance reproducibility, calibration, - deal with issues of scalability, multiples scales, spatial non-stationarity,
+
 \hypertarget{references}{%
 \section*{References}\label{references}}
 \addcontentsline{toc}{section}{References}
@@ -595,6 +611,9 @@ Popper, Karl. 1934. \emph{The Logic of Scientific Discovery}. Hutchinson. \url{h
 
 \leavevmode\vadjust pre{\hypertarget{ref-rodrigue_geography_2013}{}}%
 Rodrigue, Jean-Paul, Claude Comtois, and Brian Slack. 2013. \emph{The Geography of Transport Systems}. 3 edition. London ; New York: Routledge.
+
+\leavevmode\vadjust pre{\hypertarget{ref-schwartz1973interpreting}{}}%
+Schwartz, Aba. 1973. {``Interpreting the Effect of Distance on Migration.''} \emph{Journal of Political Economy} 81 (5): 1153--69.
 
 \leavevmode\vadjust pre{\hypertarget{ref-simini_universal_2012}{}}%
 Simini, Filippo, Marta C González, Amos Maritan, and Albert-László Barabási. 2012. {``A Universal Model for Mobility and Migration Patterns.''} \emph{Nature}, February, 812. \url{https://doi.org/10.1038/nature10856}.
