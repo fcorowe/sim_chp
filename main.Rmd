@@ -62,7 +62,7 @@ T_{i j}=k \frac{V_{i} W_{j}}{c_{i j}^{\beta}}
 $$
 
 In practice, a matrix of flows between a set of origins, a set of destinations and a measure of spatial separation between origins and destinations is the key input for SIMs.
-Four different forms of SIM are generally calibrated.
+A family of SIMs taking four distinctive shapes is typically considered @wilson_family_1971.
 A *unconstrained* formulation of the model to ensure that the total sum of the predicted flows from a gravity model be equal the total sum of the observed flows across all origins and destinations.
 *Constrained* versions are used to ensure that specific restrictions are met.
 Three general formulations of constrained models are used: production-constrained, attraction-constrained and doubly constrained models.
@@ -71,8 +71,13 @@ Attraction-constrained forms are used to constrain a model so that the predicted
 Doubly constrained models combine these two sets of constraints.
 
 SIMs have been extended in four key ways.
-(1) conceptualising - not only predictive capability, (2) alternative conceptualisations - frameworks e.g. radiation model to account what?
-discrete choice modelling to account for micro behaviour (3) capture the effects of spatial structure on interactions - LeSage, Fotheringham,
+
+(1) conceptualising - was not until that a theory relating to human behavior was developed for gravity model concepts and interpretations moving away from a mathemathical relationship not only predictive capability
+
+(2) alternative developments - frameworks e.g. radiation model to account what?
+discrete choice modelling to account for micro behaviour
+
+(3) capture the effects of spatial structure on interactions - LeSage, Fotheringham, - @oshan2021spatial four generalizable approaches were proposed to account for the spatial structure effect: the CD model, the Box--Cox transform, spatial econometric models,and eigenvector spatial filtering (ESF).
 
 -   Progress on SIMs - recognise expansions on (1) the development of the potential concept; (2) the separation of origin and destination attributes; (3) the identification of intervening opportunity and agglomeration impacts; and (4) a realization of the effects of spatial structure on interactions- and the work LeSage on spatial econometrics, Dan Griffith on spatial filtering, Kanaroglou et al on spatial discrete choice modelling, radiation models - competing destinations model Fotheringham (1983a, 1983b, 1984a).
     A large theoretical and empirical literature has developed around the definition of the "correct" exponent.
