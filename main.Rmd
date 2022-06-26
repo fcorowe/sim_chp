@@ -76,18 +76,16 @@ SIMs were originally conceptualised as a mathematical formulation to represent o
 Field-specific theories have been used to develop initial mathematical formulations of SIMs to understand retail, trade, transport, communication, migration and mobility patterns.
 Second, more sophisticated measures to capture the influence of origins and destinations have been developed.
 The specification of SIMs has moved away from relying on population size to approximate the propulsive effect of origins and attractive force of destinations, to capture local economic, political, cultural and social differences across origins and destination, and recognise propulsive and attractive effects at play in both origins and destinations.
-Third, measures of spatial separation have also been sophisticated to more appropriately reflect the geographical, physiological and financial distance and costs between origins and destinations [@schwartz1973interpreting].
+Third, measures of spatial separation have also been sophisticated to more appropriately reflect the geographical, physiological and financial distance and costs between origins and destinations [@schwartz1973interpreting], as well as the system of road networks [<!--# Ref  -->] and the spatial distribution of human settlements [@niedomysl2017].
 Fourth, considerable methodological work has been done to conceptualise and operationalise the influence of spatial structure in SIMs [@oshan2021spatial].
 
 statistical framework - estimation using OLS based on logs formulations, then Poisson and more sophisticated count models.
 
 (1) capture the effects of spatial structure on interactions - LeSage, Fotheringham, - @oshan2021spatial four generalizable approaches were proposed to account for the spatial structure effect: the CD model, the Box--Cox transform, spatial econometric models,and eigenvector spatial filtering (ESF).
 
-```{=html}
 <!-- -->
-```
-(1) alternative developments - frameworks e.g. radiation model to account what?
-    discrete choice modelling to account for micro behaviour
+
+(1) alternative developments - frameworks e.g. radiation model to account what? discrete choice modelling to account for micro behaviour
 
 -   Progress on SIMs - recognise expansions on (1) the development of the potential concept; (2) the separation of origin and destination attributes; (3) the identification of intervening opportunity and agglomeration impacts; and (4) a realization of the effects of spatial structure on interactions- and the work LeSage on spatial econometrics, Dan Griffith on spatial filtering, Kanaroglou et al on spatial discrete choice modelling, radiation models - competing destinations model Fotheringham (1983a, 1983b, 1984a).
     A large theoretical and empirical literature has developed around the definition of the "correct" exponent.
