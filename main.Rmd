@@ -31,6 +31,8 @@ Context: spatial interaction modelling in a world of big data, machine learning,
 The text included here is for our own benefit.
 The idea of challenges
 
+key challenges: software, big data, calibration (scalability, multiples scales, spatial non-stationarity), training
+
 # Definition and Uses
 
 For over 70 years, spatial interaction models (SIMs) have been the workmodel to understand spatial interactions between entities at different locations in physical space.
@@ -70,7 +72,7 @@ Production-constrained forms are used to constrain a model so that the predicted
 Attraction-constrained forms are used to constrain a model so that the predicted number of trips terminating at each destination is equal to the observed number of trips.
 Doubly constrained models combine these two sets of constraints.
 
-SIMs have been extended in five key ways.
+SIMs have been extended in six key ways.
 First, social science theory has been infused to underpin and enrich SIMs.
 SIMs were originally conceptualised as a mathematical formulation to represent observed relationships between origins and destinations encoded in a origin-destination matrix, and generate accurate prediction of spatial flows.
 Field-specific theories have been used to develop initial mathematical formulations of SIMs to understand retail, trade, transport, communication, migration and mobility patterns.
@@ -78,41 +80,41 @@ Second, more sophisticated measures to capture the influence of origins and dest
 The specification of SIMs has moved away from relying on population size to approximate the propulsive effect of origins and attractive force of destinations, to capture local economic, political, cultural and social differences across origins and destination, and recognise propulsive and attractive effects at play in both origins and destinations.
 Third, measures of spatial separation have also been sophisticated to more appropriately reflect the geographical, physiological and financial distance and costs between origins and destinations [@schwartz1973interpreting], as well as the system of road networks [<!--# Ref  -->] and the spatial distribution of human settlements [@niedomysl2017].
 Fourth, considerable methodological work has been done to conceptualise and operationalise the influence of spatial structure in SIMs [@oshan2021spatial].
-Four generalisable approaches have been proposed to account for spatial structure in distinctive ways: the competing destination model by including an accessibility measure [<!--# Ref: Fotheringham  -->]; the Box--Cox transform by using a Box--Cox functional form of distance [<!--# Ref: Tiefelsdorf  -->]; spatial econometric modelling [<!--# Ref: Bolduc / LeSage and Pace -->]; and eigenvector spatial filtering by incorporating spatial dependence or spatial autocorrelation [<!--# Ref: Griffith -->].
-Fifth,
+Five generalisable approaches have been proposed to account for spatial structure in distinctive ways: the competing destination model by including an accessibility measure [<!--# Ref: Fotheringham  -->]; the Box--Cox transform by using a Box--Cox functional form of distance [<!--# Ref: Tiefelsdorf  -->]; spatial choice modelling by accounting for destination alternative substitution patterns [@hunt2004]; spatial econometric modelling [<!--# Ref: Bolduc / LeSage and Pace -->]; and eigenvector spatial filtering by incorporating spatial dependence or spatial autocorrelation [<!--# Ref: Griffith -->].
+Fifth, statistical frameworks to calibrate SIMs have evolved from linear log model formulations using ordinary least squares (OLS) and maximum likelihood estimation procedures, through generalised linear frameworks using iteratively reweighted least squares (IWLS), especially Poisson and Negative Binomial distributions [<!--# Ref: Flowrew -->], to more sophisticated multilevel and discrete choice models to capture origin-, destination- or origin-destination-specific parameters [<!--# Ref-->].
+Sixth, alternative frameworks of spatial interaction modelling have been developed to incorporate different ways of conceptualising the decision-making process of choosing a destination location.
+The radiation [@simini_universal_2012], exploration and preferential return [@pappalardo2015] and random utility models [@mcfadden1974analysis] have become prominent frameworks to model spatial flows, particularly movement of people.
 
-statistical framework - estimation using OLS based on logs formulations, then Poisson and more sophisticated count models.
+Thus, considerable progress has been made on advancing the theoretical and methodological underpinnings of SIMs.
+Yet, major challenges remain in terms of reproducibility, calibration and *Big Data* modelling.
 
-(1) alternative developments - frameworks e.g. radiation model to account what? discrete choice modelling to account for micro behaviour
+Challenges:
 
--   Progress on SIMs - recognise expansions on (1) the development of the potential concept; (2) the separation of origin and destination attributes; (3) the identification of intervening opportunity and agglomeration impacts; and (4) a realization of the effects of spatial structure on interactions- and the work LeSage on spatial econometrics, Dan Griffith on spatial filtering, Kanaroglou et al on spatial discrete choice modelling, radiation models - competing destinations model Fotheringham (1983a, 1983b, 1984a).
-    A large theoretical and empirical literature has developed around the definition of the "correct" exponent.
+-   reproducibility
+    -   Challenge: reproducing research / model estimates
+    -   what is needed to facilitate reproducibility. We need digital infrastructure/ecosystem, involving user friendly software, tutorials facilitated via computational notebooks integrating text, explanation, real-world data and code to train people.
+-   calibration
+    -   Challenge: lots of models but they are not readily accessible - focus on maths but not practice.
 
+    -   What is needed: We need digital infrastructure/ecosystem, involving user friendly software, tutorials facilitated via computational notebooks integrating text, explanation, real-world data and code to train people.
+-   *Big Data* modelling
+    -   Challenges: lots of data but issues of scalability, inference based on P values and capturing heterogeneity.
+
+    -   What is needed: different approaches - use of machine learning (because it is not possible), generalised linear mixed models (GLMMs) to capture heterogeneity, greater use of causal inference approaches and warnings of the misuse of statistical significance and *P* values (We are not calling for a ban on *P* values. Nor are we saying they cannot be used as a decision criterion in certain specialized applications (such as determining whether a manufacturing process meets some quality-control standard).
+        And we are also not advocating for an anything-goes situation, in which weak evidence suddenly becomes credible.
+        Rather, and in line with many others over the decades, we are calling for a stop to the use of *P* values in the conventional, dichotomous way --- to decide whether a result refutes or supports a scientific hypothesis)
+-   
 -   Remaining challenges - reproducibility (technical enabling infrastructure), calibration and leverage on the potential opportunities offered by big data - traditional and new forms of data - leverage on properties -- real-time information, large volumes and temporal frequency - machine learning to improve inference and prediction as well as address issues of scalability (suggest broad approaches: parallel computing, slicing the data), inference (discuss how p-value is not a useful indicator anymore) and capturing heterogeneity.
-
-Objective of the section: To conceptually describe what spatial interaction modelling is (including its key components), how it is used, why it is important and how it relates to gravity modelling.
-I conceive this section to provide a brief, gentle, intuitive introduction to spatial interaction models, emphasising its importance and the various context of applications of SIMs i.e. retail, population, transport, etc.
-
--   Mention of key SIM paradigms
-
-<!--# FR: I would say let's introduce the intuition of traditional gravity models and then what progress has been made. -->
-
-SIMs cover a wide range of methods and applications.
-According to @rodrigue_geography_2013, there are 3 broad types of SIM:
-
--   Gravity models, in which interaction is estimated as a function of size/attractiveness of start/end points and some impedance function; this is the original and 'traditional' SIM.
-
--   Radiation models or 'potential models', in which interaction is estimated as a function of size/attractiveness of start/end points but mediated by a function of intervening opportunities [@simini_universal_2012].
-
--   Retail models, which seek to identify the 'market boundary' between economic hubs.
 
 Identify reproducibility, calibration and big data as key challenges as noted above.
 If we frame these as key challenges, I think it would make sense to map the rest of the sections onto these challenges.
 The issue I have on doing this is that the issues of calibration and big data may entail similar or the same challenges.
 
-\> In practice, information to operationalise SIMs is encoded in a matrix of flows between a set of origins, a set of destinations and a measure of spatial separation between origins and destinations.
+# Challenges
 
-# Reproducible SIMs <!--# RL to lead -->
+# The way forward
+
+## Reproducible SIMs <!--# RL to lead -->
 
 *Objective of the section: To discuss the opportunities and challenges of estimating spatial interacting modelling in the context of reproducible research*
 
@@ -294,7 +296,7 @@ od_to_pubs_result %>%
   geom_point(aes(distance_euclidean, interaction, colour = D))
 ```
 
-# Calibration
+## Calibration
 
 As Openshaw (1975) succinctly puts it, "calibration is the process of providing estimates of the unknown parameters we have identified as the independent variables of the model".
 In a basic gravity formulation of a spatial interaction model there will be three parameters to estimate relating to origin mass or emissivity, destination mass or attractiveness and a parameter determining the frictional effect of the cost of interactions occurring between the two.
@@ -342,12 +344,12 @@ Issues of spatial non-stationarity.
 Issues of incomplete, poor or otherwise imperfect calibration data.
 These are all problems that persist but that due to new researchers in the field invariably starting from scratch rather than usefully building on existing knowledge through accessible methods, have not yet been successfully solved.
 
-# Expanding spatial interaction modelling
+## Expanding spatial interaction modelling
 
 Objective of the section: To discuss ways in which spatial interaction modelling can be expanded.
 I am particularly interested in advocating for (1) seeing spatial interaction models in a context of uncertainty, rather than as mathematical models; and, (2) discussing how hierarchical / generalised linear mixed modelling can offer ways to capture variability across places and populations.
 
-# Spatial interaction modelling using machine learning
+## Spatial interaction modelling using machine learning
 
 Objective of the section: To discuss how machine learning can enhance flow count inference and prediction
 
