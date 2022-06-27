@@ -227,7 +227,7 @@ Second, more sophisticated measures to capture the influence of origins and dest
 The specification of SIMs has moved away from relying on population size to approximate the propulsive effect of origins and attractive force of destinations, to capture local economic, political, cultural and social differences across origins and destination, and recognise propulsive and attractive effects at play in both origins and destinations.
 Third, measures of spatial separation have also been sophisticated to more appropriately reflect the geographical, physiological and financial distance and costs between origins and destinations (Schwartz 1973), as well as the system of road networks {[}{]} and the spatial distribution of human settlements (Niedomysl et al. 2017).
 Fourth, considerable methodological work has been done to conceptualise and operationalise the influence of spatial structure in SIMs (Oshan 2021).
-Five generalisable approaches have been proposed to account for spatial structure in distinctive ways: the competing destination model by including an accessibility measure {[}{]}; the Box--Cox transform by using a Box--Cox functional form of distance {[}{]}; spatial choice modelling by accounting for destination alternative substitution patterns (Hunt, Boots, and Kanaroglou 2004); spatial econometric modelling {[}{]}; and eigenvector spatial filtering by incorporating spatial dependence or spatial autocorrelation {[}{]}.
+Five generalisable approaches have been proposed to account for spatial structure in distinctive ways: the competing destination model by including an accessibility measure (Fotheringham 1983); the Box--Cox transform by using a Box--Cox functional form of distance {[}{]}; spatial choice modelling by accounting for destination alternative substitution patterns (Hunt, Boots, and Kanaroglou 2004); spatial econometric modelling {[}{]}; and eigenvector spatial filtering by incorporating spatial dependence or spatial autocorrelation {[}{]}.
 Fifth, statistical frameworks to calibrate SIMs have evolved from linear log-normal model formulations using ordinary least squares (OLS) and maximum likelihood estimation procedures, through generalised linear frameworks using iteratively reweighted least squares (IWLS), especially Poisson and Negative Binomial distributions {[}{]}, to more sophisticated multilevel and discrete choice models to capture origin-, destination- or origin-destination-specific parameters {[}{]}.
 Sixth, alternative frameworks of spatial interaction modelling have been developed to incorporate different ways of conceptualising the decision-making process of choosing a destination location.
 The radiation (Simini et al. 2012), exploration and preferential return (Pappalardo et al. 2015) and random utility models (McFadden 1974) have become prominent frameworks to model spatial flows, particularly movement of people.
@@ -279,13 +279,27 @@ In this section, we want to describe why the areas identified are seen as challe
 \hypertarget{reproducibility}{%
 \subsection{\texorpdfstring{Reproducibility }{Reproducibility }}\label{reproducibility}}
 
-Reproducibility of SIMs has been an area of attention in past research.
-Yet, we argue that reproducibility of the estimates derived from SIMs are
+Reproducibility of SIMs has not been a prominent area of attention in past research.
+Replicating most SIM application would certainly be a challenge.
+Such situation is unfortunate as it is likely to have limited the applicability and portability of sophisticated frameworks to estimate SIMs and capture the effects of spatial structure on spatial flows through the use of spatial choice, spatial econometric or eigenvector spatial filtering modelling techniques.
+Even the application of basic formulations of SIMs tends to represent a daunting challenge for beginning modelers of spatial flow data.
+The lack of reproducibility as a standard research practice has tended to generate ``black box'' data analyses, preventing the validation, verification and comparability of SIM estimates.
+
+Understandably, reproducibility was not concern during the 1970s and 1980s, when significant progress was made on developing SIMs.
+Computer hardware, software and know-how needed to develop and deploy SIMs were unavailable to most people.
+Even when consumer laptops became widely available and more affordable during the 2000s, few well-known user-friendly off-the-shelf options to implement SIMs existed.
+Yet, today, computer software and hardware are highly affordable and learning computing programming has become increasingly accessible.
+With the advent of open science, resources to learn computer programming in popular data science languages, such as \emph{R} and \emph{Python} have become widely available.
+Nevertheless, most SIM applications cannot still be reproduced.
+
+We argue for reproducibility because it can generate all these benefits!
+
+Yet, reproducibility of SIM estimates is key
 
 \begin{itemize}
 \item
   Why reproducibility is seen as a challenge / reproducing research / model estimates and why is important - not starting from scratch- build on existing work and address important issues of xxx.
-  Benefits (Brunsdon 2016):
+  Benefits (Brunsdon 2016) (Rowe et al. 2020):
 
   \begin{itemize}
   \item
@@ -297,22 +311,9 @@ Yet, we argue that reproducibility of the estimates derived from SIMs are
   \item
     can augment impact of research
   \end{itemize}
-\end{itemize}
-
-\begin{itemize}
-\tightlist
 \item
   What has prevented reproducibility
 \end{itemize}
-
-Reproducibility has not been prominent in research developing and using SIMs outlined in the previous sections.
-This is understandable, because computer hardware, software and know-how needed to develop and run SIMs was simply unavailable to most people (let alone lowly and often cash-strapped students!) for most of field's history.
-Even when consumer laptops became widely available and more affordable during the 2000s, there were few well-known user-friendly off-the-shelf options implementing SIMs other than MATLAB and arguably Excel, unless you were willing to dive into programming.
-
-Fast-forward to the 2020s and computer hardware, and perhaps more importantly software, is much easier to obtain.
-In terms of affordability, a second-hand laptop whose processing power would have been considered a supercomputer by 1990s standards (and impossibly powerful when seminal SIM papers were published) can be obtained for around \$100 dollars in most countries.\footnote{See \url{https://ebay.com/b/Laptops-Netbooks/175672/bn_1648276} for an example of the huge international market for second-hand laptops.}
-Tutorials teaching you to code with popular languages for data science abound, with R and Python particularly prominent in the fields (including Quantitative Geography, Social Physics, Statistics and more recently Urban Analytics) where much SIM research is undertaken.
-It has never been easier to write reproducible code implementing SIMs yet, despite notable exceptions (Dennett 2018), most SIMs and the findings they produce, are not reproducible.
 
 One could argue that reproducibility is a `nice to have', an optional and potentially onerous extra thing to think about during the research process.
 Yet increasingly it is becoming apparent that reproducibility is \emph{vital} for research to be falsifiable (Popper 1934) and therefore scientifically sound.
@@ -686,6 +687,9 @@ Brunsdon, Chris. 2016. {``Quantitative Methods I.''} \emph{Progress in Human Geo
 \leavevmode\vadjust pre{\hypertarget{ref-dennett_modelling_2018}{}}%
 Dennett, Adam. 2018. {``Modelling Population Flows Using Spatial Interaction Models.''} \emph{Australian Population Studies} 2 (2): 33--58. \url{https://doi.org/10.37970/aps.v2i2.38}.
 
+\leavevmode\vadjust pre{\hypertarget{ref-fotheringham1983}{}}%
+Fotheringham, A S. 1983. {``A New Set of Spatial-Interaction Models: The Theory of Competing Destinations.''} \emph{Environment and Planning A: Economy and Space} 15 (1): 15--36. \url{https://doi.org/10.1177/0308518x8301500103}.
+
 \leavevmode\vadjust pre{\hypertarget{ref-hunt2004}{}}%
 Hunt, Len M., Barry Boots, and Pavios S. Kanaroglou. 2004. {``Spatial Choice Modelling: New Opportunities to Incorporate Space into Substitution Patterns.''} \emph{Progress in Human Geography} 28 (6): 746--66. \url{https://doi.org/10.1191/0309132504ph517oa}.
 
@@ -709,6 +713,9 @@ Pappalardo, Luca, Filippo Simini, Salvatore Rinzivillo, Dino Pedreschi, Fosca Gi
 
 \leavevmode\vadjust pre{\hypertarget{ref-popper_logic_1934}{}}%
 Popper, Karl. 1934. \emph{The Logic of Scientific Discovery}. Hutchinson. \url{http://books.google.com/books?id=MdvaSAAACAAJ\&pgis=1}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-rowe2020}{}}%
+Rowe, Francisco, Gunther Maier, Daniel Arribas-Bel, and Sergio Rey. 2020. {``The Potential of Notebooks for Scientific Publication, Reproducibility and Dissemination.''} \emph{REGION} 7 (3): E1--5. \url{https://doi.org/10.18335/region.v7i3.357}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-schwartz1973interpreting}{}}%
 Schwartz, Aba. 1973. {``Interpreting the Effect of Distance on Migration.''} \emph{Journal of Political Economy} 81 (5): 1153--69.
