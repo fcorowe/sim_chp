@@ -228,17 +228,17 @@ The specification of SIMs has moved away from relying on population size to appr
 Third, measures of spatial separation have also been sophisticated to more appropriately reflect the geographical, physiological and financial distance and costs between origins and destinations (Schwartz 1973), as well as the system of road networks {[}{]} and the spatial distribution of human settlements (Niedomysl et al. 2017).
 Fourth, considerable methodological work has been done to conceptualise and operationalise the influence of spatial structure in SIMs (Oshan 2021).
 Five generalisable approaches have been proposed to account for spatial structure in distinctive ways: the competing destination model by including an accessibility measure {[}{]}; the Box--Cox transform by using a Box--Cox functional form of distance {[}{]}; spatial choice modelling by accounting for destination alternative substitution patterns (Hunt, Boots, and Kanaroglou 2004); spatial econometric modelling {[}{]}; and eigenvector spatial filtering by incorporating spatial dependence or spatial autocorrelation {[}{]}.
-Fifth, statistical frameworks to calibrate SIMs have evolved from linear log model formulations using ordinary least squares (OLS) and maximum likelihood estimation procedures, through generalised linear frameworks using iteratively reweighted least squares (IWLS), especially Poisson and Negative Binomial distributions {[}{]}, to more sophisticated multilevel and discrete choice models to capture origin-, destination- or origin-destination-specific parameters {[}{]}.
+Fifth, statistical frameworks to calibrate SIMs have evolved from linear log-normal model formulations using ordinary least squares (OLS) and maximum likelihood estimation procedures, through generalised linear frameworks using iteratively reweighted least squares (IWLS), especially Poisson and Negative Binomial distributions {[}{]}, to more sophisticated multilevel and discrete choice models to capture origin-, destination- or origin-destination-specific parameters {[}{]}.
 Sixth, alternative frameworks of spatial interaction modelling have been developed to incorporate different ways of conceptualising the decision-making process of choosing a destination location.
 The radiation (Simini et al. 2012), exploration and preferential return (Pappalardo et al. 2015) and random utility models (McFadden 1974) have become prominent frameworks to model spatial flows, particularly movement of people.
 
 Thus, considerable progress has been made on advancing the theoretical and methodological underpinnings of SIMs.
 Yet, major challenges remain in terms of reproducibility, calibration and \emph{Big Data} modelling.
+We believe that addressing these challenges are key to facilitate the application of SIMs, extend existing modelling approaches, leverage the greater geographical and temporal breadth, depth, scale and timeliness of \emph{Big Data} and ultimately enhance our understanding human interactions and our social world.
 
 Challenges:
 
 \begin{itemize}
-\tightlist
 \item
   reproducibility
 
@@ -254,7 +254,7 @@ Challenges:
 
   \begin{itemize}
   \item
-    Challenge: lots of models but they are not readily accessible - focus on maths but not practice.
+    Challenge: lots of models but they are not readily accessible - focus on maths but not practice
   \item
     What is needed: We need digital infrastructure/ecosystem, involving user friendly software, tutorials facilitated via computational notebooks integrating text, explanation, real-world data and code to train people.
   \end{itemize}
@@ -263,16 +263,13 @@ Challenges:
 
   \begin{itemize}
   \item
-    Challenges: lots of data but issues of scalability, inference based on P values and capturing heterogeneity.
+    Challenges: lots of data but issues of scalability, inference based on P values, capturing heterogeneity and temporal trends.
   \item
-    What is needed: different approaches - use of machine learning (because it is not possible), generalised linear mixed models (GLMMs) to capture heterogeneity, greater use of causal inference approaches and warnings of the misuse of statistical significance and~\emph{P}~values (We are not calling for a ban on~\emph{P}~values. Nor are we saying they cannot be used as a decision criterion in certain specialized applications (such as determining whether a manufacturing process meets some quality-control standard).
-    And we are also not advocating for an anything-goes situation, in which weak evidence suddenly becomes credible.
-    Rather, and in line with many others over the decades, we are calling for a stop to the use of~\emph{P}~values in the conventional, dichotomous way --- to decide whether a result refutes or supports a scientific hypothesis)
+    What is needed: different approaches - use of machine learning (because it is not possible), generalised linear mixed models (GLMMs) to capture heterogeneity and spatial non-stationary, greater use of causal inference approaches and warnings of the misuse of statistical significance and~\emph{P}~values.
   \end{itemize}
-\item
-\item
-  Remaining challenges - reproducibility (technical enabling infrastructure), calibration and leverage on the potential opportunities offered by big data - traditional and new forms of data - leverage on properties -- real-time information, large volumes and temporal frequency - machine learning to improve inference and prediction as well as address issues of scalability (suggest broad approaches: parallel computing, slicing the data), inference (discuss how p-value is not a useful indicator anymore) and capturing heterogeneity.
 \end{itemize}
+
+Remaining challenges - reproducibility (technical enabling infrastructure), calibration and leverage on the potential opportunities offered by big data - traditional and new forms of data - leverage on properties -- real-time information, large volumes and temporal frequency - machine learning to improve inference and prediction as well as address issues of scalability (suggest broad approaches: parallel computing, slicing the data), inference (discuss how p-value is not a useful indicator anymore) and capturing heterogeneity.
 
 Identify reproducibility, calibration and big data as key challenges as noted above.
 If we frame these as key challenges, I think it would make sense to map the rest of the sections onto these challenges.
@@ -281,8 +278,39 @@ The issue I have on doing this is that the issues of calibration and big data ma
 \hypertarget{challenges}{%
 \section{Challenges}\label{challenges}}
 
+\hypertarget{reproducibility}{%
+\subsection{Reproducibility}\label{reproducibility}}
+
+\hypertarget{calibration}{%
+\subsection{Calibration}\label{calibration}}
+
+\hypertarget{big-data-modelling}{%
+\subsection{Big Data modelling}\label{big-data-modelling}}
+
 \hypertarget{the-way-forward}{%
 \section{The way forward}\label{the-way-forward}}
+
+\hypertarget{enabling-infrastructure}{%
+\subsection{Enabling infrastructure}\label{enabling-infrastructure}}
+
+software, practical reproducible examples, open science, digital technology (including docker, computational notebooks), enhance training
+
+\hypertarget{capturing-spatial-and-temporal-heterogeneity}{%
+\subsection{Capturing spatial and temporal heterogeneity}\label{capturing-spatial-and-temporal-heterogeneity}}
+
+generalised linear mixed models (GLMMs) to capture heterogeneity and spatial non-stationary
+
+\hypertarget{enhancing-statistical-inference}{%
+\subsection{Enhancing statistical inference}\label{enhancing-statistical-inference}}
+
+greater use of causal inference approaches and warnings of the misuse of statistical significance and~\emph{P}~values (We are not calling for a ban on~\emph{P}~values. Nor are we saying they cannot be used as a decision criterion in certain specialized applications (such as determining whether a manufacturing process meets some quality-control standard).
+And we are also not advocating for an anything-goes situation, in which weak evidence suddenly becomes credible.
+Rather, and in line with many others over the decades, we are calling for a stop to the use of~\emph{P}~values in the conventional, dichotomous way --- to decide whether a result refutes or supports a scientific hypothesis)
+
+\hypertarget{integrating-data-science}{%
+\subsection{Integrating data science}\label{integrating-data-science}}
+
+use of machine learning for prediction and inference - can take into account the complexities of spatial and temporal dependence
 
 \hypertarget{reproducible-sims}{%
 \subsection{\texorpdfstring{Reproducible SIMs }{Reproducible SIMs }}\label{reproducible-sims}}
@@ -525,8 +553,8 @@ We can visualise the result as follows, resulting in Figure \ref{fig:pubresmap}:
 \caption{\label{fig:pubresmap}Results of a reproducible SIM undertaken on a minimal example based on synthetic data representing hypothetical trips to 2 pubs in Leeds, UK.}
 \end{figure}
 
-\hypertarget{calibration}{%
-\subsection{Calibration}\label{calibration}}
+\hypertarget{calibration-1}{%
+\subsection{Calibration}\label{calibration-1}}
 
 As Openshaw (1975) succinctly puts it, ``calibration is the process of providing estimates of the unknown parameters we have identified as the independent variables of the model''.
 In a basic gravity formulation of a spatial interaction model there will be three parameters to estimate relating to origin mass or emissivity, destination mass or attractiveness and a parameter determining the frictional effect of the cost of interactions occurring between the two.

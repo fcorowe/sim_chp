@@ -81,30 +81,36 @@ The specification of SIMs has moved away from relying on population size to appr
 Third, measures of spatial separation have also been sophisticated to more appropriately reflect the geographical, physiological and financial distance and costs between origins and destinations [@schwartz1973interpreting], as well as the system of road networks [<!--# Ref  -->] and the spatial distribution of human settlements [@niedomysl2017].
 Fourth, considerable methodological work has been done to conceptualise and operationalise the influence of spatial structure in SIMs [@oshan2021spatial].
 Five generalisable approaches have been proposed to account for spatial structure in distinctive ways: the competing destination model by including an accessibility measure [<!--# Ref: Fotheringham  -->]; the Box--Cox transform by using a Box--Cox functional form of distance [<!--# Ref: Tiefelsdorf  -->]; spatial choice modelling by accounting for destination alternative substitution patterns [@hunt2004]; spatial econometric modelling [<!--# Ref: Bolduc / LeSage and Pace -->]; and eigenvector spatial filtering by incorporating spatial dependence or spatial autocorrelation [<!--# Ref: Griffith -->].
-Fifth, statistical frameworks to calibrate SIMs have evolved from linear log model formulations using ordinary least squares (OLS) and maximum likelihood estimation procedures, through generalised linear frameworks using iteratively reweighted least squares (IWLS), especially Poisson and Negative Binomial distributions [<!--# Ref: Flowrew -->], to more sophisticated multilevel and discrete choice models to capture origin-, destination- or origin-destination-specific parameters [<!--# Ref-->].
+Fifth, statistical frameworks to calibrate SIMs have evolved from linear log-normal model formulations using ordinary least squares (OLS) and maximum likelihood estimation procedures, through generalised linear frameworks using iteratively reweighted least squares (IWLS), especially Poisson and Negative Binomial distributions [<!--# Ref: Flowrew -->], to more sophisticated multilevel and discrete choice models to capture origin-, destination- or origin-destination-specific parameters [<!--# Ref-->].
 Sixth, alternative frameworks of spatial interaction modelling have been developed to incorporate different ways of conceptualising the decision-making process of choosing a destination location.
 The radiation [@simini_universal_2012], exploration and preferential return [@pappalardo2015] and random utility models [@mcfadden1974analysis] have become prominent frameworks to model spatial flows, particularly movement of people.
 
 Thus, considerable progress has been made on advancing the theoretical and methodological underpinnings of SIMs.
 Yet, major challenges remain in terms of reproducibility, calibration and *Big Data* modelling.
+We believe that addressing these challenges are key to facilitate the application of SIMs, extend existing modelling approaches, leverage the greater geographical and temporal breadth, depth, scale and timeliness of *Big Data* and ultimately enhance our understanding human interactions and our social world.
+
+<!--# Overview of new structure. Below is how I see the structure for the chapter i.e. identifying reproducibility, calibration and big data modelling as key challenges, and then a section identifying and discussing different areas of work that we consider important to address the identified challenges -->
 
 Challenges:
 
 -   reproducibility
+
     -   Challenge: reproducing research / model estimates
     -   what is needed to facilitate reproducibility. We need digital infrastructure/ecosystem, involving user friendly software, tutorials facilitated via computational notebooks integrating text, explanation, real-world data and code to train people.
+
 -   calibration
-    -   Challenge: lots of models but they are not readily accessible - focus on maths but not practice.
+
+    -   Challenge: lots of models but they are not readily accessible - focus on maths but not practice
 
     -   What is needed: We need digital infrastructure/ecosystem, involving user friendly software, tutorials facilitated via computational notebooks integrating text, explanation, real-world data and code to train people.
--   *Big Data* modelling
-    -   Challenges: lots of data but issues of scalability, inference based on P values and capturing heterogeneity.
 
-    -   What is needed: different approaches - use of machine learning (because it is not possible), generalised linear mixed models (GLMMs) to capture heterogeneity, greater use of causal inference approaches and warnings of the misuse of statistical significance and *P* values (We are not calling for a ban on *P* values. Nor are we saying they cannot be used as a decision criterion in certain specialized applications (such as determining whether a manufacturing process meets some quality-control standard).
-        And we are also not advocating for an anything-goes situation, in which weak evidence suddenly becomes credible.
-        Rather, and in line with many others over the decades, we are calling for a stop to the use of *P* values in the conventional, dichotomous way --- to decide whether a result refutes or supports a scientific hypothesis)
--   
--   Remaining challenges - reproducibility (technical enabling infrastructure), calibration and leverage on the potential opportunities offered by big data - traditional and new forms of data - leverage on properties -- real-time information, large volumes and temporal frequency - machine learning to improve inference and prediction as well as address issues of scalability (suggest broad approaches: parallel computing, slicing the data), inference (discuss how p-value is not a useful indicator anymore) and capturing heterogeneity.
+-   *Big Data* modelling
+
+    -   Challenges: lots of data but issues of scalability, inference based on P values, capturing heterogeneity and temporal trends.
+
+    -   What is needed: different approaches - use of machine learning (because it is not possible), generalised linear mixed models (GLMMs) to capture heterogeneity and spatial non-stationary, greater use of causal inference approaches and warnings of the misuse of statistical significance and *P* values.
+
+Remaining challenges - reproducibility (technical enabling infrastructure), calibration and leverage on the potential opportunities offered by big data - traditional and new forms of data - leverage on properties -- real-time information, large volumes and temporal frequency - machine learning to improve inference and prediction as well as address issues of scalability (suggest broad approaches: parallel computing, slicing the data), inference (discuss how p-value is not a useful indicator anymore) and capturing heterogeneity.
 
 Identify reproducibility, calibration and big data as key challenges as noted above.
 If we frame these as key challenges, I think it would make sense to map the rest of the sections onto these challenges.
@@ -112,7 +118,33 @@ The issue I have on doing this is that the issues of calibration and big data ma
 
 # Challenges
 
+## Reproducibility
+
+## Calibration
+
+## Big Data modelling
+
 # The way forward
+
+## Enabling infrastructure
+
+software, practical reproducible examples, open science, digital technology (including docker, computational notebooks), enhance training
+
+## Capturing spatial and temporal heterogeneity
+
+generalised linear mixed models (GLMMs) to capture heterogeneity and spatial non-stationary
+
+## Enhancing statistical inference
+
+greater use of causal inference approaches and warnings of the misuse of statistical significance and *P* values (We are not calling for a ban on *P* values. Nor are we saying they cannot be used as a decision criterion in certain specialized applications (such as determining whether a manufacturing process meets some quality-control standard).
+And we are also not advocating for an anything-goes situation, in which weak evidence suddenly becomes credible.
+Rather, and in line with many others over the decades, we are calling for a stop to the use of *P* values in the conventional, dichotomous way to decide whether a result refutes or supports a scientific hypothesis)
+
+## Integrating data science
+
+use of machine learning for prediction and inference - can take into account the complexities of spatial and temporal dependence
+
+<!--# I plan to use the text below to fill the sections above -->
 
 ## Reproducible SIMs <!--# RL to lead -->
 
