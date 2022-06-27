@@ -274,54 +274,36 @@ Remaining challenges - reproducibility (technical enabling infrastructure), cali
 \hypertarget{challenges}{%
 \section{Challenges}\label{challenges}}
 
+In this section, we want to describe why the areas identified are seen as challenges and in which ways.
+
 \hypertarget{reproducibility}{%
 \subsection{\texorpdfstring{Reproducibility }{Reproducibility }}\label{reproducibility}}
 
-\hypertarget{calibration}{%
-\subsection{\texorpdfstring{Calibration }{Calibration }}\label{calibration}}
+Reproducibility of SIMs has been an area of attention in past research.
+Yet, we argue that reproducibility of the estimates derived from SIMs are
 
-\hypertarget{big-data-modelling}{%
-\subsection{\texorpdfstring{Big Data modelling }{Big Data modelling }}\label{big-data-modelling}}
+\begin{itemize}
+\item
+  Why reproducibility is seen as a challenge / reproducing research / model estimates and why is important - not starting from scratch- build on existing work and address important issues of xxx.
+  Benefits (Brunsdon 2016):
 
-Rise of data imposes key challenges for the modelling of spatial interactions
+  \begin{itemize}
+  \item
+    enhance comparability
+  \item
+    enhance transparency / credibility - accountability, validation and verification
+  \item
+    portability - not need to rebuild; expanding existing work to address novel question and results can be updated
+  \item
+    can augment impact of research
+  \end{itemize}
+\end{itemize}
 
 \begin{itemize}
 \tightlist
 \item
-  (Oshan 2021) ``Although local models and spatial non-stationarity were originally used to diagnose problems arising from spatial structure, there has been limited recent research using local SI models''.
+  What has prevented reproducibility
 \end{itemize}
-
-\hypertarget{the-way-forward}{%
-\section{The way forward}\label{the-way-forward}}
-
-\hypertarget{enabling-infrastructure}{%
-\subsection{\texorpdfstring{Enabling infrastructure }{Enabling infrastructure }}\label{enabling-infrastructure}}
-
-software, practical reproducible examples, open science, digital technology (including docker, computational notebooks), enhance training
-
-\hypertarget{capturing-spatial-and-temporal-heterogeneity}{%
-\subsection{\texorpdfstring{Capturing spatial and temporal heterogeneity }{Capturing spatial and temporal heterogeneity }}\label{capturing-spatial-and-temporal-heterogeneity}}
-
-generalised linear mixed models (GLMMs) to capture heterogeneity and spatial non-stationary
-
-\hypertarget{enhancing-statistical-inference}{%
-\subsection{\texorpdfstring{Enhancing statistical inference }{Enhancing statistical inference }}\label{enhancing-statistical-inference}}
-
-greater use of causal inference approaches and warnings of the misuse of statistical significance and~\emph{P}~values (We are not calling for a ban on \emph{P} values. Nor are we saying they cannot be used as a decision criterion in certain specialized applications (such as determining whether a manufacturing process meets some quality-control standard).
-And we are also not advocating for an anything-goes situation, in which weak evidence suddenly becomes credible.
-Rather, and in line with many others over the decades, we are calling for a stop to the use of \emph{P} values in the conventional, dichotomous way to decide whether a result refutes or supports a scientific hypothesis)
-
-\hypertarget{integrating-data-science}{%
-\subsection{\texorpdfstring{Integrating data science }{Integrating data science }}\label{integrating-data-science}}
-
-use of machine learning for prediction and inference - can take into account the complexities of spatial and temporal dependence
-
-scalable models
-
-\hypertarget{reproducible-sims}{%
-\subsection{\texorpdfstring{Reproducible SIMs }{Reproducible SIMs }}\label{reproducible-sims}}
-
-\emph{Objective of the section: To discuss the opportunities and challenges of estimating spatial interacting modelling in the context of reproducible research}
 
 Reproducibility has not been prominent in research developing and using SIMs outlined in the previous sections.
 This is understandable, because computer hardware, software and know-how needed to develop and run SIMs was simply unavailable to most people (let alone lowly and often cash-strapped students!) for most of field's history.
@@ -347,6 +329,46 @@ There are tangible benefits of making your SIM work reproducible:
 \item
   Reproducible research encourages innovation, both of your work and the work of others, because you can focus on what is new and novel rather than (for example) writing a paper implementing an existing SIM in a slightly new context (as many SIM papers have).
 \end{itemize}
+
+\hypertarget{calibration}{%
+\subsection{\texorpdfstring{Calibration }{Calibration }}\label{calibration}}
+
+Define calibration
+
+Defining the challenge:
+
+\begin{itemize}
+\item
+  lots of models but they are not readily accessible - focus on maths but not practice
+\item
+  Detachment between theory and practice
+\item
+  The way to calibration has been done and has not evolved much, particularly to capture patterns of heterogeneity.
+\item
+  Lack of geographical education / training
+\item
+\end{itemize}
+
+\hypertarget{big-data-modelling}{%
+\subsection{\texorpdfstring{Big Data modelling }{Big Data modelling }}\label{big-data-modelling}}
+
+Rise of data imposes key challenges for the modelling of spatial interactions
+
+\begin{itemize}
+\tightlist
+\item
+  (Oshan 2021) ``Although local models and spatial non-stationarity were originally used to diagnose problems arising from spatial structure, there has been limited recent research using local SI models''.
+\end{itemize}
+
+\hypertarget{the-way-forward}{%
+\section{The way forward}\label{the-way-forward}}
+
+This section will describe the areas which should be developed to address the identified challenges.
+
+\hypertarget{enabling-infrastructure}{%
+\subsection{\texorpdfstring{Enabling infrastructure }{Enabling infrastructure }}\label{enabling-infrastructure}}
+
+software, practical reproducible examples, open science, digital technology (including docker, computational notebooks), enhance training
 
 To highlight the ease with which reproducible SIMs can now be developed, we present below reproducible R code that implements a simple SIM.
 It is notable that open source software continues to evolve: the code presented below uses the \texttt{simodels} R package, the development of which was partly motivated by this book chapter (the primary motivation was the need to develop SIMs to represent trips for purposes other than commuting and travel to school in Ireland as part of a contract with Transport Infrastructure Ireland, highlighting the applied nature of SIM research).
@@ -559,6 +581,39 @@ We can visualise the result as follows, resulting in Figure \ref{fig:pubresmap}:
 \caption{\label{fig:pubresmap}Results of a reproducible SIM undertaken on a minimal example based on synthetic data representing hypothetical trips to 2 pubs in Leeds, UK.}
 \end{figure}
 
+\hypertarget{capturing-spatial-and-temporal-heterogeneity}{%
+\subsection{\texorpdfstring{Capturing spatial and temporal heterogeneity }{Capturing spatial and temporal heterogeneity }}\label{capturing-spatial-and-temporal-heterogeneity}}
+
+generalised linear mixed models (GLMMs) to capture heterogeneity and spatial non-stationary
+
+\hypertarget{enhancing-statistical-inference}{%
+\subsection{\texorpdfstring{Enhancing statistical inference }{Enhancing statistical inference }}\label{enhancing-statistical-inference}}
+
+greater use of causal inference approaches and warnings of the misuse of statistical significance and~\emph{P}~values (We are not calling for a ban on \emph{P} values. Nor are we saying they cannot be used as a decision criterion in certain specialized applications (such as determining whether a manufacturing process meets some quality-control standard).
+And we are also not advocating for an anything-goes situation, in which weak evidence suddenly becomes credible.
+Rather, and in line with many others over the decades, we are calling for a stop to the use of \emph{P} values in the conventional, dichotomous way to decide whether a result refutes or supports a scientific hypothesis)
+
+\hypertarget{integrating-data-science}{%
+\subsection{\texorpdfstring{Integrating data science }{Integrating data science }}\label{integrating-data-science}}
+
+use of machine learning for prediction and inference - can take into account the complexities of spatial and temporal dependence
+
+scalable models
+
+\hypertarget{facilitating-future-progress-of-spatial-interaction-modelling}{%
+\section{Facilitating future progress of spatial interaction modelling}\label{facilitating-future-progress-of-spatial-interaction-modelling}}
+
+Objective of the section: To identify and discuss the key pillars that will enable progress on all the proposed fronts - open science, important and new questions and digital infrastructure.
+I see this as our conclusion - probably one or two short paragraph summarising what has been discussed with a forward looking approach.
+
+\hypertarget{i-plan-to-use-the-text-below-to-fill-the-sections-above}{%
+\section{\texorpdfstring{\textbf{I plan to use the text below to fill the sections above}}{I plan to use the text below to fill the sections above}}\label{i-plan-to-use-the-text-below-to-fill-the-sections-above}}
+
+\hypertarget{reproducible-sims}{%
+\subsection{\texorpdfstring{Reproducible SIMs }{Reproducible SIMs }}\label{reproducible-sims}}
+
+\emph{Objective of the section: To discuss the opportunities and challenges of estimating spatial interacting modelling in the context of reproducible research}
+
 \hypertarget{calibration-1}{%
 \subsection{Calibration}\label{calibration-1}}
 
@@ -619,21 +674,15 @@ I am particularly interested in advocating for (1) seeing spatial interaction mo
 
 Objective of the section: To discuss how machine learning can enhance flow count inference and prediction
 
-\hypertarget{facilitating-future-progress-of-spatial-interaction-modelling}{%
-\section{Facilitating future progress of spatial interaction modelling}\label{facilitating-future-progress-of-spatial-interaction-modelling}}
-
-Objective of the section: To identify and discuss the key pillars that will enable progress on all the proposed fronts - open science, important and new questions and digital infrastructure.
-I see this as our conclusion - probably one or two short paragraph summarising what has been discussed with a forward looking approach.
-
-These are the challenges.
-We therefore need software to enhance reproducibility, calibration, - deal with issues of scalability, multiples scales, spatial non-stationarity,
-
 \hypertarget{references}{%
 \section*{References}\label{references}}
 \addcontentsline{toc}{section}{References}
 
 \hypertarget{refs}{}
 \begin{CSLReferences}{1}{0}
+\leavevmode\vadjust pre{\hypertarget{ref-brunsdon2016}{}}%
+Brunsdon, Chris. 2016. {``Quantitative Methods I.''} \emph{Progress in Human Geography} 40 (5): 687--96. \url{https://doi.org/10.1177/0309132515599625}.
+
 \leavevmode\vadjust pre{\hypertarget{ref-dennett_modelling_2018}{}}%
 Dennett, Adam. 2018. {``Modelling Population Flows Using Spatial Interaction Models.''} \emph{Australian Population Studies} 2 (2): 33--58. \url{https://doi.org/10.37970/aps.v2i2.38}.
 

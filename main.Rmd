@@ -114,45 +114,28 @@ Remaining challenges - reproducibility (technical enabling infrastructure), cali
 
 # Challenges
 
+In this section, we want to describe why the areas identified are seen as challenges and in which ways.
+
 ## Reproducibility <!--# 450 words -->
 
-## Calibration <!--# 450 words -->
+Reproducibility of SIMs has been an area of attention in past research.
+Yet, we argue that reproducibility of the estimates derived from SIMs are
 
-## Big Data modelling <!--# 450 words -->
+-   Why reproducibility is seen as a challenge / reproducing research / model estimates and why is important - not starting from scratch- build on existing work and address important issues of xxx.
+    Benefits [@brunsdon2016]:
 
-Rise of data imposes key challenges for the modelling of spatial interactions
+    -   enhance comparability
 
--   [@oshan2021spatial] "Although local models and spatial non-stationarity were originally used to diagnose problems arising from spatial structure, there has been limited recent research using local SI models".
+    -   enhance transparency / credibility - accountability, validation and verification
 
-# The way forward 
+    -   portability - not need to rebuild; expanding existing work to address novel question and results can be updated
 
-## Enabling infrastructure <!--# 450 words -->
+    -   can augment impact of research
 
-software, practical reproducible examples, open science, digital technology (including docker, computational notebooks), enhance training
-
-## Capturing spatial and temporal heterogeneity <!--# 450 words -->
-
-generalised linear mixed models (GLMMs) to capture heterogeneity and spatial non-stationary
-
-## Enhancing statistical inference <!--# 450 words -->
-
-greater use of causal inference approaches and warnings of the misuse of statistical significance and *P* values (We are not calling for a ban on *P* values. Nor are we saying they cannot be used as a decision criterion in certain specialized applications (such as determining whether a manufacturing process meets some quality-control standard).
-And we are also not advocating for an anything-goes situation, in which weak evidence suddenly becomes credible.
-Rather, and in line with many others over the decades, we are calling for a stop to the use of *P* values in the conventional, dichotomous way to decide whether a result refutes or supports a scientific hypothesis)
-
-## Integrating data science <!--# 450 words -->
-
-use of machine learning for prediction and inference - can take into account the complexities of spatial and temporal dependence
-
-scalable models
-
-<!--# I plan to use the text below to fill the sections above -->
-
-## Reproducible SIMs <!--# RL to lead -->
-
-*Objective of the section: To discuss the opportunities and challenges of estimating spatial interacting modelling in the context of reproducible research*
-
-<!--# FR: I think this is good . The only suggestion I would make is to make this a bit broader to encapsulate the ideas of open science and enabling infrastructure. I see open science as a key enabler of reproducibility. As you identified in the text, there are options to fit SIMs but these options are commercial and not widely available, and are not fully transparent. It is challenging to know how SIMs are estimated, and therefore difficult to replicate. Also I would use the concept of enabling infrastructure because I see software as one of the components enabling the development of reproducible SIMs, but I don't think it is the only one. Again, as you wuite rightly identied below, practical tutorials to be able to apply SIMs are lacking. The work by Adam is probably an exception. Tutorials tend to focus on the theory, but the jump from the theory to the application of SIMs is quite dramatic. People often struggle to see the switch from an origin-destination matrix to a vector of origin-destination pair of flows -->
+```{=html}
+<!-- -->
+```
+-   What has prevented reproducibility
 
 Reproducibility has not been prominent in research developing and using SIMs outlined in the previous sections.
 This is understandable, because computer hardware, software and know-how needed to develop and run SIMs was simply unavailable to most people (let alone lowly and often cash-strapped students!) for most of field's history.
@@ -177,6 +160,38 @@ There are tangible benefits of making your SIM work reproducible:
 -   Reproducible results based on open source software discourages reinvention of wheels and associated wasting of time.
 
 -   Reproducible research encourages innovation, both of your work and the work of others, because you can focus on what is new and novel rather than (for example) writing a paper implementing an existing SIM in a slightly new context (as many SIM papers have).
+
+## Calibration <!--# 450 words -->
+
+Define calibration
+
+Defining the challenge:
+
+-   lots of models but they are not readily accessible - focus on maths but not practice
+
+-   Detachment between theory and practice
+
+-   The way to calibration has been done and has not evolved much, particularly to capture patterns of heterogeneity.
+
+-   Lack of geographical education / training
+
+-   
+
+## Big Data modelling <!--# 450 words -->
+
+Rise of data imposes key challenges for the modelling of spatial interactions
+
+-   [@oshan2021spatial] "Although local models and spatial non-stationarity were originally used to diagnose problems arising from spatial structure, there has been limited recent research using local SI models".
+
+# The way forward
+
+This section will describe the areas which should be developed to address the identified challenges.
+
+## Enabling infrastructure <!--# 450 words -->
+
+<!--# FR: I think this is good . The only suggestion I would make is to make this a bit broader to encapsulate the ideas of open science and enabling infrastructure. I see open science as a key enabler of reproducibility. As you identified in the text, there are options to fit SIMs but these options are commercial and not widely available, and are not fully transparent. It is challenging to know how SIMs are estimated, and therefore difficult to replicate. Also I would use the concept of enabling infrastructure because I see software as one of the components enabling the development of reproducible SIMs, but I don't think it is the only one. Again, as you wuite rightly identied below, practical tutorials to be able to apply SIMs are lacking. The work by Adam is probably an exception. Tutorials tend to focus on the theory, but the jump from the theory to the application of SIMs is quite dramatic. People often struggle to see the switch from an origin-destination matrix to a vector of origin-destination pair of flows -->
+
+software, practical reproducible examples, open science, digital technology (including docker, computational notebooks), enhance training
 
 To highlight the ease with which reproducible SIMs can now be developed, we present below reproducible R code that implements a simple SIM.
 It is notable that open source software continues to evolve: the code presented below uses the `simodels` R package, the development of which was partly motivated by this book chapter (the primary motivation was the need to develop SIMs to represent trips for purposes other than commuting and travel to school in Ireland as part of a contract with Transport Infrastructure Ireland, highlighting the applied nature of SIM research).
@@ -330,6 +345,35 @@ od_to_pubs_result %>%
   geom_point(aes(distance_euclidean, interaction, colour = D))
 ```
 
+## Capturing spatial and temporal heterogeneity <!--# 450 words -->
+
+generalised linear mixed models (GLMMs) to capture heterogeneity and spatial non-stationary
+
+## Enhancing statistical inference <!--# 450 words -->
+
+greater use of causal inference approaches and warnings of the misuse of statistical significance and *P* values (We are not calling for a ban on *P* values. Nor are we saying they cannot be used as a decision criterion in certain specialized applications (such as determining whether a manufacturing process meets some quality-control standard).
+And we are also not advocating for an anything-goes situation, in which weak evidence suddenly becomes credible.
+Rather, and in line with many others over the decades, we are calling for a stop to the use of *P* values in the conventional, dichotomous way to decide whether a result refutes or supports a scientific hypothesis)
+
+## Integrating data science <!--# 450 words -->
+
+use of machine learning for prediction and inference - can take into account the complexities of spatial and temporal dependence
+
+scalable models
+
+# Facilitating future progress of spatial interaction modelling
+
+Objective of the section: To identify and discuss the key pillars that will enable progress on all the proposed fronts - open science, important and new questions and digital infrastructure.
+I see this as our conclusion - probably one or two short paragraph summarising what has been discussed with a forward looking approach.
+
+<!--# I plan to use the text below to fill the sections above -->
+
+# **I plan to use the text below to fill the sections above**
+
+## Reproducible SIMs <!--# RL to lead -->
+
+*Objective of the section: To discuss the opportunities and challenges of estimating spatial interacting modelling in the context of reproducible research*
+
 ## Calibration
 
 As Openshaw (1975) succinctly puts it, "calibration is the process of providing estimates of the unknown parameters we have identified as the independent variables of the model".
@@ -386,13 +430,5 @@ I am particularly interested in advocating for (1) seeing spatial interaction mo
 ## Spatial interaction modelling using machine learning
 
 Objective of the section: To discuss how machine learning can enhance flow count inference and prediction
-
-# Facilitating future progress of spatial interaction modelling
-
-Objective of the section: To identify and discuss the key pillars that will enable progress on all the proposed fronts - open science, important and new questions and digital infrastructure.
-I see this as our conclusion - probably one or two short paragraph summarising what has been discussed with a forward looking approach.
-
-These are the challenges.
-We therefore need software to enhance reproducibility, calibration, - deal with issues of scalability, multiples scales, spatial non-stationarity,
 
 # References
