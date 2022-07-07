@@ -101,6 +101,7 @@ Reproducible code and data can be used to provide educational training and enabl
 
 Calibration is at the centre of what makes spatial interaction models useful to researchers and practitioners.
 As [@openshaw1975] describes it, "calibration is the process of providing estimates of the unknown parameters we have identified as the independent variables of the model." In a basic gravity SIM formulation, we seek to estimate three parameters - as identified above - relating to origin mass, destination mass and a parameter determining the frictional effect of spatial separation between origins and destinations.
+These parameters reveal information about our system of interest - for example, how costly physical separation distances are to interaction.
 
 Yet, we identified key challenges relating to the calibration of SIMs.
 Calibration requires both data and software.
@@ -123,8 +124,8 @@ Yet, calibration remains a challenging sub-topic for reproducibility and wider a
 
 Ironically, effective enough calibration routines have been available for as long as students have been running regression models in their introductory statistics classes.
 Occasional references can be found in the historic literature (e.g. [@fotheringham_spatial_1980]; [@flowerdew_method_1982]) which lift the curtain and reveal that through reformulating the classic Wilsonian entropy maximising spatial interaction model as either a logged OLS regression model or a GLM utilising Poisson or negative binomial distributions, multiple parameters can be calibrated easily.
-These models are all available in common statistical software packages; but for most trying to make sense of the field coming across papers by some of the doyens (for it was and still is a male-dominated field) of the scene, practical expediency is often sacrificed at the alter of technical prowess.
-And even then, while undoubtedly mathematically and theoretically rigorous, notes on calibration can be presented either as passing reference to 'least squares' or worse a lengthy derivation of maximum likelihood of Newton Raphson methods with no practical middle ground.
+These models are all available in common statistical software packages; but for most trying to make sense of the field coming across papers by some of the doyens (for it was and still is a male-dominated field) of the scene, practical expediency is often sacrificed at the alter of theoretical or technical prowess.
+And even then, while undoubtedly mathematically and theoretically rigorous, notes on calibration can be presented either as passing reference to 'least squares' or worse a lengthy derivation of maximum likelihood or Newton Raphson methods with no practical middle ground to assist novices in running a model.
 
 ## Big Data modelling <!--# 450 words -->
 
@@ -332,7 +333,7 @@ od_to_pubs_result %>%
 ## Capturing Heterogeneity <!--# 450 words -->
 
 We argue that research on SIMs should seek to adopt and adapt modelling frameworks to capture and understand patterns of spatial, temporal and population non-stationarity which can now be capture given the rise of large data sets.
-This line of enquire involves calibrating models to estimate separate parameters for individual origins, destinations, time units and population segments.
+This line of enquiry involves calibrating models to estimate separate parameters for individual origins, destinations, time units and population segments.
 Such parameters can reflect local, temporal and population variations in the relationships producing spatial flows.
 Inference based on a set of global model parameters may lead to draw misleading conclusions due to misrepresentations of local-, temporal- and population-specific trends.
 
