@@ -249,7 +249,7 @@ Reproducible open data products can also be used as communication and impact str
 Reproducible code and data can be used to provide educational training and enable practitioners to address policy questions which were not outside the scope of the original research project (Rowe et al. 2020).
 
 \hypertarget{calibration}{%
-\subsection{\texorpdfstring{Calibration }{Calibration }}\label{calibration}}
+\subsection{Calibration}\label{calibration}}
 
 Calibration is at the centre of what makes spatial interaction models useful to researchers and practitioners.
 As Openshaw (1975) describes it, ``calibration is the process of providing estimates of the unknown parameters we have identified as the independent variables of the model.'' In a basic gravity SIM formulation, we seek to estimate three parameters - as identified above - relating to origin mass, destination mass and a parameter determining the frictional effect of spatial separation between origins and destinations.
@@ -554,7 +554,30 @@ Yet, it is widely used in biology and ecology, and various routines exist in \em
 \hypertarget{integrating-data-science}{%
 \subsection{\texorpdfstring{Integrating Data Science }{Integrating Data Science }}\label{integrating-data-science}}
 
-use of machine learning for prediction and inference - can take into account the complexities of spatial and temporal dependence
+New methods and tools are needed to engineer and calibrate SIMs using large data sets.
+In agreement with Singleton and Arribas-Bel (2019), we recognise that the value of data science approaches to enable the calibration of SIMs on large data sets.
+We propose that data science can be beneficial on three key fronts.
+First, a key challenge is the storage, manipulation and analysis of large volumes of data.
+Large data sets cannot generally be stored and analysed on a computer's local memory.
+Traditional approaches relying on local memory capacity to calibrate SIMs are therefore sub-optimal.
+Adoption of data science approaches to Big Data storage, scalability, high performance computing and parallel computing.
+Training and infrastructure to integrate these approaches are needed to enable researchers to unlock the opportunities afforded by Big Data, understanding spatial interactions in real-time or near real-time at more detailed temporal and spatial granularity.
+
+Second, we propose the use of ML/AI to enhance the prediction capacity of SIMs.
+While this proposal is not new and ML/AI approaches have been deployed mainly in transport applications, their deployment in geography has been limited.
+Big Data now provides enough density of data to train and assess the capability of these algorithms to predict spatial interactions.
+Emerging evidence suggests that ML-calibrated SIMs outperform traditional GLM-calibrated SIMs at generated more accurate predictions of spatial interactions (Rowe, Mahony, and Tao 2022).
+ML/AI models do not require a pre-define functional specification.
+They have the ability to uncover complex structure in the data and are rapidly deployable requiring limited human intervention.
+In the context of SIMs, the promise is that ML/AI can uncover and accommodate complex functional forms capturing patterns of spatial and temporal dependence and non-stationarity (Rowe, Mahony, and Tao 2022).
+
+\begin{itemize}
+\tightlist
+\item
+  Causal inference
+\end{itemize}
+
+use of machine learning for prediction and inference -
 
 scalable models
 
@@ -632,6 +655,9 @@ Rowe, Francisco. 2013. {``Spatial Labour Mobility in a Transition Economy: Migra
 \leavevmode\vadjust pre{\hypertarget{ref-rowe2021}{}}%
 ---------. 2021. {``Big Data and Human Geography.''} \url{http://dx.doi.org/10.31235/osf.io/phz3e}.
 
+\leavevmode\vadjust pre{\hypertarget{ref-rowe2022}{}}%
+Rowe, Francisco, Michael Mahony, and Sui Tao. 2022. {``Assessing Machine Learning Algorithms for Near-Real Time Bus Ridership Prediction During Extreme Weather.''} \url{https://doi.org/10.48550/ARXIV.2204.09792}.
+
 \leavevmode\vadjust pre{\hypertarget{ref-rowe2020}{}}%
 Rowe, Francisco, Gunther Maier, Daniel Arribas-Bel, and Sergio Rey. 2020. {``The Potential of Notebooks for Scientific Publication, Reproducibility and Dissemination.''} \emph{REGION} 7 (3): E1--5. \url{https://doi.org/10.18335/region.v7i3.357}.
 
@@ -640,6 +666,9 @@ Schwartz, Aba. 1973. {``Interpreting the Effect of Distance on Migration.''} \em
 
 \leavevmode\vadjust pre{\hypertarget{ref-simini_universal_2012}{}}%
 Simini, Filippo, Marta C González, Amos Maritan, and Albert-László Barabási. 2012. {``A Universal Model for Mobility and Migration Patterns.''} \emph{Nature}, February, 812. \url{https://doi.org/10.1038/nature10856}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-singleton2019}{}}%
+Singleton, Alex, and Daniel Arribas-Bel. 2019. {``Geographic Data Science.''} \emph{Geographical Analysis} 53 (1): 61--75. \url{https://doi.org/10.1111/gean.12194}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-wilson_family_1971}{}}%
 Wilson, AG. 1971. {``A Family of Spatial Interaction Models, and Associated Developments.''} \emph{Environment and Planning} 3 (January): 132. https://doi.org/\url{https://doi.org/10.1068/a030001}.
