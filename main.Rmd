@@ -155,12 +155,12 @@ New methods are also required to handle, analyse and store large data sets.
 Traditional SIM frameworks were designed to identify significant relationships in small sample sizes with known properties.
 Big data are not collected for research purposes.
 They are an unintended consequence of administrative processes or social interactions and need to be reengineered for research.
-Handling Big Data requires a wider and new digital skills set, largely based on machine learning, artificial intelligence and coding, in addition to greater knowledge of computing technology (e.g. Jupyter notebooks, Github and Docker) as well as scalability and parallelisation approaches.
+Handling Big Data requires a wider and new digital skills set, largely based on machine learning and artificial intelligence (ML/AI) and coding, in addition to greater knowledge of computing technology (e.g. Jupyter notebooks, Github and Docker) as well as scalability and parallelisation approaches.
 Except for a few centres, current university geography programmes and infrastructures are largely unprepared to deliver the required training.
 A multidisciplinary approach is needed to integrate computational training into human geography.
-Machine learning and artificial intelligence are likely to enhance prediction outcomes generated from SIMs.
-The idea of using machine learning and artificial intelligence to model spatial interactions is not new, but the application has been limited due to the lack of large data sets.
-Machine learning and artificial intelligence are data hungry, requiring millions of data for effective training and validation.
+ML/AI are likely to enhance prediction outcomes generated from SIMs.
+The idea of using ML/AI to model spatial interactions is not new, but the application has been limited due to the lack of large data sets.
+ML/AI are data hungry, requiring millions of data for effective training and validation.
 The rise of data provide an opportunity to promote the wider adoption of these models.
 
 # The Way Forward
@@ -330,7 +330,7 @@ od_to_pubs_result %>%
 
 <!--# FR: would be good to include a comment to close the section - perhaps on how we see the package being developed or suggest that the next sections provide this vision -->
 
-## Capturing Heterogeneity 
+## Capturing Heterogeneity
 
 We argue that research on SIMs should seek to adopt and adapt modelling frameworks to capture and understand patterns of spatial, temporal and population non-stationarity which can now be capture given the rise of large data sets.
 This line of enquiry involves calibrating models to estimate separate parameters for individual origins, destinations, time units and population segments.
@@ -385,7 +385,7 @@ Additionally determining the relevance of factors shaping spatial flows based on
 Multi-model inference has been rarely applied to capture spatial interactions [@rowe2013].
 Yet, it is widely used in biology and ecology, and various routines exist in *R* which can be integrated with `simodels`.
 
-## Integrating Data Science <!--# 450 words -->
+## Integrating Data Science
 
 New methods and tools are needed to engineer and calibrate SIMs using large data sets.
 In agreement with @singleton2019, we recognise that the value of data science approaches to enable the calibration of SIMs on large data sets.
@@ -404,27 +404,21 @@ ML/AI models do not require a pre-defined functional specification.
 They have the ability to uncover complex structure in the data and are rapidly deployable requiring limited human intervention.
 In the context of SIMs, the promise is that ML/AI can uncover and accommodate complex functional forms capturing patterns of spatial and temporal dependence and non-stationarity [@rowe2022].
 
-Third, ML/AI are also expected to
-
-Causal inference
-
-use of machine learning for prediction and inference -
-
-scalable models
-
-Remaining challenges - reproducibility (technical enabling infrastructure), calibration and leverage on the potential opportunities offered by big data - traditional and new forms of data - leverage on properties -- real-time information, large volumes and temporal frequency - machine learning to improve inference and prediction as well as address issues of scalability (suggest broad approaches: parallel computing, slicing the data), inference (discuss how p-value is not a useful indicator anymore) and capturing heterogeneity.
+Third, ML/AI are also expected to enhance causal inference in SIMs.
+ML/AI-based methods are generally focused on prediction rather than understanding and establishing causal relationships.
+Yet, ML/AI models can be combined with causal inference to enhance the identification of cause-and-effect relationships.
+Many causal methods use prediction to generate instruments or counterfactuals in a first stage that can be employed in a second phase to produce "more" reliable estimates for statistical inference.
+Thus the fundamental problem of causal inference is the existence of a perfect analogue of out-of-sample performance for causal models, since counterfactual quantities are never observed.
+ML/AI models can be used to derive "better" counterfactuals and enhance inference on causality.
+At the same time, ML/AI can help scale causal effect estimation methods to SIMs based on high-dimensional data and unstructured data.
+ML/AI thus offers an opportunity to build accurate decision-support systems that estimate effect of interventions on spatial flows.
 
 # The future of spatial interaction modelling
 
-Objective of the section: To identify and discuss the key pillars that will enable progress on all the proposed fronts - open science, important and new questions and digital infrastructure.
-I see this as our conclusion - probably one or two short paragraph summarising what has been discussed with a forward looking approach.
-
-<!--# I plan to use the text below to fill the sections above -->
-
-<!--# [FR: Looking for the right place for this - perhaps in the conclusion section] But we are confident that with software such as R and Python meaning that statistical and geographic analyses are no longer separated in the workflow and packages emerging, contributed to by researchers active in the field enabling others to run reproducible analyses, these challenges need not persist. With increasing volumes of data coming online to allow multiple different sorts of models to be tested and calibrated against empirical observations in a variety of different contexts, we will be able to find solutions to problems that inevitably emerge when calibrating general models to messy reality: issues of sparse or huge interaction matrices. Issues of multiple scales, dimensions and aggregations. Issues of spatial non-stationarity. Issues of incomplete, poor or otherwise imperfect calibration data. These are all problems that persist but that due to new researchers in the field invariably starting from scratch rather than usefully building on existing knowledge through accessible methods, have not yet been successfully solved. --->
-
-> <!--# Overview of the challenge structure. Below is how I see the structure for the chapter i.e. identifying reproducibility, calibration and big data modelling as key challenges, and then a section identifying and discussing different areas of work that we consider important to address the identified challenges -->
-
-<!--# Challenges:-->
+SIMs represent a core analytical tool to predict and understand spatial flows of people, information and products across our society and economy.
+Ultimately SIMs provide essential knowledge and information to support decision making and policy interventions.
+During the COVID-19 pandemic alone, SIMs have been essential generating critical evidence to monitor the geographical extent and speed of infection spread, retail, transport and movement activity by understanding human spatial interactions.
+Despite considerable progress over the past fifty years, we identified key challenges for the efficient deployment of SIMs in terms of reproducibility, calibration and Big Data modelling.
+We identified four areas of future development to tackle these challenges: (1) to enable essential infrastructure to facilitate the training, calibration and reproducibility of SIMs; (2) to embrace modelling frameworks to capture spatial, temporal and population heterogeneity; (3) to enhance statistical inference to accommodate Big Data analysis; and, (4) to integrate data science approaches to enhance SIM-generated predictions and statistical inference.
 
 # References

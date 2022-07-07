@@ -164,7 +164,7 @@ F.Rowe-Gonzalez@liverpool.ac.uk; Robin Lovelace at R.Lovelace@leeds.ac.uk or Ada
 For over 70 years, spatial interaction models (SIMs) have been the workmodel to understand flows between entities at different locations in physical space.
 SIMs represent mathematical formulations through which the spatial interaction between geographic places encoded in aggregate flows of people, information and goods can be rendered.
 Intuitively, these models seek to represent the spatial interaction between places as a function of three components: origin characteristics, destination characteristics and the separation between origins and destinations.
-Originally adapted from physics, spatial flows between an origin and a destination were concieved to be proportional to their gravitational force and inversely related to their spatial separation.
+Originally adapted from physics, spatial flows between an origin and a destination were conceived to be proportional to their gravitational force and inversely related to their spatial separation.
 Characteristics of origins and destinations are used to represent gravitational forces pushing and/or pulling people, information and goods from and to specific locations, and different forms of distance and costs are used to represent the deterring effects of geographical separation on spatial flows.
 
 SIMs have been instrumental and applied in a wide range of contexts to support data analysis and decision making in retail, transport, housing, epidemiology, public health, land use, urban and population modelling and planning projection and forecasting contexts.
@@ -205,7 +205,7 @@ Field-specific theories have been used to extend and develop the fundamental str
 Second, more sophisticated measures to capture the influence of origins and destinations have been developed.
 The specification of SIMs has moved away from relying on population size to approximate the propulsive effect of origins and attractive force of destinations, to capture local economic, political, cultural and social differences across origins and destination, and recognise propulsive and attractive effects at play in both origins and destinations.
 Third, measures of spatial separation have also been sophisticated to more appropriately reflect the geographical, physiological and financial distance and costs between origins and destinations (Schwartz 1973), as well as the system of road networks {[}{]} and the spatial distribution of human settlements (Niedomysl et al. 2017).
-Fourth, considerable methodological work has been done to conceptualise and operationalise the influence of spatial structure in SIMs (T. M. Oshan 2021).
+Fourth, considerable methodological work has been done to conceptualise and operationalise the influence of spatial structure in SIMs (Oshan 2021).
 Five generalisable approaches have been proposed to account for spatial structure in distinctive ways: the competing destination model by including an accessibility measure (A. S. Fotheringham 1983); the Box--Cox transform by using a Box--Cox functional form of distance {[}{]}; spatial choice modelling by accounting for destination alternative substitution patterns (Hunt, Boots, and Kanaroglou 2004); spatial econometric modelling {[}{]}; and eigenvector spatial filtering by incorporating spatial dependence or spatial autocorrelation {[}{]}.
 Fifth, frameworks to calibrate SIMs have evolved.
 Early methods of calibration comprised linear programming and non-linear optimization.
@@ -271,7 +271,7 @@ As such, it is not immediately obvious, even for those with geography degrees, h
 But, why have cohorts of undergraduate geography students not been taught how to fit these models and explore systems of spatial interaction?
 
 Accessibility seems to represent an obstacle for the wider applicability of SIMs.
-We discussed issues around reproducibility challenging the practical application of SIMs, but that with packages like \texttt{SPINT} (T. Oshan 2021) and our own efforts with the \texttt{simodels} package in \emph{R} (see Section \ref{enabling-infrastructure}, the tide is beginning to turn.
+We discussed issues around reproducibility challenging the practical application of SIMs, but that with packages like \texttt{SPINT} (Oshan 2016) and our own efforts with the \texttt{simodels} package in \emph{R} (see Section \ref{enabling-infrastructure}, the tide is beginning to turn.
 Yet, calibration remains a challenging sub-topic for reproducibility and wider accessibility of these models, particularly where algorithms which are able to calibrate parameters have remained locked away - either behind dense algebraic notation in dusty papers from the 1970s, or where they have found their way into commercial software, behind paywalls.
 
 Ironically, effective enough calibration routines have been available for as long as students have been running regression models in their introductory statistics classes.
@@ -287,7 +287,7 @@ Much of these data contain location information and hence offer an opportunity t
 Big Data offer unique opportunities to study spatial interactions at unprecedented detailed geographical and temporal scales in real or near real-time across extensive populations and geographical areas.
 However, leveraging on these opportunities also involves major challenges for the analysis and modelling of spatial interactions (Rowe 2021).
 
-Limited research has focused on explicitly capturing patterns of non-stationarity in spatial interaction modelling despite the availability of suitable methods (T. M. Oshan 2021).
+Limited research has focused on explicitly capturing patterns of non-stationarity in spatial interaction modelling despite the availability of suitable methods (Oshan 2021).
 While the issues of calibration discussed in Section \ref{calibration} may have represented a barrier, lack of large enough data sets may have also hindered progress.
 Before the emergence of Big Data, the most common form of spatial flow data were cross-sections of origin-destination matrices derived from censuses or surveys, offering information at coarse geographical scales and population subgroups.
 The rise of data now offers more granular and denser volumes of data to capture patterns of spatial, temporal and population non-stationarity.
@@ -308,12 +308,12 @@ New methods are also required to handle, analyse and store large data sets.
 Traditional SIM frameworks were designed to identify significant relationships in small sample sizes with known properties.
 Big data are not collected for research purposes.
 They are an unintended consequence of administrative processes or social interactions and need to be reengineered for research.
-Handling Big Data requires a wider and new digital skills set, largely based on machine learning, artificial intelligence and coding, in addition to greater knowledge of computing technology (e.g.~Jupyter notebooks, Github and Docker) as well as scalability and parallelisation approaches.
+Handling Big Data requires a wider and new digital skills set, largely based on machine learning and artificial intelligence (ML/AI) and coding, in addition to greater knowledge of computing technology (e.g.~Jupyter notebooks, Github and Docker) as well as scalability and parallelisation approaches.
 Except for a few centres, current university geography programmes and infrastructures are largely unprepared to deliver the required training.
 A multidisciplinary approach is needed to integrate computational training into human geography.
-Machine learning and artificial intelligence are likely to enhance prediction outcomes generated from SIMs.
-The idea of using machine learning and artificial intelligence to model spatial interactions is not new, but the application has been limited due to the lack of large data sets.
-Machine learning and artificial intelligence are data hungry, requiring millions of data for effective training and validation.
+ML/AI are likely to enhance prediction outcomes generated from SIMs.
+The idea of using ML/AI to model spatial interactions is not new, but the application has been limited due to the lack of large data sets.
+ML/AI are data hungry, requiring millions of data for effective training and validation.
 The rise of data provide an opportunity to promote the wider adoption of these models.
 
 \hypertarget{the-way-forward}{%
@@ -496,19 +496,15 @@ We can visualise the result as follows, resulting in Figure \ref{fig:pubresmap}:
 \includegraphics[width=0.8\linewidth]{main_files/figure-latex/pubresmap-1} \caption{Results of a reproducible SIM undertaken on a minimal example based on synthetic data representing hypothetical trips to 2 pubs in Leeds, UK.}\label{fig:pubresmap}
 \end{figure}
 
-\begin{verbatim}
-##   |                                                                              |                                                                      |   0%  |                                                                              |==================                                                    |  25%  |                                                                              |===================================                                   |  50%  |                                                                              |====================================================                  |  75%  |                                                                              |======================================================================| 100%
-\end{verbatim}
-
 \hypertarget{capturing-heterogeneity}{%
-\subsection{\texorpdfstring{Capturing Heterogeneity }{Capturing Heterogeneity }}\label{capturing-heterogeneity}}
+\subsection{Capturing Heterogeneity}\label{capturing-heterogeneity}}
 
 We argue that research on SIMs should seek to adopt and adapt modelling frameworks to capture and understand patterns of spatial, temporal and population non-stationarity which can now be capture given the rise of large data sets.
 This line of enquiry involves calibrating models to estimate separate parameters for individual origins, destinations, time units and population segments.
 Such parameters can reflect local, temporal and population variations in the relationships producing spatial flows.
 Inference based on a set of global model parameters may lead to draw misleading conclusions due to misrepresentations of local-, temporal- and population-specific trends.
 
-Yet, as noted above, limited progress has been made on capturing these patterns of non-stationarity (T. M. Oshan 2021).
+Yet, as noted above, limited progress has been made on capturing these patterns of non-stationarity (Oshan 2021).
 Existing approaches have been proposed to capture spatial-nonstationarity.
 An approach involves subsetting the overall data set into origin- or destination-specific data sets and calibrate individual models for each data set.
 An alternative approach is to include interaction terms between a binary categorical variable identifying an origin or destination, and each of the relevant covariates in a regression model.
@@ -534,7 +530,7 @@ Third, model selection is a challenge because of biases in model performance tes
 Guidelines for the implementation of GLMMs will therefore be needed to navegate these challenges and leverage the potential of these models to effectively account for non-stationarity in spatial flows.
 
 \hypertarget{enhancing-statistical-inference}{%
-\subsection{\texorpdfstring{Enhancing Statistical Inference }{Enhancing Statistical Inference }}\label{enhancing-statistical-inference}}
+\subsection{Enhancing Statistical Inference}\label{enhancing-statistical-inference}}
 
 We argue new ways of approaching statistical inference in SIMs.
 First, we call for a careful use of the concept of statistical significance.
@@ -551,14 +547,14 @@ So, while adopting causal inference methods to analyse spatial interactions may 
 
 Third, we propose the use of multi-model inference.
 Intuitively, multi-model inference seeks to draw conclusions from a range of theoretically-sound model specifications (Burnham and Anderson 2004).
-It uses model averaging to determine the direction and strength of regression predictors, and generating ways assess their relative importance based on Akaike Information Criterion scores from multiple models.
-As such, inferences are not drawn from a single model, leading to more robust inferences.
-Determining the relevance of factors shaping spatial flows based on multi-model inference offers an additional alternative to make inference in the context of SIMs and Big Data.
+It uses model averaging to determine the direction and strength of regression predictors, and enables the generation of Akaike Information Criterion based weights from multiple models to assess the relative importance of predictors in an outcome.
+As such, inferences are not drawn from a single model, leading to more robust inferences, and offers an alternative approach to evaluate the importance of predictors that does not depend on statistical significance dicothomy.
+Additionally determining the relevance of factors shaping spatial flows based on multi-model inference offers an additional alternative to make inference in the context of SIMs and Big Data.
 Multi-model inference has been rarely applied to capture spatial interactions (Rowe 2013).
 Yet, it is widely used in biology and ecology, and various routines exist in \emph{R} which can be integrated with \texttt{simodels}.
 
 \hypertarget{integrating-data-science}{%
-\subsection{\texorpdfstring{Integrating Data Science }{Integrating Data Science }}\label{integrating-data-science}}
+\subsection{Integrating Data Science}\label{integrating-data-science}}
 
 New methods and tools are needed to engineer and calibrate SIMs using large data sets.
 In agreement with Singleton and Arribas-Bel (2019), we recognise that the value of data science approaches to enable the calibration of SIMs on large data sets.
@@ -573,30 +569,27 @@ Second, we propose the use of ML/AI to enhance the prediction capacity of SIMs.
 While this proposal is not new and ML/AI approaches have been deployed mainly in transport applications, their deployment in geography has been limited.
 Big Data now provides enough density of data to train and assess the capability of these algorithms to predict spatial interactions.
 Emerging evidence suggests that ML-calibrated SIMs outperform traditional GLM-calibrated SIMs at generated more accurate predictions of spatial interactions (Rowe, Mahony, and Tao 2022).
-ML/AI models do not require a pre-define functional specification.
+ML/AI models do not require a pre-defined functional specification.
 They have the ability to uncover complex structure in the data and are rapidly deployable requiring limited human intervention.
 In the context of SIMs, the promise is that ML/AI can uncover and accommodate complex functional forms capturing patterns of spatial and temporal dependence and non-stationarity (Rowe, Mahony, and Tao 2022).
 
-\begin{itemize}
-\tightlist
-\item
-  Causal inference
-\end{itemize}
-
-use of machine learning for prediction and inference -
-
-scalable models
-
-Remaining challenges - reproducibility (technical enabling infrastructure), calibration and leverage on the potential opportunities offered by big data - traditional and new forms of data - leverage on properties -- real-time information, large volumes and temporal frequency - machine learning to improve inference and prediction as well as address issues of scalability (suggest broad approaches: parallel computing, slicing the data), inference (discuss how p-value is not a useful indicator anymore) and capturing heterogeneity.
+Third, ML/AI are also expected to enhance causal inference in SIMs.
+ML/AI-based methods are generally focused on prediction rather than understanding and establishing causal relationships.
+Yet, ML/AI models can be combined with causal inference to enhance the identification of cause-and-effect relationships.
+Many causal methods use prediction to generate instruments or counterfactuals in a first stage that can be employed in a second phase to produce ``more'' reliable estimates for statistical inference.
+Thus the fundamental problem of causal inference is the existence of a perfect analogue of out-of-sample performance for causal models, since counterfactual quantities are never observed.
+ML/AI models can be used to derive ``better'' counterfactuals and enhance inference on causality.
+At the same time, ML/AI can help scale causal effect estimation methods to SIMs based on high-dimensional data and unstructured data.
+ML/AI thus offers an opportunity to build accurate decision-support systems that estimate effect of interventions on spatial flows.
 
 \hypertarget{the-future-of-spatial-interaction-modelling}{%
 \section{The future of spatial interaction modelling}\label{the-future-of-spatial-interaction-modelling}}
 
-Objective of the section: To identify and discuss the key pillars that will enable progress on all the proposed fronts - open science, important and new questions and digital infrastructure.
-I see this as our conclusion - probably one or two short paragraph summarising what has been discussed with a forward looking approach.
-
-\begin{quote}
-\end{quote}
+SIMs represent a core analytical tool to predict and understand spatial flows of people, information and products across our society and economy.
+Ultimately SIMs provide essential knowledge and information to support decision making and policy interventions.
+During the COVID-19 pandemic alone, SIMs have been essential generating critical evidence to monitor the geographical extent and speed of infection spread, retail, transport and movement activity by understanding human spatial interactions.
+Despite considerable progress over the past fifty years, we identified key challenges for the efficient deployment of SIMs in terms of reproducibility, calibration and Big Data modelling.
+We identified four areas of future development to tackle these challenges: (1) to enable essential infrastructure to facilitate the training, calibration and reproducibility of SIMs; (2) to embrace modelling frameworks to capture spatial, temporal and population heterogeneity; (3) to enhance statistical inference to accommodate Big Data analysis; and, (4) to integrate data science approaches to enhance SIM-generated predictions and statistical inference.
 
 \hypertarget{references}{%
 \section*{References}\label{references}}
@@ -652,11 +645,11 @@ O'Hara, Robert, and Johan Kotze. 2010. {``Do Not Log-Transform Count Data.''} \e
 \leavevmode\vadjust pre{\hypertarget{ref-ogcopengeospatialconsortiuminc_opengis_2011}{}}%
 (OGC) Open Geospatial Consortium Inc. 2011. {``OpenGIS Implementation Specification for Geographic Information - Simple Feature Access - Part 1: Common Architecture.''} \url{https://www.ogc.org/standards/sfa}.
 
-\leavevmode\vadjust pre{\hypertarget{ref-oshan_spatial_2021}{}}%
-Oshan, Taylor. 2021. {``Spatial {Interaction} {Modeling} ({SpInt}).''} \url{https://github.com/pysal/spint}.
+\leavevmode\vadjust pre{\hypertarget{ref-oshan2016}{}}%
+Oshan, Taylor M. 2016. {``A Primer for Working with the Spatial Interaction Modeling (SpInt) Module in the Python Spatial Analysis Library (PySAL).''} \emph{REGION} 3 (2): 11. \url{https://doi.org/10.18335/region.v3i2.175}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-oshan2021spatial}{}}%
-Oshan, Taylor M. 2021. {``The Spatial Structure Debate in Spatial Interaction Modeling: 50 Years On.''} \emph{Progress in Human Geography} 45 (5): 925--50.
+---------. 2021. {``The Spatial Structure Debate in Spatial Interaction Modeling: 50 Years On.''} \emph{Progress in Human Geography} 45 (5): 925--50.
 
 \leavevmode\vadjust pre{\hypertarget{ref-pappalardo2015}{}}%
 Pappalardo, Luca, Filippo Simini, Salvatore Rinzivillo, Dino Pedreschi, Fosca Giannotti, and Albert-László Barabási. 2015. {``Returners and Explorers Dichotomy in Human Mobility.''} \emph{Nature Communications} 6 (1). \url{https://doi.org/10.1038/ncomms9166}.
