@@ -15,7 +15,7 @@ editor_options:
 For over 70 years, spatial interaction models (SIMs) have been the workmodel to understand flows between entities at different locations in physical space.
 SIMs represent mathematical formulations through which the spatial interaction between geographic places encoded in aggregate flows of people, information and goods can be rendered.
 Intuitively, these models seek to represent the spatial interaction between places as a function of three components: origin characteristics, destination characteristics and the separation between origins and destinations.
-Originally adapted from physics, spatial flows between an origin and a destination were concieved to be proportional to their gravitational force and inversely related to their spatial separation.
+Originally adapted from physics, spatial flows between an origin and a destination were conceived to be proportional to their gravitational force and inversely related to their spatial separation.
 Characteristics of origins and destinations are used to represent gravitational forces pushing and/or pulling people, information and goods from and to specific locations, and different forms of distance and costs are used to represent the deterring effects of geographical separation on spatial flows.
 
 SIMs have been instrumental and applied in a wide range of contexts to support data analysis and decision making in retail, transport, housing, epidemiology, public health, land use, urban and population modelling and planning projection and forecasting contexts.
@@ -119,7 +119,7 @@ As such, it is not immediately obvious, even for those with geography degrees, h
 But, why have cohorts of undergraduate geography students not been taught how to fit these models and explore systems of spatial interaction?
 
 Accessibility seems to represent an obstacle for the wider applicability of SIMs.
-We discussed issues around reproducibility challenging the practical application of SIMs, but that with packages like `SPINT` [@oshan_spatial_2021] and our own efforts with the `simodels` package in *R* (see Section \@ref(enabling-infrastructure), the tide is beginning to turn.
+We discussed issues around reproducibility challenging the practical application of SIMs, but that with packages like `SPINT` [@oshan2016] and our own efforts with the `simodels` package in *R* (see Section \@ref(enabling-infrastructure), the tide is beginning to turn.
 Yet, calibration remains a challenging sub-topic for reproducibility and wider accessibility of these models, particularly where algorithms which are able to calibrate parameters have remained locked away - either behind dense algebraic notation in dusty papers from the 1970s, or where they have found their way into commercial software, behind paywalls.
 
 Ironically, effective enough calibration routines have been available for as long as students have been running regression models in their introductory statistics classes.
@@ -330,7 +330,7 @@ od_to_pubs_result %>%
 
 <!--# FR: would be good to include a comment to close the section - perhaps on how we see the package being developed or suggest that the next sections provide this vision -->
 
-## Capturing Heterogeneity <!--# 450 words -->
+## Capturing Heterogeneity 
 
 We argue that research on SIMs should seek to adopt and adapt modelling frameworks to capture and understand patterns of spatial, temporal and population non-stationarity which can now be capture given the rise of large data sets.
 This line of enquiry involves calibrating models to estimate separate parameters for individual origins, destinations, time units and population segments.
@@ -362,7 +362,7 @@ Second, interpreting the model outputs from GLMMs correctly may be challenging, 
 Third, model selection is a challenge because of biases in model performance tests caused by the presence of random effects [<!--# Ref -->].
 Guidelines for the implementation of GLMMs will therefore be needed to navegate these challenges and leverage the potential of these models to effectively account for non-stationarity in spatial flows.
 
-## Enhancing Statistical Inference <!--# 450 words -->
+## Enhancing Statistical Inference
 
 We argue new ways of approaching statistical inference in SIMs.
 First, we call for a careful use of the concept of statistical significance.
@@ -379,9 +379,9 @@ So, while adopting causal inference methods to analyse spatial interactions may 
 
 Third, we propose the use of multi-model inference.
 Intuitively, multi-model inference seeks to draw conclusions from a range of theoretically-sound model specifications [@modelse2004].
-It uses model averaging to determine the direction and strength of regression predictors, and generating ways assess their relative importance based on Akaike Information Criterion scores from multiple models.
-As such, inferences are not drawn from a single model, leading to more robust inferences.
-Determining the relevance of factors shaping spatial flows based on multi-model inference offers an additional alternative to make inference in the context of SIMs and Big Data.
+It uses model averaging to determine the direction and strength of regression predictors, and enables the generation of Akaike Information Criterion based weights from multiple models to assess the relative importance of predictors in an outcome.
+As such, inferences are not drawn from a single model, leading to more robust inferences, and offers an alternative approach to evaluate the importance of predictors that does not depend on statistical significance dicothomy.
+Additionally determining the relevance of factors shaping spatial flows based on multi-model inference offers an additional alternative to make inference in the context of SIMs and Big Data.
 Multi-model inference has been rarely applied to capture spatial interactions [@rowe2013].
 Yet, it is widely used in biology and ecology, and various routines exist in *R* which can be integrated with `simodels`.
 
@@ -400,11 +400,13 @@ Second, we propose the use of ML/AI to enhance the prediction capacity of SIMs.
 While this proposal is not new and ML/AI approaches have been deployed mainly in transport applications, their deployment in geography has been limited.
 Big Data now provides enough density of data to train and assess the capability of these algorithms to predict spatial interactions.
 Emerging evidence suggests that ML-calibrated SIMs outperform traditional GLM-calibrated SIMs at generated more accurate predictions of spatial interactions [@rowe2022].
-ML/AI models do not require a pre-define functional specification.
+ML/AI models do not require a pre-defined functional specification.
 They have the ability to uncover complex structure in the data and are rapidly deployable requiring limited human intervention.
 In the context of SIMs, the promise is that ML/AI can uncover and accommodate complex functional forms capturing patterns of spatial and temporal dependence and non-stationarity [@rowe2022].
 
--   Causal inference
+Third, ML/AI are also expected to
+
+Causal inference
 
 use of machine learning for prediction and inference -
 
