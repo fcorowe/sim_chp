@@ -1,17 +1,12 @@
-\BOOKMARK [1][-]{section.1}{Definition and Uses}{}% 1
-\BOOKMARK [1][-]{section.2}{Challenges}{}% 2
-\BOOKMARK [2][-]{subsection.2.1}{Reproducibility }{section.2}% 3
-\BOOKMARK [2][-]{subsection.2.2}{Calibration }{section.2}% 4
-\BOOKMARK [2][-]{subsection.2.3}{Big Data modelling }{section.2}% 5
-\BOOKMARK [1][-]{section.3}{The way forward}{}% 6
-\BOOKMARK [2][-]{subsection.3.1}{Enabling infrastructure }{section.3}% 7
-\BOOKMARK [2][-]{subsection.3.2}{Capturing spatial and temporal heterogeneity }{section.3}% 8
-\BOOKMARK [2][-]{subsection.3.3}{Enhancing statistical inference }{section.3}% 9
-\BOOKMARK [2][-]{subsection.3.4}{Integrating data science }{section.3}% 10
-\BOOKMARK [1][-]{section.4}{Facilitating future progress of spatial interaction modelling}{}% 11
-\BOOKMARK [1][-]{section.5}{I plan to use the text below to fill the sections above}{}% 12
-\BOOKMARK [2][-]{subsection.5.1}{Reproducible SIMs }{section.5}% 13
-\BOOKMARK [2][-]{subsection.5.2}{Calibration}{section.5}% 14
-\BOOKMARK [2][-]{subsection.5.3}{Expanding spatial interaction modelling}{section.5}% 15
-\BOOKMARK [2][-]{subsection.5.4}{Spatial interaction modelling using machine learning}{section.5}% 16
-\BOOKMARK [1][-]{subsection.5.4}{References}{}% 17
+\BOOKMARK [1][-]{section.1}{\376\377\000D\000e\000f\000i\000n\000i\000t\000i\000o\000n\000\040\000a\000n\000d\000\040\000U\000s\000e\000s}{}% 1
+\BOOKMARK [1][-]{section.2}{\376\377\000C\000h\000a\000l\000l\000e\000n\000g\000e\000s}{}% 2
+\BOOKMARK [2][-]{subsection.2.1}{\376\377\000R\000e\000p\000r\000o\000d\000u\000c\000i\000b\000i\000l\000i\000t\000y}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{\376\377\000C\000a\000l\000i\000b\000r\000a\000t\000i\000o\000n\000\040}{section.2}% 4
+\BOOKMARK [2][-]{subsection.2.3}{\376\377\000B\000i\000g\000\040\000D\000a\000t\000a\000\040\000m\000o\000d\000e\000l\000l\000i\000n\000g\000\040}{section.2}% 5
+\BOOKMARK [1][-]{section.3}{\376\377\000T\000h\000e\000\040\000W\000a\000y\000\040\000F\000o\000r\000w\000a\000r\000d}{}% 6
+\BOOKMARK [2][-]{subsection.3.1}{\376\377\000E\000n\000a\000b\000l\000i\000n\000g\000\040\000I\000n\000f\000r\000a\000s\000t\000r\000u\000c\000t\000u\000r\000e\000\040}{section.3}% 7
+\BOOKMARK [2][-]{subsection.3.2}{\376\377\000C\000a\000p\000t\000u\000r\000i\000n\000g\000\040\000H\000e\000t\000e\000r\000o\000g\000e\000n\000e\000i\000t\000y\000\040}{section.3}% 8
+\BOOKMARK [2][-]{subsection.3.3}{\376\377\000E\000n\000h\000a\000n\000c\000i\000n\000g\000\040\000S\000t\000a\000t\000i\000s\000t\000i\000c\000a\000l\000\040\000I\000n\000f\000e\000r\000e\000n\000c\000e\000\040}{section.3}% 9
+\BOOKMARK [2][-]{subsection.3.4}{\376\377\000I\000n\000t\000e\000g\000r\000a\000t\000i\000n\000g\000\040\000D\000a\000t\000a\000\040\000S\000c\000i\000e\000n\000c\000e\000\040}{section.3}% 10
+\BOOKMARK [1][-]{section.4}{\376\377\000T\000h\000e\000\040\000f\000u\000t\000u\000r\000e\000\040\000o\000f\000\040\000s\000p\000a\000t\000i\000a\000l\000\040\000i\000n\000t\000e\000r\000a\000c\000t\000i\000o\000n\000\040\000m\000o\000d\000e\000l\000l\000i\000n\000g}{}% 11
+\BOOKMARK [1][-]{section.4}{\376\377\000R\000e\000f\000e\000r\000e\000n\000c\000e\000s}{}% 12
