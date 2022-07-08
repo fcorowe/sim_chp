@@ -1,19 +1,22 @@
 ---
-# output: github_document
+# For GH version:
+output: github_document
+# For pdf version:
 # output: bookdown::github_document2
-output:
-  bookdown::pdf_document2:
-    template: template.tex
-    keep_tex: true
-bibliography: sim_refs.bib
-editor_options:
-  markdown:
-    wrap: sentence
+# output:
+#   bookdown::pdf_document2:
+#     template: template.tex
+#     keep_tex: true
+# bibliography: sim_refs.bib
+# editor_options:
+#   markdown:
+#     wrap: sentence
 ---
 
 ```{r, eval=FALSE, echo=FALSE}
 # Code to run once/rarely for set-up
-
+file.rename("README.tex", "main.tex")
+file.rename("README.pdf", "main.pdf") # or another file name
 ```
 
 
