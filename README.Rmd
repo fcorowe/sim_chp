@@ -123,7 +123,7 @@ Reproducible code and data can be used to provide educational training and enabl
 ## Calibration
 
 Calibration is at the centre of what makes spatial interaction models useful to researchers and practitioners.
-As [@openshaw1975] describes it, "calibration is the process of providing estimates of the unknown parameters we have identified as the independent variables of the model." In a basic gravity SIM formulation, we seek to estimate three parameters - as identified above - relating to origin mass, destination mass and a parameter determining the frictional effect of spatial separation between origins and destinations.
+As [@openshaw_theoretical_1975] describes it, "calibration is the process of providing estimates of the unknown parameters we have identified as the independent variables of the model." In a basic gravity SIM formulation, we seek to estimate three parameters - as identified above - relating to origin mass, destination mass and a parameter determining the frictional effect of spatial separation between origins and destinations.
 These parameters reveal information about our system of interest - for example, how costly physical separation distances are to interaction.
 
 Yet, we identified key challenges relating to the calibration of SIMs.

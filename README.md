@@ -226,15 +226,15 @@ not outside the scope of the original research project (Rowe et al.
 ## 2.2 Calibration
 
 Calibration is at the centre of what makes spatial interaction models
-useful to researchers and practitioners. As (**openshaw1975?**)
-describes it, “calibration is the process of providing estimates of the
-unknown parameters we have identified as the independent variables of
-the model.” In a basic gravity SIM formulation, we seek to estimate
-three parameters - as identified above - relating to origin mass,
-destination mass and a parameter determining the frictional effect of
-spatial separation between origins and destinations. These parameters
-reveal information about our system of interest - for example, how
-costly physical separation distances are to interaction.
+useful to researchers and practitioners. As (Openshaw 1975) describes
+it, “calibration is the process of providing estimates of the unknown
+parameters we have identified as the independent variables of the
+model.” In a basic gravity SIM formulation, we seek to estimate three
+parameters - as identified above - relating to origin mass, destination
+mass and a parameter determining the frictional effect of spatial
+separation between origins and destinations. These parameters reveal
+information about our system of interest - for example, how costly
+physical separation distances are to interaction.
 
 Yet, we identified key challenges relating to the calibration of SIMs.
 Calibration requires both data and software. Forty or fifty years ago
@@ -865,6 +865,15 @@ class="csl-entry">
 (OGC) Open Geospatial Consortium Inc. 2011. “OpenGIS Implementation
 Specification for Geographic Information - Simple Feature Access - Part
 1: Common Architecture.” <https://www.ogc.org/standards/sfa>.
+
+</div>
+
+<div id="ref-openshaw_theoretical_1975" class="csl-entry">
+
+Openshaw, Stan. 1975. *Some Theoretical and Applied Aspects of Spatial
+Interaction Shopping Models*. Vol. 4. CATMOG. Norwich: Geo Abstracts
+Ltd.
+<https://github.com/qmrg/CATMOG/blob/Main/04-spatial-interaction-shopping.pdf>.
 
 </div>
 
