@@ -1,4 +1,5 @@
 ---
+# output: github_document
 # output: bookdown::github_document2
 output:
   bookdown::pdf_document2:
@@ -9,6 +10,23 @@ editor_options:
   markdown:
     wrap: sentence
 ---
+
+```{r, eval=FALSE, echo=FALSE}
+# Code to run once/rarely for set-up
+
+```
+
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+<!-- # Spatial Interaction Modelling Chapter -->
 
 # Definition and Uses
 

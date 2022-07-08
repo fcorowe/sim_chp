@@ -398,7 +398,7 @@ Before creating SIMs representing travel to these two pubs in Leeds, we first pe
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics[width=0.5\linewidth]{main_files/figure-latex/unnamed-chunk-7-1} \includegraphics[width=0.5\linewidth]{main_files/figure-latex/unnamed-chunk-7-2}
+\includegraphics[width=0.5\linewidth]{README_files/figure-latex/unnamed-chunk-9-1} \includegraphics[width=0.5\linewidth]{README_files/figure-latex/unnamed-chunk-9-2}
 
 For many applications, the most important function in the \texttt{simodels} package is \texttt{si\_to\_od()}:
 
@@ -458,22 +458,11 @@ We can check the results:
 \begin{Shaded}
 \begin{Highlighting}[]
 \FunctionTok{sum}\NormalTok{(od\_to\_pubs\_result}\SpecialCharTok{$}\NormalTok{interaction)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 2903
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
+\CommentTok{\#\textgreater{} [1] 2903}
 \FunctionTok{sum}\NormalTok{(origin\_zones}\SpecialCharTok{$}\NormalTok{to\_pubs)}
+\CommentTok{\#\textgreater{} [1] 2903}
 \end{Highlighting}
 \end{Shaded}
-
-\begin{verbatim}
-## [1] 2903
-\end{verbatim}
 
 As shown above, the total number of trips is the same in the OD data as in the zone level data.
 We can visualise the result as follows, resulting in Figure \ref{fig:pubresmap}:
@@ -493,8 +482,12 @@ We can visualise the result as follows, resulting in Figure \ref{fig:pubresmap}:
 \end{Shaded}
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{main_files/figure-latex/pubresmap-1} \caption{Results of a reproducible SIM undertaken on a minimal example based on synthetic data representing hypothetical trips to 2 pubs in Leeds, UK.}\label{fig:pubresmap}
+\includegraphics[width=0.8\linewidth]{README_files/figure-latex/pubresmap-1} \caption{Results of a reproducible SIM undertaken on a minimal example based on synthetic data representing hypothetical trips to 2 pubs in Leeds, UK.}\label{fig:pubresmap}
 \end{figure}
+
+\begin{verbatim}
+#>   |                                                                              |                                                                      |   0%  |                                                                              |==================                                                    |  25%  |                                                                              |===================================                                   |  50%  |                                                                              |====================================================                  |  75%  |                                                                              |======================================================================| 100%
+\end{verbatim}
 
 \hypertarget{capturing-heterogeneity}{%
 \subsection{Capturing Heterogeneity}\label{capturing-heterogeneity}}
