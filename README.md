@@ -4,8 +4,8 @@
 
 # 1 Definition and Uses
 
-For over 70 years, spatial interaction models (SIMs) have been the
-workmodel to understand flows between entities at different locations in
+For over 70 years, spatial interaction models (SIMs) have been a key
+tool to simulate flows between entities at different locations in
 physical space. SIMs represent mathematical formulations through which
 the spatial interaction between geographic places encoded in aggregate
 flows of people, information and goods can be rendered. Intuitively,
@@ -21,22 +21,22 @@ specific locations, and different forms of distance and costs are used
 to represent the deterring effects of geographical separation on spatial
 flows.
 
-SIMs have been instrumental and applied in a wide range of contexts to
-support data analysis and decision making in retail, transport, housing,
+SIMs have been applied in a wide range of contexts to support data
+analysis and decision making in retail, transport, housing,
 epidemiology, public health, land use, urban and population modelling
 and planning projection and forecasting contexts. SIMs are generally
-used for two key purposes. A key purpose is the *prediction* of the size
-and direction of spatial flows. SIMs have been widely used to predict
-the impact of the development of new service units, such as shopping
-stores, healthcare facilities and housing units on the potential demand
-for associated services and traffic patterns. Predictions from such
-analyses enable the identification of optimal locations and size for
-potential new service units. A second key purpose of SIMs is *inference*
-about the factors shaping the spatial interactions in a network of
-flows. SIMs have been used to determine and understand the influence of
-retail store on consumers’ store choices and place attributes on
-migration decisions and commuting patterns. SIMs have also been used to
-delineate geographical areas of service and retail catchment areas.
+used for two key purposes: prediction and inference. The *prediction* of
+the size and direction of spatial flows has been used to predict the
+impact of new service units, such as shopping stores, healthcare
+facilities and housing units on the potential demand for associated
+services and traffic patterns. Predictions from such analyses enable the
+identification of optimal locations and size for potential new service
+units. A second key purpose of SIMs is *inference* about the factors
+shaping the spatial interactions in a network of flows. SIMs have been
+used to determine and understand the influence of retail store on
+consumers’ store choices and place attributes on migration decisions and
+commuting patterns. SIMs have also been used to delineate geographical
+areas of service and retail catchment areas.
 
 Formally SIMs take different forms. Newtonian gravity models are
 probably the most widely known and used form of spatial interaction

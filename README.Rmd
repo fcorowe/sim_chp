@@ -41,10 +41,9 @@ Intuitively, these models seek to represent the spatial interaction between plac
 Originally adapted from physics, spatial flows between an origin and a destination were conceived to be proportional to their gravitational force and inversely related to their spatial separation.
 Characteristics of origins and destinations are used to represent gravitational forces pushing and/or pulling people, information and goods from and to specific locations, and different forms of distance and costs are used to represent the deterring effects of geographical separation on spatial flows.
 
-SIMs have been instrumental and applied in a wide range of contexts to support data analysis and decision making in retail, transport, housing, epidemiology, public health, land use, urban and population modelling and planning projection and forecasting contexts.
-SIMs are generally used for two key purposes.
-A key purpose is the *prediction* of the size and direction of spatial flows.
-SIMs have been widely used to predict the impact of the development of new service units, such as shopping stores, healthcare facilities and housing units on the potential demand for associated services and traffic patterns.
+SIMs have been applied in a wide range of contexts to support data analysis and decision making in retail, transport, housing, epidemiology, public health, land use, urban and population modelling and planning projection and forecasting contexts.
+SIMs are generally used for two key purposes: prediction and inference.
+The *prediction* of the size and direction of spatial flows has been used to predict the impact of new service units, such as shopping stores, healthcare facilities and housing units on the potential demand for associated services and traffic patterns.
 Predictions from such analyses enable the identification of optimal locations and size for potential new service units.
 A second key purpose of SIMs is *inference* about the factors shaping the spatial interactions in a network of flows.
 SIMs have been used to determine and understand the influence of retail store on consumers' store choices and place attributes on migration decisions and commuting patterns.
