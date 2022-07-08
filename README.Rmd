@@ -35,7 +35,7 @@ knitr::opts_chunk$set(
 
 # Definition and Uses
 
-For over 70 years, spatial interaction models (SIMs) have been the workmodel to understand flows between entities at different locations in physical space.
+For over 70 years, spatial interaction models (SIMs) have been a key tool to simulate flows between entities at different locations in physical space.
 SIMs represent mathematical formulations through which the spatial interaction between geographic places encoded in aggregate flows of people, information and goods can be rendered.
 Intuitively, these models seek to represent the spatial interaction between places as a function of three components: origin characteristics, destination characteristics and the separation between origins and destinations.
 Originally adapted from physics, spatial flows between an origin and a destination were conceived to be proportional to their gravitational force and inversely related to their spatial separation.
