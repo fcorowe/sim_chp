@@ -1,16 +1,18 @@
 ---
 # For GH version:
-output: bookdown::github_document2
+# output: bookdown::github_document2
 # For pdf version:
 
 # output: bookdown::github_document2
-# output:
-#   bookdown::pdf_document2:
-#     template: template.tex
-#     keep_tex: true
-# editor_options:
-#   markdown:
-#     wrap: sentence
+output:
+  bookdown::pdf_document2:
+    template: template.tex
+    keep_tex: true
+    
+# Editor options (for visual mode)
+editor_options:
+  markdown:
+    wrap: sentence
 
 bibliography: sim_refs.bib
 ---
@@ -26,7 +28,8 @@ file.rename("README.pdf", "main.pdf") # or another file name
 ```{r, include = FALSE}
 knitr::opts_chunk$set(
   collapse = TRUE,
-  comment = "#>"
+  comment = "#>",
+  cache = TRUE
 )
 ```
 

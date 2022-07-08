@@ -161,16 +161,15 @@ F.Rowe-Gonzalez@liverpool.ac.uk; Robin Lovelace at R.Lovelace@leeds.ac.uk or Ada
 \hypertarget{definition-and-uses}{%
 \section{Definition and Uses}\label{definition-and-uses}}
 
-For over 70 years, spatial interaction models (SIMs) have been the workmodel to understand flows between entities at different locations in physical space.
+For over 70 years, spatial interaction models (SIMs) have been a key tool to simulate flows between entities at different locations in physical space.
 SIMs represent mathematical formulations through which the spatial interaction between geographic places encoded in aggregate flows of people, information and goods can be rendered.
 Intuitively, these models seek to represent the spatial interaction between places as a function of three components: origin characteristics, destination characteristics and the separation between origins and destinations.
 Originally adapted from physics, spatial flows between an origin and a destination were conceived to be proportional to their gravitational force and inversely related to their spatial separation.
 Characteristics of origins and destinations are used to represent gravitational forces pushing and/or pulling people, information and goods from and to specific locations, and different forms of distance and costs are used to represent the deterring effects of geographical separation on spatial flows.
 
-SIMs have been instrumental and applied in a wide range of contexts to support data analysis and decision making in retail, transport, housing, epidemiology, public health, land use, urban and population modelling and planning projection and forecasting contexts.
-SIMs are generally used for two key purposes.
-A key purpose is the \emph{prediction} of the size and direction of spatial flows.
-SIMs have been widely used to predict the impact of the development of new service units, such as shopping stores, healthcare facilities and housing units on the potential demand for associated services and traffic patterns.
+SIMs have been applied in a wide range of contexts to support data analysis and decision making in retail, transport, housing, epidemiology, public health, land use, urban and population modelling and planning projection and forecasting contexts.
+SIMs are generally used for two key purposes: prediction and inference.
+The \emph{prediction} of the size and direction of spatial flows has been used to predict the impact of new service units, such as shopping stores, healthcare facilities and housing units on the potential demand for associated services and traffic patterns.
 Predictions from such analyses enable the identification of optimal locations and size for potential new service units.
 A second key purpose of SIMs is \emph{inference} about the factors shaping the spatial interactions in a network of flows.
 SIMs have been used to determine and understand the influence of retail store on consumers' store choices and place attributes on migration decisions and commuting patterns.
@@ -252,7 +251,7 @@ Reproducible code and data can be used to provide educational training and enabl
 \subsection{Calibration}\label{calibration}}
 
 Calibration is at the centre of what makes spatial interaction models useful to researchers and practitioners.
-As (\textbf{openshaw1975?}) describes it, ``calibration is the process of providing estimates of the unknown parameters we have identified as the independent variables of the model.'' In a basic gravity SIM formulation, we seek to estimate three parameters - as identified above - relating to origin mass, destination mass and a parameter determining the frictional effect of spatial separation between origins and destinations.
+As (Openshaw 1975) describes it, ``calibration is the process of providing estimates of the unknown parameters we have identified as the independent variables of the model.'' In a basic gravity SIM formulation, we seek to estimate three parameters - as identified above - relating to origin mass, destination mass and a parameter determining the frictional effect of spatial separation between origins and destinations.
 These parameters reveal information about our system of interest - for example, how costly physical separation distances are to interaction.
 
 Yet, we identified key challenges relating to the calibration of SIMs.
@@ -286,6 +285,8 @@ As argued above, new technologies have enabled the emergence of `Big Data' throu
 Much of these data contain location information and hence offer an opportunity to derive spatial flow data and understand spatial interactions between places.
 Big Data offer unique opportunities to study spatial interactions at unprecedented detailed geographical and temporal scales in real or near real-time across extensive populations and geographical areas.
 However, leveraging on these opportunities also involves major challenges for the analysis and modelling of spatial interactions (Rowe 2021).
+Furthermore, Big Data sources have often analysed `as-is', without due attention paid to levels of validity and cross-comparison between data sources.
+Validation techniques and model/aggregate-data comparisons can help overcome these issues (Lovelace et al. 2016).
 
 Limited research has focused on explicitly capturing patterns of non-stationarity in spatial interaction modelling despite the availability of suitable methods (Oshan 2021).
 While the issues of calibration discussed in Section \ref{calibration} may have represented a barrier, lack of large enough data sets may have also hindered progress.
@@ -485,10 +486,6 @@ We can visualise the result as follows, resulting in Figure \ref{fig:pubresmap}:
 \includegraphics[width=0.8\linewidth]{README_files/figure-latex/pubresmap-1} \caption{Results of a reproducible SIM undertaken on a minimal example based on synthetic data representing hypothetical trips to 2 pubs in Leeds, UK.}\label{fig:pubresmap}
 \end{figure}
 
-\begin{verbatim}
-#>   |                                                                              |                                                                      |   0%  |                                                                              |==================                                                    |  25%  |                                                                              |===================================                                   |  50%  |                                                                              |====================================================                  |  75%  |                                                                              |======================================================================| 100%
-\end{verbatim}
-
 \hypertarget{capturing-heterogeneity}{%
 \subsection{Capturing Heterogeneity}\label{capturing-heterogeneity}}
 
@@ -623,6 +620,9 @@ Harrison, Xavier A., Lynda Donaldson, Maria Eugenia Correa-Cano, Julian Evans, D
 \leavevmode\vadjust pre{\hypertarget{ref-hunt2004}{}}%
 Hunt, Len M., Barry Boots, and Pavios S. Kanaroglou. 2004. {``Spatial Choice Modelling: New Opportunities to Incorporate Space into Substitution Patterns.''} \emph{Progress in Human Geography} 28 (6): 746--66. \url{https://doi.org/10.1191/0309132504ph517oa}.
 
+\leavevmode\vadjust pre{\hypertarget{ref-lovelace_big_2016}{}}%
+Lovelace, Robin, Mark Birkin, Philip Cross, and Martin Clarke. 2016. {``From Big Noise to Big Data: Toward the Verification of Large Data Sets for Understanding Regional Retail Flows.''} \emph{Geographical Analysis} 48 (1): 59--81. \url{https://doi.org/10.1111/gean.12081}.
+
 \leavevmode\vadjust pre{\hypertarget{ref-mcfadden1974analysis}{}}%
 McFadden, D. 1974. \emph{Analysis of Qualitative Choice Behavior. Zarembka, p.(ed.): Frontiers in Econometrics}. Academic Press. New York, NY.
 
@@ -637,6 +637,9 @@ O'Hara, Robert, and Johan Kotze. 2010. {``Do Not Log-Transform Count Data.''} \e
 
 \leavevmode\vadjust pre{\hypertarget{ref-ogcopengeospatialconsortiuminc_opengis_2011}{}}%
 (OGC) Open Geospatial Consortium Inc. 2011. {``OpenGIS Implementation Specification for Geographic Information - Simple Feature Access - Part 1: Common Architecture.''} \url{https://www.ogc.org/standards/sfa}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-openshaw_theoretical_1975}{}}%
+Openshaw, Stan. 1975. \emph{Some {Theoretical} and {Applied} {Aspects} of {Spatial} {Interaction} {Shopping} {Models}}. Vol. 4. {CATMOG}. Norwich: Geo Abstracts Ltd. \url{https://github.com/qmrg/CATMOG/blob/Main/04-spatial-interaction-shopping.pdf}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-oshan2016}{}}%
 Oshan, Taylor M. 2016. {``A Primer for Working with the Spatial Interaction Modeling (SpInt) Module in the Python Spatial Analysis Library (PySAL).''} \emph{REGION} 3 (2): 11. \url{https://doi.org/10.18335/region.v3i2.175}.
