@@ -21,7 +21,6 @@ file.rename("README.tex", "main.tex")
 file.rename("README.pdf", "main.pdf") # or another file name
 ```
 
-
 <!-- README.md is generated from README.Rmd. Please edit that file -->
 
 ```{r, include = FALSE}
@@ -155,6 +154,8 @@ As argued above, new technologies have enabled the emergence of 'Big Data' throu
 Much of these data contain location information and hence offer an opportunity to derive spatial flow data and understand spatial interactions between places.
 Big Data offer unique opportunities to study spatial interactions at unprecedented detailed geographical and temporal scales in real or near real-time across extensive populations and geographical areas.
 However, leveraging on these opportunities also involves major challenges for the analysis and modelling of spatial interactions [@rowe2021].
+Furthermore, Big Data sources have often analysed 'as-is', without due attention paid to levels of validity and cross-comparison between data sources.
+Validation techniques and model/aggregate-data comparisons can help overcome these issues [@lovelace_big_2016].
 
 Limited research has focused on explicitly capturing patterns of non-stationarity in spatial interaction modelling despite the availability of suitable methods [@oshan2021spatial].
 While the issues of calibration discussed in Section \@ref(calibration) may have represented a barrier, lack of large enough data sets may have also hindered progress.
@@ -199,10 +200,6 @@ Partly motivated by this chapter, we have developed the `simodels`[^1] *R* packa
 . `simodels` enables to develop SIMs taking geographic data sets as an input in a few lines of code
 . To install the package, run
 :
-
-[^1]: short for spatial interaction models
-
-[^2]: the primary motivation was the need to develop SIMs to represent trips for non-commuting or non-school purposes in Ireland as part of a contract with Transport Infrastructure Ireland.
 
 ```{r, eval=FALSE}
 install.packages("simodels")
@@ -444,3 +441,7 @@ Despite considerable progress over the past fifty years, we identified key chall
 We identified four areas of future development to tackle these challenges: (1) to enable essential infrastructure to facilitate the training, calibration and reproducibility of SIMs; (2) to embrace modelling frameworks to capture spatial, temporal and population heterogeneity; (3) to enhance statistical inference to accommodate Big Data analysis; and, (4) to integrate data science approaches to enhance SIM-generated predictions and statistical inference.
 
 # References
+
+[^1]: short for spatial interaction models
+
+[^2]: the primary motivation was the need to develop SIMs to represent trips for non-commuting or non-school purposes in Ireland as part of a contract with Transport Infrastructure Ireland.

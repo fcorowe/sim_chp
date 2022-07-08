@@ -311,7 +311,11 @@ study spatial interactions at unprecedented detailed geographical and
 temporal scales in real or near real-time across extensive populations
 and geographical areas. However, leveraging on these opportunities also
 involves major challenges for the analysis and modelling of spatial
-interactions (Rowe 2021).
+interactions (Rowe 2021). Furthermore, Big Data sources have often
+analysed ‘as-is’, without due attention paid to levels of validity and
+cross-comparison between data sources. Validation techniques and
+model/aggregate-data comparisons can help overcome these issues
+(Lovelace et al. 2016).
 
 Limited research has focused on explicitly capturing patterns of
 non-stationarity in spatial interaction modelling despite the
@@ -822,6 +826,15 @@ Hunt, Len M., Barry Boots, and Pavios S. Kanaroglou. 2004. “Spatial
 Choice Modelling: New Opportunities to Incorporate Space into
 Substitution Patterns.” *Progress in Human Geography* 28 (6): 746–66.
 <https://doi.org/10.1191/0309132504ph517oa>.
+
+</div>
+
+<div id="ref-lovelace_big_2016" class="csl-entry">
+
+Lovelace, Robin, Mark Birkin, Philip Cross, and Martin Clarke. 2016.
+“From Big Noise to Big Data: Toward the Verification of Large Data Sets
+for Understanding Regional Retail Flows.” *Geographical Analysis* 48
+(1): 59–81. <https://doi.org/10.1111/gean.12081>.
 
 </div>
 
