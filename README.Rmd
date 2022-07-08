@@ -1,16 +1,18 @@
 ---
 # For GH version:
-output: github_document
+output: bookdown::github_document2
 # For pdf version:
+
 # output: bookdown::github_document2
 # output:
 #   bookdown::pdf_document2:
 #     template: template.tex
 #     keep_tex: true
-# bibliography: sim_refs.bib
 # editor_options:
 #   markdown:
 #     wrap: sentence
+
+bibliography: sim_refs.bib
 ---
 
 ```{r, eval=FALSE, echo=FALSE}
