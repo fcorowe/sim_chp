@@ -499,9 +499,10 @@ od_zones_to_points = si_to_od(origin_zones,
 ```
 
 The resulting origin-destination data set is smaller (79 rows compared
-with 94 rows previously). While in the existing example this does lead
-to a major reduction, this process can greatly speed-up SIM processing,
-modelling and visualisation run times dealing with large data sets.
+with 94 rows previously). While is not a major reduction, the process
+can greatly speed-up SIM processing, modelling and visualisation run
+times dealing with large data sets, tackling issues outlined in Section
+<a href="#big-data-modelling">2.3</a>.
 
 We can now specify a simple SIM model as follows:
 
