@@ -426,42 +426,34 @@ library(tidyverse)
 
 The starting ‘point’ is geographic entities representing trip start, end
 (for ‘multi-partite’ models) or intermediate points. We use the word
-‘features’
-<!--# FR: would be good to clarify what features is used for....geographic entities? -->
-because almost all SIMs use input data sets that are compliant
-<!--# FR: It would be good to clarify what "are compliant with the simple feature specification" means. Does the statement that follows explain it? -->
-with the ‘simple features’ open specification ((OGC) Open Geospatial
-Consortium Inc 2011), typically imported from files encoded in
-proprietary the Shapefile (`.shp`) or open GeoPackage (`.gpkg`), GeoJSON
-(`.geojson`) or other geographic file formats. *R* has a mature
-ecosystem for working with geographic file formats, so we can use the
-`sf` package:
-
-``` r
-u_origins = "origin_zones.geojson"
-f_origins = basename(u_origins)
-u_destinations = "destination_points.geojson"
-f_destinations = basename(u_destinations)
-```
-
-``` r
-download.file(u_origins, destfile = f_origins)
-download.file(u_destinations, destfile = f_destinations)
-```
+‘features’ — meaning geographic vector entities (points, lines,
+polygons) — with reference to the ‘simple features’ standard defined by
+the Open Geospatial Consortium ((OGC) Open Geospatial Consortium Inc
+2011). Almost all SIMs use points and polygons as the basis of origins
+and destinations and raster datasets can be represented as simple
+features. Such geographic features, and associated attributes (e.g. a
+column named `population` representing the population of each
+administrative zone) can be imported from standard spatial vector data
+formats such as Shapefiles (`.shp`) GeoPackage (`.gpkg`) and GeoJSON
+(`.geojson`) files with the `sf` package:
 
 ``` r
 origin_zones = sf::read_sf("origin_zones.geojson")
 destination_points = sf::read_sf("destination_points.geojson")
 ```
 
-The code chunk above demonstrates importing specific data objects
-<!--# FR: It may be a good idea to explain the structure of the input spatial flow data as to whether the `simodels` requires a data file organised in a certain way i.e. origin-destination matrix format or can handle alternative structures ie. long data formats with origin-destination pairs as rows.  -->: 1)
-a simple features object with ‘multipolygon’ geometries representing
-administrative zones that constitute trip origins; and, 2) a simple
-features object with ‘point’ geometries representing two popular pubs in
-Leeds as trip destinations. Before creating SIMs representing travel to
-these two pubs in Leeds, we first perform some exploratory data analysis
-(EDA) to illustrate the input data.
+The code chunk above imports two data objects:
+<!--# FR: It may be a good idea to explain the structure of the input spatial flow data as to whether the `simodels` requires a data file organised in a certain way i.e. origin-destination matrix format or can handle alternative structures ie. long data formats with origin-destination pairs as rows. Answer: there is not input flow data here: the OD matrix is calculated internally with the `si_to_od()` function. Will clarify! (RL)  -->
+
+1)  A simple features object with ‘multipolygon’ geometries representing
+    administrative zones that constitute trip origins (`origin_zones`).
+
+2)  A simple features object with ‘point’ geometries representing two
+    popular pubs in Leeds as trip destinations (`destination_points`).
+
+Before creating SIMs representing travel to these two pubs in Leeds, we
+first perform some exploratory data analysis (EDA) to illustrate the
+input data (Beecham and Lovelace 2022):
 
 ``` r
 origin_zones %>% 
@@ -772,6 +764,15 @@ Arribas-Bel, Dani, Mark Green, Francisco Rowe, and Alex Singleton. 2021.
 “Open Data Products-A Framework for Creating Valuable Analysis Ready
 Data.” *Journal of Geographical Systems* 23 (4): 497–514.
 <https://doi.org/10.1007/s10109-021-00363-5>.
+
+</div>
+
+<div id="ref-beecham_framework_2022" class="csl-entry">
+
+Beecham, Roger, and Robin Lovelace. 2022. “A Framework for Inserting
+Visually Supported Inferences into Geographical Analysis Workflow:
+Application to Road Safety Research.” *Geographical Analysis* n/a (n/a).
+<https://doi.org/10.1111/gean.12338>.
 
 </div>
 
