@@ -553,6 +553,27 @@ od_to_pubs_result %>%
 
 <!--# FR: would be good to include a comment to close the section - perhaps on how we see the package being developed or suggest that the next sections provide this vision -->
 
+In the future we would like to see SIM development becoming as pain-free
+and intuitive as possible. We hope to see new open source SIM software
+projects being developed to reduce the ‘barrier to entry’ to SIMs.
+Building SIM software as part of popular languages for data science such
+as R, Python or Julia enables reproducibility, and access to a large
+ecosystem, as part of the SIM development process.
+
+In terms of the `simodels` package briefly introduced in this section,
+it is early days (the package was first published on CRAN in June 2022).
+It has been tested on substantial input datasets and can certainly
+enable SIMs to be developed, tested, and refined rapidly. In the future,
+we would like to add pre-existing SIM models, for example a
+`si_gravity()` function to provide a basic gravity model without having
+to specify the functional form as we did above, to the package. Over
+time, we would like to implement many such functions, perhaps a step
+towards realising Alan Wilson’s vision of a ‘family’ of SIMs in open
+source software (Wilson 1971). More broadly, the project is open source
+and in that spirit of collaboration will evolve organically
+(Franco-Bedoya et al. 2017); we encourage contributions and ideas on the
+project’s issue tracker.[^3]
+
 ## 3.2 Capturing Heterogeneity
 
 We argue that research on SIMs should seek to adopt and adapt modelling
@@ -817,6 +838,14 @@ the Parameters of Spatial Interaction Models.” *Geographical Analysis*
 
 </div>
 
+<div id="ref-franco-bedoya_open_2017" class="csl-entry">
+
+Franco-Bedoya, Oscar, David Ameller, Dolors Costal, and Xavier Franch.
+2017. “Open Source Software Ecosystems: A Systematic Mapping.”
+*Information and Software Technology* 91: 160185.
+
+</div>
+
 <div id="ref-graells-garrido2021" class="csl-entry">
 
 Graells-Garrido, Eduardo, Feliu Serra-Burriel, Francisco Rowe, Fernando
@@ -1049,3 +1078,5 @@ https://doi.org/<https://doi.org/10.1068/a030001>.
 [^2]: the primary motivation was the need to develop SIMs to represent
     trips for non-commuting or non-school purposes in Ireland as part of
     a contract with Transport Infrastructure Ireland.
+
+[^3]: <https://github.com/Robinlovelace/simodels/issues>
