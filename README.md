@@ -106,19 +106,20 @@ effect of origins and attractive force of destinations, to capture local
 economic, political, cultural and social differences across origins and
 destination, and recognise propulsive and attractive effects at play in
 both origins and destinations. Third, measures of spatial separation
-have also been sophisticated to more appropriately reflect the
-geographical, physiological and financial distance and costs between
-origins and destinations (Schwartz 1973), as well as the system of road
-networks
-
-![\`\<!--# Ref  --\>\`{=html}](https://latex.codecogs.com/png.image?%5Cdpi%7B110%7D&space;%5Cbg_white&space;%60%3C%21--%23%20Ref%20%20--%3E%60%7B%3Dhtml%7D "`<!--# Ref  -->`{=html}")
-
-and the spatial distribution of human settlements (Niedomysl et al.
-2017). Fourth, considerable methodological work has been done to
-conceptualise and operationalise the influence of spatial structure in
-SIMs (Oshan 2021). Five generalisable approaches have been proposed to
-account for spatial structure in distinctive ways: the competing
-destination model by including an accessibility measure (A. S.
+have also been refined to more appropriately reflect the geographical,
+physiological and financial distance and costs between origins and
+destinations (Schwartz 1973). It is now much easier to calculate route
+distances on road networks thanks to routing engines and interfaces to
+routing engines from languages in which SIMs can be developed Morgan et
+al. (2019). Many innovations are possible thanks to new datasets, for
+example the use of night-time light intensity to estimate the spatial
+distribution of human settlements (Niedomysl et al. 2017), and the use
+of aggregated datasets derived from social media sources to train SIMs
+(Lovelace et al. 2014). Fourth, considerable methodological work has
+been done to conceptualise and operationalise the influence of spatial
+structure in SIMs (Oshan 2021). Fifth, generalisable approaches have
+been proposed to account for spatial structure in distinctive ways: the
+competing destination model by including an accessibility measure (A. S.
 Fotheringham 1983); the Box–Cox transform by using a Box–Cox functional
 form of distance
 
@@ -385,21 +386,34 @@ are important elements to develop an ecosystem that fosters reproducible
 SIMs, provides adequate training and facilitate the application of SIMs.
 We believe that an essential building block in this ecosystem is
 user-friendly, efficient, open source software. Partly motivated by this
-chapter, we have developed the `simodels`[^1] *R* package. [^2] Below we
-present a reproducible example . `simodels` enables to develop SIMs
-taking geographic data sets as an input in a few lines of code . To
-install the package, run :
-
-``` r
-install.packages("simodels")
-```
+chapter, we have developed the `simodels`[^1] *R* package (Lovelace and
+Nowosad 2022). [^2] Below we present a reproducible example . `simodels`
+enables the rapid develop of SIMs — starting from basic geographic
+datasets as the key input — in comparatively few lines of code .
 
 `simodels` does not just provide functions for running and fitting
 (finding parameters to minimise model-observation differences). It
 provides a framework for developing SIMs and creating new functions
 implementing different types of SIM and using a variety of pre-existing
-modelling tools in SIMs. We will also install `tidyverse` for intuitive
-data processing functionality and load the packages:
+modelling tools in SIMs. We aim to expand the functionality of the
+package building on the foundations presented below.
+
+The first step to using the package and reproducing the minimal results
+shown below is to install R and an appropriate integrated development
+environment such as RStudio. After starting RStudio for the first time,
+you can get started with SIMs in a statistical programming environment
+that has strong support geographic visualisation (as we will see in the
+visualisations in this section) and modelling capabilities. The first
+step in this reproducible example is to install the package by entering
+and running the following command into the R console:
+
+``` r
+install.packages("simodels")
+```
+
+We will also install `tidyverse` for intuitive data processing
+functionality (Grolemund and Wickham 2016). Load the packages as
+follows:
 
 ``` r
 install.packages("tidyverse")
@@ -810,6 +824,13 @@ Edited by Wenjia Zhang. *PLOS ONE* 16 (5): e0250080.
 
 </div>
 
+<div id="ref-grolemund_data_2016" class="csl-entry">
+
+Grolemund, Garrett, and Hadley Wickham. 2016. *R for Data Science*. 1
+edition. O’Reilly Media.
+
+</div>
+
 <div id="ref-harrison2018" class="csl-entry">
 
 Harrison, Xavier A., Lynda Donaldson, Maria Eugenia Correa-Cano, Julian
@@ -838,10 +859,34 @@ for Understanding Regional Retail Flows.” *Geographical Analysis* 48
 
 </div>
 
+<div id="ref-lovelace_geotagged_2014" class="csl-entry">
+
+Lovelace, Robin, Nick Malleson, Kirk Harland, and Mark Birkin. 2014.
+“Geotagged Tweets to Inform a Spatial Interaction Model: A Case Study of
+Museums.” *Arxiv Working Paper*.
+
+</div>
+
+<div id="ref-lovelace_simodels_2022" class="csl-entry">
+
+Lovelace, Robin, and Jakub Nowosad. 2022. “Simodels: Flexible Framework
+for Developing Spatial Interaction Models.”
+<https://CRAN.R-project.org/package=simodels>.
+
+</div>
+
 <div id="ref-mcfadden1974analysis" class="csl-entry">
 
 McFadden, D. 1974. *Analysis of Qualitative Choice Behavior. Zarembka,
 p.(ed.): Frontiers in Econometrics*. Academic Press. New York, NY.
+
+</div>
+
+<div id="ref-morgan_opentripplanner_2019" class="csl-entry">
+
+Morgan, Malcolm, Marcus Young, Robin Lovelace, and Layik Hama. 2019.
+“OpenTripPlanner for R.” *Journal of Open Source Software* 4 (44): 1926.
+<https://doi.org/10.21105/joss.01926>.
 
 </div>
 
@@ -912,6 +957,15 @@ Pappalardo, Luca, Filippo Simini, Salvatore Rinzivillo, Dino Pedreschi,
 Fosca Giannotti, and Albert-László Barabási. 2015. “Returners and
 Explorers Dichotomy in Human Mobility.” *Nature Communications* 6 (1).
 <https://doi.org/10.1038/ncomms9166>.
+
+</div>
+
+<div id="ref-pereira2021" class="csl-entry">
+
+Pereira, Rafael H. M., Marcus Saraiva, Daniel Herszenhut, Carlos Kaue
+Vieira Braga, and Matthew Wigginton Conway. 2021. “R5r: Rapid Realistic
+Routing on Multimodal Transport Networks with R<sup>5</sup> in R.”
+*Findings*, March, 21262. <https://doi.org/10.32866/001c.21262>.
 
 </div>
 

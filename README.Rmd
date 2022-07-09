@@ -1,13 +1,12 @@
 ---
 # For GH version:
-# output: bookdown::github_document2
-# For pdf version:
+output: bookdown::github_document2
 
-# output: bookdown::github_document2
-output:
-  bookdown::pdf_document2:
-    template: template.tex
-    keep_tex: true
+# For pdf version:
+# output:
+#   bookdown::pdf_document2:
+#     template: template.tex
+#     keep_tex: true
     
 # Editor options (for visual mode)
 editor_options:
@@ -79,9 +78,10 @@ SIMs were originally conceptualised as a mathematical formulation to represent o
 Field-specific theories have been used to extend and develop the fundamental structure of SIMs to understand retail, trade, transport, communication, migration and mobility patterns.
 Second, more sophisticated measures to capture the influence of origins and destinations have been developed.
 The specification of SIMs has moved away from relying on population size to approximate the propulsive effect of origins and attractive force of destinations, to capture local economic, political, cultural and social differences across origins and destination, and recognise propulsive and attractive effects at play in both origins and destinations.
-Third, measures of spatial separation have also been sophisticated to more appropriately reflect the geographical, physiological and financial distance and costs between origins and destinations [@schwartz1973interpreting], as well as the system of road networks [<!--# Ref  -->] and the spatial distribution of human settlements [@niedomysl2017].
+Third, measures of spatial separation have also been refined to more appropriately reflect the geographical, physiological and financial distance and costs between origins and destinations [@schwartz1973interpreting]. It is now much easier to calculate route distances on road networks thanks to routing engines and interfaces to routing engines from languages in which SIMs can be developed [@pereira2021, @morgan_opentripplanner_2019].
+Many innovations are possible thanks to new datasets, for example the use of night-time light intensity to estimate the spatial distribution of human settlements [@niedomysl2017], and the use of aggregated datasets derived from social media sources to train SIMs [@lovelace_geotagged_2014].
 Fourth, considerable methodological work has been done to conceptualise and operationalise the influence of spatial structure in SIMs [@oshan2021spatial].
-Five generalisable approaches have been proposed to account for spatial structure in distinctive ways: the competing destination model by including an accessibility measure [@fotheringham1983]; the Box--Cox transform by using a Box--Cox functional form of distance [<!--# Ref: Tiefelsdorf  -->]; spatial choice modelling by accounting for destination alternative substitution patterns [@hunt2004]; spatial econometric modelling [<!--# Ref: Bolduc / LeSage and Pace -->]; and eigenvector spatial filtering by incorporating spatial dependence or spatial autocorrelation [<!--# Ref: Griffith -->].
+Fifth, generalisable approaches have been proposed to account for spatial structure in distinctive ways: the competing destination model by including an accessibility measure [@fotheringham1983]; the Box--Cox transform by using a Box--Cox functional form of distance [<!--# Ref: Tiefelsdorf  -->]; spatial choice modelling by accounting for destination alternative substitution patterns [@hunt2004]; spatial econometric modelling [<!--# Ref: Bolduc / LeSage and Pace -->]; and eigenvector spatial filtering by incorporating spatial dependence or spatial autocorrelation [<!--# Ref: Griffith -->].
 Fifth, frameworks to calibrate SIMs have evolved.
 Early methods of calibration comprised linear programming and non-linear optimization.
 Regression methods have now become prominent evolving from linear log-normal model formulations using ordinary least squares (OLS) and maximum likelihood estimation procedures, through generalised linear frameworks using iteratively reweighted least squares (IWLS), especially Poisson and Negative Binomial distributions [<!--# Ref: Flowrew -->], to more sophisticated multilevel and discrete choice models to capture origin-, destination- or origin-destination-specific parameters [<!--# Ref-->].
@@ -198,19 +198,25 @@ This section will describe the areas which should be developed to address the id
 Developing the essential infrastructure is key to enhance the reproducibility and facilitate the calibration of SIMs.
 Software, open science and digital technology (i.e. computational notebooks and Docker) are important elements to develop an ecosystem that fosters reproducible SIMs, provides adequate training and facilitate the application of SIMs.
 We believe that an essential building block in this ecosystem is user-friendly, efficient, open source software.
-Partly motivated by this chapter, we have developed the `simodels`[^1] *R* package.
+Partly motivated by this chapter, we have developed the `simodels`[^1] *R* package [@lovelace_simodels_2022].
 [^2] Below we present a reproducible example
-. `simodels` enables to develop SIMs taking geographic data sets as an input in a few lines of code
-. To install the package, run
-:
+. `simodels` enables the rapid develop of SIMs --- starting from basic geographic datasets as the key input --- in comparatively few lines of code
+.
+
+`simodels` does not just provide functions for running and fitting (finding parameters to minimise model-observation differences).
+It provides a framework for developing SIMs and creating new functions implementing different types of SIM and using a variety of pre-existing modelling tools in SIMs.
+We aim to expand the functionality of the package building on the foundations presented below.
+
+The first step to using the package and reproducing the minimal results shown below is to install R and an appropriate integrated development environment such as RStudio.
+After starting RStudio for the first time, you can get started with SIMs in a statistical programming environment that has strong support geographic visualisation (as we will see in the visualisations in this section) and modelling capabilities.
+The first step in this reproducible example is to install the package by entering and running the following command into the R console:
 
 ```{r, eval=FALSE}
 install.packages("simodels")
 ```
 
-`simodels` does not just provide functions for running and fitting (finding parameters to minimise model-observation differences).
-It provides a framework for developing SIMs and creating new functions implementing different types of SIM and using a variety of pre-existing modelling tools in SIMs.
-We will also install `tidyverse` for intuitive data processing functionality and load the packages:
+We will also install `tidyverse` for intuitive data processing functionality [@grolemund_data_2016].
+Load the packages as follows:
 
 ```{r, eval=FALSE}
 install.packages("tidyverse")
