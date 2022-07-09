@@ -477,7 +477,8 @@ nrow(od_zones_to_points)
 names(od_zones_to_points)
 ```
 
-As shown in the output above, the result is a data frame with 94 rows,
+`si_to_od()` creates an ‘OD matrix’ represented in long form. As shown
+in the output above, the result is a data frame with 94 rows,
 representing the full combination of trips from each of the 47 origin
 zones to each of the 2 destinations. The names in the data frame refer
 to variables for origin and destination locations. When working on large
@@ -488,8 +489,8 @@ rows. To reduce data set sizes, a ‘sparse matrix’ representing only OD
 pairs below a certain distance threshold can be created by adding a
 `max_dist` argument as shown below. The maximum Euclidean distance
 between zone centroids and point destinations needs to be set, at 5 km
-in this example. Note \`si_to_od\` will expect Euclidean distance to be
-provided in the origin-destination data set.
+in this example. Note: `si_to_od()` calculates Euclidean between the
+full combination of origins and destinations automatically.
 
 ``` r
 od_zones_to_points = si_to_od(origin_zones, 
