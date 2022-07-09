@@ -203,9 +203,10 @@ SIMs were originally conceptualised as a mathematical formulation to represent o
 Field-specific theories have been used to extend and develop the fundamental structure of SIMs to understand retail, trade, transport, communication, migration and mobility patterns.
 Second, more sophisticated measures to capture the influence of origins and destinations have been developed.
 The specification of SIMs has moved away from relying on population size to approximate the propulsive effect of origins and attractive force of destinations, to capture local economic, political, cultural and social differences across origins and destination, and recognise propulsive and attractive effects at play in both origins and destinations.
-Third, measures of spatial separation have also been sophisticated to more appropriately reflect the geographical, physiological and financial distance and costs between origins and destinations (Schwartz 1973), as well as the system of road networks {[}{]} and the spatial distribution of human settlements (Niedomysl et al. 2017).
+Third, measures of spatial separation have also been refined to more appropriately reflect the geographical, physiological and financial distance and costs between origins and destinations (Schwartz 1973). It is now much easier to calculate route distances on road networks thanks to routing engines and interfaces to routing engines from languages in which SIMs can be developed Morgan et al. (2019).
+Many innovations are possible thanks to new datasets, for example the use of night-time light intensity to estimate the spatial distribution of human settlements (Niedomysl et al. 2017), and the use of aggregated datasets derived from social media sources to train SIMs (Lovelace et al. 2014).
 Fourth, considerable methodological work has been done to conceptualise and operationalise the influence of spatial structure in SIMs (Oshan 2021).
-Five generalisable approaches have been proposed to account for spatial structure in distinctive ways: the competing destination model by including an accessibility measure (A. S. Fotheringham 1983); the Box--Cox transform by using a Box--Cox functional form of distance {[}{]}; spatial choice modelling by accounting for destination alternative substitution patterns (Hunt, Boots, and Kanaroglou 2004); spatial econometric modelling {[}{]}; and eigenvector spatial filtering by incorporating spatial dependence or spatial autocorrelation {[}{]}.
+Fifth, generalisable approaches have been proposed to account for spatial structure in distinctive ways: the competing destination model by including an accessibility measure (A. S. Fotheringham 1983); the Box--Cox transform by using a Box--Cox functional form of distance {[}{]}; spatial choice modelling by accounting for destination alternative substitution patterns (Hunt, Boots, and Kanaroglou 2004); spatial econometric modelling {[}{]}; and eigenvector spatial filtering by incorporating spatial dependence or spatial autocorrelation {[}{]}.
 Fifth, frameworks to calibrate SIMs have evolved.
 Early methods of calibration comprised linear programming and non-linear optimization.
 Regression methods have now become prominent evolving from linear log-normal model formulations using ordinary least squares (OLS) and maximum likelihood estimation procedures, through generalised linear frameworks using iteratively reweighted least squares (IWLS), especially Poisson and Negative Binomial distributions {[}{]}, to more sophisticated multilevel and discrete choice models to capture origin-, destination- or origin-destination-specific parameters {[}{]}.
@@ -328,11 +329,18 @@ This section will describe the areas which should be developed to address the id
 Developing the essential infrastructure is key to enhance the reproducibility and facilitate the calibration of SIMs.
 Software, open science and digital technology (i.e.~computational notebooks and Docker) are important elements to develop an ecosystem that fosters reproducible SIMs, provides adequate training and facilitate the application of SIMs.
 We believe that an essential building block in this ecosystem is user-friendly, efficient, open source software.
-Partly motivated by this chapter, we have developed the \texttt{simodels}\footnote{short for spatial interaction models} \emph{R} package.
+Partly motivated by this chapter, we have developed the \texttt{simodels}\footnote{short for spatial interaction models} \emph{R} package (Lovelace and Nowosad 2022).
 \footnote{the primary motivation was the need to develop SIMs to represent trips for non-commuting or non-school purposes in Ireland as part of a contract with Transport Infrastructure Ireland.} Below we present a reproducible example
-. \texttt{simodels} enables to develop SIMs taking geographic data sets as an input in a few lines of code
-. To install the package, run
-:
+. \texttt{simodels} enables the rapid develop of SIMs --- starting from basic geographic datasets as the key input --- in comparatively few lines of code
+.
+
+\texttt{simodels} does not just provide functions for running and fitting (finding parameters to minimise model-observation differences).
+It provides a framework for developing SIMs and creating new functions implementing different types of SIM and using a variety of pre-existing modelling tools in SIMs.
+We aim to expand the functionality of the package building on the foundations presented below.
+
+The first step to using the package and reproducing the minimal results shown below is to install R and an appropriate integrated development environment such as RStudio.
+After starting RStudio for the first time, you can get started with SIMs in a statistical programming environment that has strong support geographic visualisation (as we will see in the visualisations in this section) and modelling capabilities.
+The first step in this reproducible example is to install the package by entering and running the following command into the R console:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -340,9 +348,8 @@ Partly motivated by this chapter, we have developed the \texttt{simodels}\footno
 \end{Highlighting}
 \end{Shaded}
 
-\texttt{simodels} does not just provide functions for running and fitting (finding parameters to minimise model-observation differences).
-It provides a framework for developing SIMs and creating new functions implementing different types of SIM and using a variety of pre-existing modelling tools in SIMs.
-We will also install \texttt{tidyverse} for intuitive data processing functionality and load the packages:
+We will also install \texttt{tidyverse} for intuitive data processing functionality (Grolemund and Wickham 2016).
+Load the packages as follows:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -358,24 +365,9 @@ We will also install \texttt{tidyverse} for intuitive data processing functional
 \end{Shaded}
 
 The starting `point' is geographic entities representing trip start, end (for `multi-partite' models) or intermediate points.
-We use the word `features' because almost all SIMs use input data sets that are compliant with the `simple features' open specification ((OGC) Open Geospatial Consortium Inc 2011), typically imported from files encoded in proprietary the Shapefile (\texttt{.shp}) or open GeoPackage (\texttt{.gpkg}), GeoJSON (\texttt{.geojson}) or other geographic file formats.
-\emph{R} has a mature ecosystem for working with geographic file formats, so we can use the \texttt{sf} package:
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{u\_origins }\OtherTok{=} \StringTok{"origin\_zones.geojson"}
-\NormalTok{f\_origins }\OtherTok{=} \FunctionTok{basename}\NormalTok{(u\_origins)}
-\NormalTok{u\_destinations }\OtherTok{=} \StringTok{"destination\_points.geojson"}
-\NormalTok{f\_destinations }\OtherTok{=} \FunctionTok{basename}\NormalTok{(u\_destinations)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{download.file}\NormalTok{(u\_origins, }\AttributeTok{destfile =}\NormalTok{ f\_origins)}
-\FunctionTok{download.file}\NormalTok{(u\_destinations, }\AttributeTok{destfile =}\NormalTok{ f\_destinations)}
-\end{Highlighting}
-\end{Shaded}
+We use the word `features' --- meaning geographic vector entities (points, lines, polygons) --- with reference to the `simple features' standard defined by the Open Geospatial Consortium ((OGC) Open Geospatial Consortium Inc 2011).
+Almost all SIMs use points and polygons as the basis of origins and destinations and raster datasets can be represented as simple features.
+Such geographic features, and associated attributes (e.g.~a column named \texttt{population} representing the population of each administrative zone) can be imported from standard spatial vector data formats such as Shapefiles (\texttt{.shp}) GeoPackage (\texttt{.gpkg}) and GeoJSON (\texttt{.geojson}) files with the \texttt{sf} package:
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -384,8 +376,17 @@ We use the word `features' because almost all SIMs use input data sets that are 
 \end{Highlighting}
 \end{Shaded}
 
-The code chunk above demonstrates importing specific data objects : 1) a simple features object with `multipolygon' geometries representing administrative zones that constitute trip origins; and, 2) a simple features object with `point' geometries representing two popular pubs in Leeds as trip destinations.
-Before creating SIMs representing travel to these two pubs in Leeds, we first perform some exploratory data analysis (EDA) to illustrate the input data.
+The code chunk above imports two data objects:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi})}
+\item
+  A simple features object with `multipolygon' geometries representing administrative zones that constitute trip origins (\texttt{origin\_zones}).
+\item
+  A simple features object with `point' geometries representing two popular pubs in Leeds as trip destinations (\texttt{destination\_points}).
+\end{enumerate}
+
+Before creating SIMs representing travel to these two pubs in Leeds, we first perform some exploratory data analysis (EDA) to illustrate the input data (Beecham and Lovelace 2022):
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -412,12 +413,13 @@ For many applications, the most important function in the \texttt{simodels} pack
 \end{Highlighting}
 \end{Shaded}
 
+\texttt{si\_to\_od()} creates an `OD matrix' represented in long form.
 As shown in the output above, the result is a data frame with 94 rows, representing the full combination of trips from each of the 47 origin zones to each of the 2 destinations.
 The names in the data frame refer to variables for origin and destination locations.
 When working on large input data sets, the `full matrix' of combinations can get unhelpfully large: an OD dataset from every MSOA to every pub in England, for example, would results in a data set with 350,000,000 (350 million) rows.
 To reduce data set sizes, a `sparse matrix' representing only OD pairs below a certain distance threshold can be created by adding a \texttt{max\_dist} argument as shown below.
 The maximum Euclidean distance between zone centroids and point destinations needs to be set, at 5 km in this example.
-Note `si\_to\_od` will expect Euclidean distance to be provided in the origin-destination data set.
+Note: \texttt{si\_to\_od()} calculates Euclidean between the full combination of origins and destinations automatically.
 
 \begin{Shaded}
 \begin{Highlighting}[]
@@ -428,7 +430,7 @@ Note `si\_to\_od` will expect Euclidean distance to be provided in the origin-de
 \end{Shaded}
 
 The resulting origin-destination data set is smaller (79 rows compared with 94 rows previously).
-While in the existing example this does lead to a major reduction, this process can greatly speed-up SIM processing, modelling and visualisation run times dealing with large data sets.
+While is not a major reduction, the process can greatly speed-up SIM processing, modelling and visualisation run times dealing with large data sets, tackling issues outlined in Section \ref{big-data-modelling}.
 
 We can now specify a simple SIM model as follows:
 
@@ -485,6 +487,16 @@ We can visualise the result as follows, resulting in Figure \ref{fig:pubresmap}:
 \begin{figure}
 \includegraphics[width=0.8\linewidth]{README_files/figure-latex/pubresmap-1} \caption{Results of a reproducible SIM undertaken on a minimal example based on synthetic data representing hypothetical trips to 2 pubs in Leeds, UK.}\label{fig:pubresmap}
 \end{figure}
+
+In the future we would like to see SIM development becoming as pain-free and intuitive as possible.
+We hope to see new open source SIM software projects being developed to reduce the `barrier to entry' to SIMs.
+Building SIM software as part of popular languages for data science such as R, Python or Julia enables reproducibility, and access to a large ecosystem, as part of the SIM development process.
+
+In terms of the \texttt{simodels} package briefly introduced in this section, it is early days (the package was first published on CRAN in June 2022).
+It has been tested on substantial input datasets and can certainly enable SIMs to be developed, tested, and refined rapidly.
+In the future, we would like to add pre-existing SIM models, for example a \texttt{si\_gravity()} function to provide a basic gravity model without having to specify the functional form as we did above, to the package.
+Over time, we would like to implement many such functions, perhaps a step towards realising Alan Wilson's vision of a `family' of SIMs in open source software (Wilson 1971).
+More broadly, the project is open source and in that spirit of collaboration will evolve organically (Franco-Bedoya et al. 2017); we encourage contributions and ideas on the project's issue tracker.\footnote{\url{https://github.com/Robinlovelace/simodels/issues}}
 
 \hypertarget{capturing-heterogeneity}{%
 \subsection{Capturing Heterogeneity}\label{capturing-heterogeneity}}
@@ -596,6 +608,9 @@ Amrhein, Valentin, Sander Greenland, and Blake McShane. 2019. {``Scientists Rise
 \leavevmode\vadjust pre{\hypertarget{ref-arribas-bel2021}{}}%
 Arribas-Bel, Dani, Mark Green, Francisco Rowe, and Alex Singleton. 2021. {``Open Data Products-A Framework for Creating Valuable Analysis Ready Data.''} \emph{Journal of Geographical Systems} 23 (4): 497--514. \url{https://doi.org/10.1007/s10109-021-00363-5}.
 
+\leavevmode\vadjust pre{\hypertarget{ref-beecham_framework_2022}{}}%
+Beecham, Roger, and Robin Lovelace. 2022. {``A Framework for Inserting Visually Supported Inferences into Geographical Analysis Workflow: Application to Road Safety Research.''} \emph{Geographical Analysis} n/a (n/a). \url{https://doi.org/10.1111/gean.12338}.
+
 \leavevmode\vadjust pre{\hypertarget{ref-brunsdon2016}{}}%
 Brunsdon, Chris. 2016. {``Quantitative Methods I.''} \emph{Progress in Human Geography} 40 (5): 687--96. \url{https://doi.org/10.1177/0309132515599625}.
 
@@ -611,8 +626,14 @@ Fotheringham, A S. 1983. {``A New Set of Spatial-Interaction Models: The Theory 
 \leavevmode\vadjust pre{\hypertarget{ref-fotheringham_spatial_1980}{}}%
 Fotheringham, A. Stewart, and M. J. Webber. 1980. {``Spatial {Structure} and the {Parameters} of {Spatial} {Interaction} {Models}.''} \emph{Geographical Analysis} 12 (1): 33--46. \url{https://doi.org/10.1111/j.1538-4632.1980.tb00016.x}.
 
+\leavevmode\vadjust pre{\hypertarget{ref-franco-bedoya_open_2017}{}}%
+Franco-Bedoya, Oscar, David Ameller, Dolors Costal, and Xavier Franch. 2017. {``Open Source Software Ecosystems: A Systematic Mapping.''} \emph{Information and Software Technology} 91: 160185.
+
 \leavevmode\vadjust pre{\hypertarget{ref-graells-garrido2021}{}}%
 Graells-Garrido, Eduardo, Feliu Serra-Burriel, Francisco Rowe, Fernando M. Cucchietti, and Patricio Reyes. 2021. {``A City of Cities: Measuring How 15-Minutes Urban Accessibility Shapes Human Mobility in Barcelona.''} Edited by Wenjia Zhang. \emph{PLOS ONE} 16 (5): e0250080. \url{https://doi.org/10.1371/journal.pone.0250080}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-grolemund_data_2016}{}}%
+Grolemund, Garrett, and Hadley Wickham. 2016. \emph{R for Data Science}. 1 edition. O'Reilly Media.
 
 \leavevmode\vadjust pre{\hypertarget{ref-harrison2018}{}}%
 Harrison, Xavier A., Lynda Donaldson, Maria Eugenia Correa-Cano, Julian Evans, David N. Fisher, Cecily E. D. Goodwin, Beth S. Robinson, David J. Hodgson, and Richard Inger. 2018. {``A Brief Introduction to Mixed Effects Modelling and Multi-Model Inference in Ecology.''} \emph{PeerJ} 6 (May): e4794. \url{https://doi.org/10.7717/peerj.4794}.
@@ -623,8 +644,17 @@ Hunt, Len M., Barry Boots, and Pavios S. Kanaroglou. 2004. {``Spatial Choice Mod
 \leavevmode\vadjust pre{\hypertarget{ref-lovelace_big_2016}{}}%
 Lovelace, Robin, Mark Birkin, Philip Cross, and Martin Clarke. 2016. {``From Big Noise to Big Data: Toward the Verification of Large Data Sets for Understanding Regional Retail Flows.''} \emph{Geographical Analysis} 48 (1): 59--81. \url{https://doi.org/10.1111/gean.12081}.
 
+\leavevmode\vadjust pre{\hypertarget{ref-lovelace_geotagged_2014}{}}%
+Lovelace, Robin, Nick Malleson, Kirk Harland, and Mark Birkin. 2014. {``Geotagged Tweets to Inform a Spatial Interaction Model: A Case Study of Museums.''} \emph{Arxiv Working Paper}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-lovelace_simodels_2022}{}}%
+Lovelace, Robin, and Jakub Nowosad. 2022. {``Simodels: Flexible Framework for Developing Spatial Interaction Models.''} \url{https://CRAN.R-project.org/package=simodels}.
+
 \leavevmode\vadjust pre{\hypertarget{ref-mcfadden1974analysis}{}}%
 McFadden, D. 1974. \emph{Analysis of Qualitative Choice Behavior. Zarembka, p.(ed.): Frontiers in Econometrics}. Academic Press. New York, NY.
+
+\leavevmode\vadjust pre{\hypertarget{ref-morgan_opentripplanner_2019}{}}%
+Morgan, Malcolm, Marcus Young, Robin Lovelace, and Layik Hama. 2019. {``OpenTripPlanner for R.''} \emph{Journal of Open Source Software} 4 (44): 1926. \url{https://doi.org/10.21105/joss.01926}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-niedomysl2017}{}}%
 Niedomysl, Thomas, Ola Hall, Maria Francisca Archila Bustos, and Ulf Ernstson. 2017. {``Using Satellite Data on Nighttime Lights Intensity to Estimate Contemporary Human Migration Distances.''} \emph{Annals of the American Association of Geographers} 107 (3): 591--605. \url{https://doi.org/10.1080/24694452.2016.1270191}.
@@ -649,6 +679,9 @@ Oshan, Taylor M. 2016. {``A Primer for Working with the Spatial Interaction Mode
 
 \leavevmode\vadjust pre{\hypertarget{ref-pappalardo2015}{}}%
 Pappalardo, Luca, Filippo Simini, Salvatore Rinzivillo, Dino Pedreschi, Fosca Giannotti, and Albert-László Barabási. 2015. {``Returners and Explorers Dichotomy in Human Mobility.''} \emph{Nature Communications} 6 (1). \url{https://doi.org/10.1038/ncomms9166}.
+
+\leavevmode\vadjust pre{\hypertarget{ref-pereira2021}{}}%
+Pereira, Rafael H. M., Marcus Saraiva, Daniel Herszenhut, Carlos Kaue Vieira Braga, and Matthew Wigginton Conway. 2021. {``R5r: Rapid Realistic Routing on Multimodal Transport Networks with R{\textsuperscript{5}} in R.''} \emph{Findings}, March, 21262. \url{https://doi.org/10.32866/001c.21262}.
 
 \leavevmode\vadjust pre{\hypertarget{ref-popper_logic_1934}{}}%
 Popper, Karl. 1934. \emph{The Logic of Scientific Discovery}. Hutchinson. \url{http://books.google.com/books?id=MdvaSAAACAAJ\&pgis=1}.

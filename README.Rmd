@@ -1,12 +1,12 @@
 ---
 # For GH version:
-output: bookdown::github_document2
+# output: bookdown::github_document2
 
 # For pdf version:
-# output:
-#   bookdown::pdf_document2:
-#     template: template.tex
-#     keep_tex: true
+output:
+  bookdown::pdf_document2:
+    template: template.tex
+    keep_tex: true
     
 # Editor options (for visual mode)
 editor_options:
@@ -268,9 +268,9 @@ destination_points = sf::read_sf("destination_points.geojson")
 
 The code chunk above imports two data objects: <!--# FR: It may be a good idea to explain the structure of the input spatial flow data as to whether the `simodels` requires a data file organised in a certain way i.e. origin-destination matrix format or can handle alternative structures ie. long data formats with origin-destination pairs as rows. Answer: there is not input flow data here: the OD matrix is calculated internally with the `si_to_od()` function. Will clarify! (RL)  -->
 
-1) A simple features object with 'multipolygon' geometries representing administrative zones that constitute trip origins (`origin_zones`).
+1)  A simple features object with 'multipolygon' geometries representing administrative zones that constitute trip origins (`origin_zones`).
 
-2) A simple features object with 'point' geometries representing two popular pubs in Leeds as trip destinations (`destination_points`).
+2)  A simple features object with 'point' geometries representing two popular pubs in Leeds as trip destinations (`destination_points`).
 
 Before creating SIMs representing travel to these two pubs in Leeds, we first perform some exploratory data analysis (EDA) to illustrate the input data [@beecham_framework_2022]:
 
