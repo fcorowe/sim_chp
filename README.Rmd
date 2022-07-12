@@ -44,11 +44,7 @@ Characteristics of origins and destinations are used to represent gravitational 
 
 SIMs have been applied in a wide range of contexts to support data analysis and decision making in retail, transport, housing, epidemiology, public health, land use, urban and population modelling and planning projection and forecasting contexts.
 SIMs are generally used for two key purposes: prediction and inference.
-The *prediction* of the size and direction of spatial flows has been used to predict the impact of new service units, such as shopping stores, healthcare facilities and housing units on the potential demand for associated services and traffic patterns.
-Predictions from such analyses enable the identification of optimal locations and size for potential new service units.
-A second key purpose of SIMs is *inference* about the factors shaping the spatial interactions in a network of flows.
-SIMs have been used to determine and understand the influence of retail store on consumers' store choices and place attributes on migration decisions and commuting patterns.
-SIMs have also been used to delineate geographical areas of service and retail catchment areas.
+The *prediction* of the size and direction of spatial flows has been used to predict the impact of new service units, such as shopping stores, healthcare facilities and housing units on the potential demand for associated services and traffic patterns [e.g. @fotheringham_okelly1989]. Predictions from such analyses enable the identification of optimal locations and size for potential new service units. A second key purpose of SIMs is *inference* about the factors shaping the spatial interactions in a network of flows. SIMs have been used to determine and understand the influence of retail store on consumers' store choices and place attributes on migration decisions and commuting patterns [e.g. @rowe2022urban]. SIMs have also been used to delineate geographical areas of service and retail catchment areas [e.g. @reilly1929methods].
 
 Formally SIMs take different forms.
 Newtonian gravity models are probably the most widely known and used form of spatial interaction models in social sciences.
@@ -78,13 +74,12 @@ SIMs were originally conceptualised as a mathematical formulation to represent o
 Field-specific theories have been used to extend and develop the fundamental structure of SIMs to understand retail, trade, transport, communication, migration and mobility patterns.
 Second, more sophisticated measures to capture the influence of origins and destinations have been developed.
 The specification of SIMs has moved away from relying on population size to approximate the propulsive effect of origins and attractive force of destinations, to capture local economic, political, cultural and social differences across origins and destination, and recognise propulsive and attractive effects at play in both origins and destinations.
-Third, measures of spatial separation have also been refined to more appropriately reflect the geographical, physiological and financial distance and costs between origins and destinations [@schwartz1973interpreting]. It is now much easier to calculate route distances on road networks thanks to routing engines and interfaces to routing engines from languages in which SIMs can be developed [@pereira2021, @morgan_opentripplanner_2019].
-Many innovations are possible thanks to new datasets, for example the use of night-time light intensity to estimate the spatial distribution of human settlements [@niedomysl2017], and the use of aggregated datasets derived from social media sources to train SIMs [@lovelace_geotagged_2014].
+Third, measures of spatial separation have been refined to more appropriately reflect the geographical, psychological and financial distance and costs between origins and destinations [@schwartz1973interpreting]. Route distances on road networks are easier to compute via routing engines and interfaces [@pereira2021, @morgan_opentripplanner_2019] and distances between human settlements can be more precisely estimate based on satellite imagery [@niedomysl2017].
 Fourth, considerable methodological work has been done to conceptualise and operationalise the influence of spatial structure in SIMs [@oshan2021spatial].
-Fifth, generalisable approaches have been proposed to account for spatial structure in distinctive ways: the competing destination model by including an accessibility measure [@fotheringham1983]; the Box--Cox transform by using a Box--Cox functional form of distance [<!--# Ref: Tiefelsdorf  -->]; spatial choice modelling by accounting for destination alternative substitution patterns [@hunt2004]; spatial econometric modelling [<!--# Ref: Bolduc / LeSage and Pace -->]; and eigenvector spatial filtering by incorporating spatial dependence or spatial autocorrelation [<!--# Ref: Griffith -->].
+Five generalisable approaches have been proposed to account for spatial structure in distinctive ways: competing destination models by including an accessibility measure [@fotheringham1983]; Box--Cox transformations by using a Box--Cox functional form of distance [@tiefelsdorf2003]; spatial choice modelling by accounting for destination alternative substitution patterns [@hunt2004]; spatial econometric modelling [@lesage2008] and eigenvector spatial filtering [@chun2011] by incorporating spatial dependence or spatial autocorrelation.
 Fifth, frameworks to calibrate SIMs have evolved.
 Early methods of calibration comprised linear programming and non-linear optimization.
-Regression methods have now become prominent evolving from linear log-normal model formulations using ordinary least squares (OLS) and maximum likelihood estimation procedures, through generalised linear frameworks using iteratively reweighted least squares (IWLS), especially Poisson and Negative Binomial distributions [<!--# Ref: Flowrew -->], to more sophisticated multilevel and discrete choice models to capture origin-, destination- or origin-destination-specific parameters [<!--# Ref-->].
+Regression methods have now become prominent evolving from linear log-normal model formulations using ordinary least squares (OLS) and maximum likelihood estimation procedures, through generalised linear frameworks using iteratively reweighted least squares (IWLS), especially Poisson and Negative Binomial distributions [@flowerdew_method_1982], to more sophisticated multilevel and discrete choice models to capture origin-, destination- or origin-destination-specific parameters [@davies2001].
 Sixth, alternative frameworks of spatial interaction modelling have been developed to incorporate different ways of conceptualising the decision-making process of choosing a destination location.
 The radiation [@simini_universal_2012], exploration and preferential return [@pappalardo2015] and random utility models [@mcfadden1974analysis] have become prominent frameworks to model spatial flows, particularly human mobility flows.
 
@@ -94,29 +89,30 @@ We believe that addressing these challenges are key to facilitate the applicatio
 
 # Challenges
 
-In this section, we want to describe why the areas identified are seen as challenges and in which ways.
+In this section, we describe why the areas identified above are seen as key challenges.
 
 ## Reproducibility
 
 Reproducibility of SIMs has not been a prominent area of attention in past research.
-Replicating most SIM application would certainly be a challenge.
-Such situation is unfortunate as it is likely to have limited the applicability and portability of sophisticated frameworks to estimate SIMs and capture the effects of spatial structure on spatial flows.
-In fact many sophisticated SIMs have been developed to capture the effects of spatial structure on spatial flows, but the accessibility and applicability of such models remained limited.
+Replicating most SIM applications would certainly be a challenge.
+Such situation is unfortunate as this may have limited the applicability and portability of sophisticated frameworks to estimate SIMs and capture the effects of spatial structure on spatial flows.
+In fact, many sophisticated SIMs have been developed to capture the effects of spatial structure on spatial flows, but the accessibility and applicability of such models remained limited.
 Arguably even the application of basic formulations of SIMs tends to represent a daunting challenge for beginning modelers of spatial flow data.
 The lack of reproducibility as a standard research practice has tended to generate "black box" data analyses, preventing the validation, verification and comparability of SIM estimates.
 
-Understandably, reproducibility was not concern during the 1970s and 1980s, when significant progress was made on developing SIMs.
+Understandably, reproducibility was not a concern during the 1970s and 1980s, when significant progress was made on developing SIMs.
 Computer hardware, software and know-how needed to develop and deploy SIMs were unavailable to most people.
 Even when consumer laptops became widely available and more affordable during the 2000s, few well-known user-friendly off-the-shelf options to implement SIMs existed.
 Yet, today, computer software and hardware are highly affordable and learning computing programming has become increasingly accessible.
 With the advent of open science, resources to learn computer programming in popular data science languages, such as *R* and *Python* have become widely available.
-Nevertheless, most SIM applications cannot still be reproduced.
+Nevertheless, most SIM applications can still not be reproduced.
 
 Yet, reproducibility of SIM estimates can yield key benefits for future research, impact and training .
-Reproducible research can boots citations and facilitate comparability of research results enabling the application of existing methods to a wide range of contexts [@brunsdon2016]. Reproducibility can also enhance accountability, validation and verification of research findings by increasing transparency [@popper_logic_1934, @brunsdon2016].
+Reproducible research can boots citations and facilitate comparability of research results enabling the application of existing methods to a wide range of contexts [@brunsdon2016].
+Reproducibility can also enhance accountability, validation and verification of research findings by increasing transparency [@brunsdon2016].
 By transparently sharing open data products, including reproducible code and input data [@arribas-bel2021], used in the analysis, results can be validated and lessons can be learnt from the limitations and strengths of the application of particular methods.
 Reproducible open products can also increase the portability of existing work.
-New research can build on existing code and data focusing on addressing new novel questions, and avoiding reinvention of wheels and associated waste of time.
+New research can build on existing code and data focusing on addressing novel questions, and avoiding reinvention of wheels.
 Reproducible work can facilitate the generation of updates as new data become available.
 Reproducible open data products can also be used as communication and impact strategy expanding the original purpose of research findings [@nust_practical_2021].
 Reproducible code and data can be used to provide educational training and enable practitioners to address policy questions which were not outside the scope of the original research project [@rowe2020].
@@ -124,34 +120,35 @@ Reproducible code and data can be used to provide educational training and enabl
 ## Calibration
 
 Calibration is at the centre of what makes spatial interaction models useful to researchers and practitioners.
-As [@openshaw_theoretical_1975] describes it, "calibration is the process of providing estimates of the unknown parameters we have identified as the independent variables of the model." In a basic gravity SIM formulation, we seek to estimate three parameters - as identified above - relating to origin mass, destination mass and a parameter determining the frictional effect of spatial separation between origins and destinations.
-These parameters reveal information about our system of interest - for example, how costly physical separation distances are to interaction.
+As @openshaw_theoretical_1975 describes it, "calibration is the process of providing estimates of the unknown parameters we have identified as the independent variables of the model." In a basic gravity formulation, we seek to estimate three parameters - as identified above - relating to origin mass, destination mass and a parameter determining the frictional effect of spatial separation between origins and destinations.
+These parameters reveal information about our system of interest.
 
 Yet, we identified key challenges relating to the calibration of SIMs.
 Calibration requires both data and software.
-Forty or fifty years ago when many of the theoretical foundations of spatial interaction modelling were laid, the data landscape was somewhat different from today -- spatial flow data were rarely available in volume and certainly not at the sort of temporal rhythm they are now where, for example, supermarket loyalty-card holders generate origin/destination revenue flow data from residential origins to store destinations at daily frequencies over time periods than can cover many years or even decades.
+Forty or fifty years ago when many of the theoretical foundations of spatial interaction modelling were laid, the data landscape was somewhat different from today -- spatial flow data were rarely available in volume and certainly not at the sort of temporal rhythm they are now.
+Supermarket loyalty-card holders generate origin/destination revenue flow data from residential origins to store destinations at daily frequencies over time periods that can cover many years or even decades.
 As such, we might be forgiven for expecting that even if the science and theory underpinning the models has not developed very much, the software and processes facilitating calibration -- relating empirical observations to the theoretical representations embodied in the models -- might have.
 But in many ways, they have not.
 Today spatial flow data are ubiquitous.
 They can be derived from digital traces collected across various sensor networks involving mobile phones, social media, loyalty cards, smart card tickets and credit cards.
 Accessing interaction data is thus not the barrier it once was.
 
-Yet, making sense of these data -- understanding where commuting flows are unexpected, or differences in customer profiles shopping at similar retail stores -- remains a challenge.
+Yet, making sense of these data remains a challenge.
 Much of the challenge is because there is a dearth of knowledge within geographical education.
 Despite SIMs underpinning many social and geographical processes, these models are not taught to undergraduate geography students in the same way as, say, regression models are taught to economists or social psychologists.
 As such, it is not immediately obvious, even for those with geography degrees, how anyone might go about fitting their spatial flow data to a theoretical model, calibrating the parameters and revealing properties of their system.
 But, why have cohorts of undergraduate geography students not been taught how to fit these models and explore systems of spatial interaction?
 
 Accessibility seems to represent an obstacle for the wider applicability of SIMs.
-We discussed issues around reproducibility challenging the practical application of SIMs, but that with packages like `SPINT` [@oshan2016] and our own efforts with the `simodels` package in *R* (see Section \@ref(enabling-infrastructure), the tide is beginning to turn.
+We discussed issues around reproducibility challenging the practical application of SIMs, but that with packages like `SPINT` [@oshan2016] and our own efforts with the `simodels` package in *R* (see Section \@ref(enabling-infrastructure)), the tide is beginning to turn.
 Yet, calibration remains a challenging sub-topic for reproducibility and wider accessibility of these models, particularly where algorithms which are able to calibrate parameters have remained locked away - either behind dense algebraic notation in dusty papers from the 1970s, or where they have found their way into commercial software, behind paywalls.
 
-Ironically, effective enough calibration routines have been available for as long as students have been running regression models in their introductory statistics classes.
-Occasional references can be found in the historic literature (e.g. [@fotheringham_spatial_1980]; [@flowerdew_method_1982]) which lift the curtain and reveal that through reformulating the classic Wilsonian entropy maximising spatial interaction model as either a logged OLS regression model or a GLM utilising Poisson or negative binomial distributions, multiple parameters can be calibrated easily.
+Ironically, effective calibration routines have been available for as long as students have been running regression models in their introductory statistics classes.
+Occasional references can be found in the historic literature [e.g. @fotheringham_spatial_1980; @flowerdew_method_1982] which lift the curtain and reveal that through reformulating the classic Wilsonian entropy maximising spatial interaction model as either a logged OLS regression model or a GLM utilising Poisson or negative binomial distributions, multiple parameters can be calibrated easily.
 These models are all available in common statistical software packages; but for most trying to make sense of the field coming across papers by some of the doyens (for it was and still is a male-dominated field) of the scene, practical expediency is often sacrificed at the alter of theoretical or technical prowess.
 And even then, while undoubtedly mathematically and theoretically rigorous, notes on calibration can be presented either as passing reference to 'least squares' or worse a lengthy derivation of maximum likelihood or Newton Raphson methods with no practical middle ground to assist novices in running a model.
 
-## Big Data modelling <!--# 450 words -->
+## Big Data modelling
 
 As argued above, new technologies have enabled the emergence of 'Big Data' through the production and storage of large volumes of digital data.
 Much of these data contain location information and hence offer an opportunity to derive spatial flow data and understand spatial interactions between places.
@@ -163,8 +160,8 @@ Validation techniques and model/aggregate-data comparisons can help overcome the
 Limited research has focused on explicitly capturing patterns of non-stationarity in spatial interaction modelling despite the availability of suitable methods [@oshan2021spatial].
 While the issues of calibration discussed in Section \@ref(calibration) may have represented a barrier, lack of large enough data sets may have also hindered progress.
 Before the emergence of Big Data, the most common form of spatial flow data were cross-sections of origin-destination matrices derived from censuses or surveys, offering information at coarse geographical scales and population subgroups.
-The rise of data now offers more granular and denser volumes of data to capture patterns of spatial, temporal and population non-stationarity.
-The adoption and adaption of more sophisticated modelling frameworks will thus be required to effectively model these patterns.
+The rise of data now offers more granular and denser volumes of data to capture previously unrepresented patterns of spatial, temporal and population non-stationarity.
+The adoption and adaption of more sophisticated modelling frameworks will thus be required to effectively uncover these patterns.
 
 Big Data also represent challenges for statistical inference.
 An standard practice in social sciences is to be guided by *P* values.
@@ -174,42 +171,43 @@ Such situation aligns with more general calls for a stop to the use of P values 
 Additionally, Big Data offer an opportunity to embrace causal inference approaches.
 Reliance on cross-sectional data hindered the wide adoption of causal inference approaches to study the determinants of spatial interactions.
 Big Data now provides large, detailed longitudinal data sets to track spatial interactions and establish cause-and-effect relationships.
-Obtaining suitable time-varying data on relevant factors believed to shape the dynamics of spatial interactions may remain an obstacle.
+Though, obtaining suitable time-varying data on relevant factors believed to shape the dynamics of spatial interactions may remain an obstacle.
 While data may be available, spatial integration of data may not be possible because of ethical considerations and data governance issues.
 
 New methods are also required to handle, analyse and store large data sets.
 Traditional SIM frameworks were designed to identify significant relationships in small sample sizes with known properties.
 Big data are not collected for research purposes.
-They are an unintended consequence of administrative processes or social interactions and need to be reengineered for research.
-Handling Big Data requires a wider and new digital skills set, largely based on machine learning and artificial intelligence (ML/AI) and coding, in addition to greater knowledge of computing technology (e.g. Jupyter notebooks, Github and Docker) as well as scalability and parallelisation approaches.
+They are an unintended consequence of administrative processes or social interactions and need to be reengineered for research [@rowe2021] .
+Handling Big Data requires a wider and new digital skills set, largely based on machine learning and artificial intelligence (ML/AI) and coding, in addition to greater knowledge of computing technology (e.g.computational notebooks, Github and Docker) as well as scalability and parallelisation approaches.
 Except for a few centres, current university geography programmes and infrastructures are largely unprepared to deliver the required training.
 A multidisciplinary approach is needed to integrate computational training into human geography.
 ML/AI are likely to enhance prediction outcomes generated from SIMs.
 The idea of using ML/AI to model spatial interactions is not new, but the application has been limited due to the lack of large data sets.
 ML/AI are data hungry, requiring millions of data for effective training and validation.
-The rise of data provide an opportunity to promote the wider adoption of these models.
+The rise of data provides an opportunity to promote the wider adoption of these models.
 
 # The Way Forward
 
-This section will describe the areas which should be developed to address the identified challenges.
+This section describes the areas which, we argue, should be developed to address the identified challenges.
 
-## Enabling Infrastructure <!--# 450 words -->
+## Enabling Infrastructure
 
 Developing the essential infrastructure is key to enhance the reproducibility and facilitate the calibration of SIMs.
-Software, open science and digital technology (i.e. computational notebooks and Docker) are important elements to develop an ecosystem that fosters reproducible SIMs, provides adequate training and facilitate the application of SIMs.
+Software, open science and digital technology are important elements to develop an ecosystem that fosters reproducible SIMs, provides adequate training and facilitates the application of SIMs.
 We believe that an essential building block in this ecosystem is user-friendly, efficient, open source software.
-Partly motivated by this chapter, we have developed the `simodels`[^1] *R* package [@lovelace_simodels_2022].
+Partly motivated by this chapter, we have developed the `simodels`[^1] *R* package [@lovelace_simodels_2022] .
 [^2] Below we present a reproducible example
-. `simodels` enables the rapid develop of SIMs --- starting from basic geographic datasets as the key input --- in comparatively few lines of code
+. `simodels` enables the rapid develop of SIMs --- starting from basic geographic data sets as the key input --- in comparatively few lines of code
 .
 
-`simodels` does not just provide functions for running and fitting (finding parameters to minimise model-observation differences).
+[^1]: Short for spatial interaction models
+
+[^2]: The primary motivation was the need to develop SIMs to represent trips for non-commuting or non-school purposes in Ireland as part of a contract with Transport Infrastructure Ireland.
+
+`simodels` does not just provide functions for running and calibrating SIM parameters.
 It provides a framework for developing SIMs and creating new functions implementing different types of SIM and using a variety of pre-existing modelling tools in SIMs.
 We aim to expand the functionality of the package building on the foundations presented below.
-
-The first step to using the package and reproducing the minimal results shown below is to install R and an appropriate integrated development environment such as RStudio.
-After starting RStudio for the first time, you can get started with SIMs in a statistical programming environment that has strong support geographic visualisation (as we will see in the visualisations in this section) and modelling capabilities.
-The first step in this reproducible example is to install the package by entering and running the following command into the R console:
+The first step is to install the package by entering and running the following command into the R console:
 
 ```{r, eval=FALSE}
 install.packages("simodels")
@@ -228,7 +226,7 @@ library(tidyverse)
 ```
 
 The starting 'point' is geographic entities representing trip start, end (for 'multi-partite' models) or intermediate points.
-We use the word 'features' --- meaning geographic vector entities (points, lines, polygons) --- with reference to the 'simple features' standard defined by the Open Geospatial Consortium [@ogcopengeospatialconsortiuminc_opengis_2011].
+We use the word 'features' --- meaning geographic vector entities (points, lines, polygons) --- with reference to the 'simple features' standard defined by the Open Geospatial Consortium [-@ogcopengeospatialconsortiuminc_opengis_2011].
 Almost all SIMs use points and polygons as the basis of origins and destinations and raster datasets can be represented as simple features.
 Such geographic features, and associated attributes (e.g. a column named `population` representing the population of each administrative zone) can be imported from standard spatial vector data formats such as Shapefiles (`.shp`) GeoPackage (`.gpkg`) and GeoJSON (`.geojson`) files with the `sf` package:
 
@@ -266,7 +264,7 @@ origin_zones = sf::read_sf("origin_zones.geojson")
 destination_points = sf::read_sf("destination_points.geojson")
 ```
 
-The code chunk above imports two data objects: <!--# FR: It may be a good idea to explain the structure of the input spatial flow data as to whether the `simodels` requires a data file organised in a certain way i.e. origin-destination matrix format or can handle alternative structures ie. long data formats with origin-destination pairs as rows. Answer: there is not input flow data here: the OD matrix is calculated internally with the `si_to_od()` function. Will clarify! (RL)  -->
+The code chunk above imports two data objects:
 
 1)  A simple features object with 'multipolygon' geometries representing administrative zones that constitute trip origins (`origin_zones`).
 
@@ -301,8 +299,8 @@ names(od_zones_to_points)
 `si_to_od()` creates an 'OD matrix' represented in long form.
 As shown in the output above, the result is a data frame with 94 rows, representing the full combination of trips from each of the 47 origin zones to each of the 2 destinations.
 The names in the data frame refer to variables for origin and destination locations.
-When working on large input data sets, the 'full matrix' of combinations can get unhelpfully large: an OD dataset from every MSOA to every pub in England, for example, would results in a data set with `r format(7000 * 50000, big.mark = ",", scientific = FALSE)` (350 million) rows.
-To reduce data set sizes, a 'sparse matrix' representing only OD pairs below a certain distance threshold can be created by adding a `max_dist` argument as shown below.
+When working on large input data sets, the 'full matrix' of combinations can get unhelpfully large: an OD dataset from every MSOA to every pub in England, for example, would result in a data set with `r format(7000 * 50000, big.mark = ",", scientific = FALSE)` (350 million) rows.
+To reduce data set size, a 'sparse matrix' representing only OD pairs below a certain distance threshold can be created by adding a `max_dist` argument as shown below.
 The maximum Euclidean distance between zone centroids and point destinations needs to be set, at 5 km in this example.
 Note: `si_to_od()` calculates Euclidean between the full combination of origins and destinations automatically.
 
@@ -313,7 +311,7 @@ od_zones_to_points = si_to_od(origin_zones,
 ```
 
 The resulting origin-destination data set is smaller (79 rows compared with 94 rows previously).
-While is not a major reduction, the process can greatly speed-up SIM processing, modelling and visualisation run times dealing with large data sets, tackling issues outlined in Section \@ref(big-data-modelling).
+While it does not lead to a major reduction in our example, the process can greatly speed-up SIM processing, modelling and visualisation run times dealing with large data sets, tackling issues outlined in Section \@ref(big-data-modelling).
 
 We can now specify a simple SIM model as follows:
 
@@ -343,7 +341,7 @@ sum(origin_zones$to_pubs)
 ```
 
 As shown above, the total number of trips is the same in the OD data as in the zone level data.
-We can visualise the result as follows, resulting in Figure \@ref(fig:pubresmap):
+We can visualise the result using `ggplot` - see Figure \@ref(fig:pubresmap).
 
 ```{r pubresmap, message=FALSE, out.width="80%", fig.cap="Results of a reproducible SIM undertaken on a minimal example based on synthetic data representing hypothetical trips to 2 pubs in Leeds, UK."}
 library(ggspatial)
@@ -364,17 +362,17 @@ od_to_pubs_result %>%
   geom_point(aes(distance_euclidean, interaction, colour = D))
 ```
 
-<!--# FR: would be good to include a comment to close the section - perhaps on how we see the package being developed or suggest that the next sections provide this vision -->
-
 In the future we would like to see SIM development becoming as pain-free and intuitive as possible.
 We hope to see new open source SIM software projects being developed to reduce the 'barrier to entry' to SIMs.
 Building SIM software as part of popular languages for data science such as R, Python or Julia enables reproducibility, and access to a large ecosystem, as part of the SIM development process.
 
-In terms of the `simodels` package briefly introduced in this section, it is early days (the package was first published on CRAN in June 2022).
+In terms of the `simodels` package briefly introduced in this section, we are at early days (the package was first published on CRAN in June 2022).
 It has been tested on substantial input datasets and can certainly enable SIMs to be developed, tested, and refined rapidly.
-In the future, we would like to add pre-existing SIM models, for example a `si_gravity()` function to provide a basic gravity model without having to specify the functional form as we did above, to the package.
+In the future, we would like to add pre-existing SIM models, for example, a `si_gravity()` function to provide a basic gravity model without having to specify the functional form as we did above, to the package.
 Over time, we would like to implement many such functions, perhaps a step towards realising Alan Wilson's vision of a 'family' of SIMs in open source software [@wilson_family_1971].
 More broadly, the project is open source and in that spirit of collaboration will evolve organically [@franco-bedoya_open_2017]; we encourage contributions and ideas on the project's issue tracker.[^3]
+
+[^3]: <https://github.com/Robinlovelace/simodels/issues>
 
 ## Capturing Heterogeneity
 
@@ -383,8 +381,8 @@ This line of enquiry involves calibrating models to estimate separate parameters
 Such parameters can reflect local, temporal and population variations in the relationships producing spatial flows.
 Inference based on a set of global model parameters may lead to draw misleading conclusions due to misrepresentations of local-, temporal- and population-specific trends.
 
-Yet, as noted above, limited progress has been made on capturing these patterns of non-stationarity [@oshan2021spatial].
-Existing approaches have been proposed to capture spatial-nonstationarity.
+Yet, as noted above, limited progress has been made on capturing these patterns of non-stationarity [\@oshan2021spatial].
+Existing approaches have been proposed to capture spatial non-stationarity.
 An approach involves subsetting the overall data set into origin- or destination-specific data sets and calibrate individual models for each data set.
 An alternative approach is to include interaction terms between a binary categorical variable identifying an origin or destination, and each of the relevant covariates in a regression model.
 A third alternative is to use geographically weighted regressions (GWRs) to capture spatial non-stationarity [@graells-garrido2021], but the extension of these models to calibrate spatial flow count data is challenging.
@@ -395,17 +393,17 @@ In such scenarios, using appropriate count distributions is recommended [@ohara2
 We propose generalised linear mixed models (GLMMs) as a more flexible modelling framework to capture all three sources of non-stationarity based on appropriate count data distributions.
 GLMMs extend GLMs to incorporate a combination of random and fixed effects parameters as predictor variables, and accommodate non-continuous responses, such as binary and count responses.
 Fixed effects represent a typical covariate and are typically used to capture "global" average patterns.
-Random effects are represented by categorical variables encoding some grouping unit, and can be used to estimate the extent of variations between and within groping units.
+Random effects are represented by categorical variables encoding some grouping unit, and can be used to estimate the extent of variations between and within grouping units.
 Random effects are flexible, and in SIMs, units could comprise groups or individual origins, destinations, origin-destination pairs, time intervals or population subgroups to capture spatial, temporal and population variations in spatial flows.
-Unlike GWRs, the flexibility of GLMMs provides an opportunity selectively capture patterns of non-stationarity in relationships with a selected group of theoretically- or policy-relevant variables.
-In addition to flexibility, random effects can aid to correct statistical inference about fixed "global" effects by providing an estimation of variable in the response variables within and between groups.
+Unlike GWRs, the flexibility of GLMMs provides an opportunity to selectively capture patterns of non-stationarity in relationships with a selected group of theoretically- or policy-relevant variables.
+In addition to flexibility, random effects can aid to correct statistical inference about fixed "global" effects by providing an estimation of variables in the response variable within and between groups.
 They can also reduce the probability of Type I error and Type I error [@harrison2018].
 GLMMs can also be used to explicitly model spatial and temporal auto-correlation.
 
 Yet, challenges exist in applying GLMMs.
-First, GLMMs make additional assumptions about the data to those made in standard statistical approaches and they need to be tested [<!--# Ref -->].
+First, GLMMs make additional assumptions about the data to those made in standard statistical approaches and they need to be tested [@harrison2018].
 Second, interpreting the model outputs from GLMMs correctly may be challenging, particularly estimates relating to variance components of random effects and correlations.
-Third, model selection is a challenge because of biases in model performance tests caused by the presence of random effects [<!--# Ref -->].
+Third, model selection is a challenge because of biases in model performance tests caused by the presence of random effects [@harrison2018].
 Guidelines for the implementation of GLMMs will therefore be needed to navegate these challenges and leverage the potential of these models to effectively account for non-stationarity in spatial flows.
 
 ## Enhancing Statistical Inference
@@ -414,19 +412,19 @@ We argue new ways of approaching statistical inference in SIMs.
 First, we call for a careful use of the concept of statistical significance.
 As highlighted in Section \@ref(big-data-modelling), dichotomising estimates into 'statistically significant' and 'statistically non-significant' is unhelpful and can lead to draw misleading conclusions, particularly for models relying on large data sets as the full set of estimates in such models can render *P* values below 0.05.
 An approach is embracing uncertainty, and re-conceptualing confidence intervals as 'compatibility intervals' can provide a practical solution [@amrhein2019].
-This shifts the focus to all values inside the interval and to the fact that singling out a single point estimate may not be appropriate to draw broad conclusions about the factors underpining spatial flows.
+This shifts the focus to all values inside the interval and to the fact that emphasising a single point estimate may not be appropriate to draw broad conclusions about the factors underpinning spatial flows.
 
 Second, we argue for greater use of causal inferential approaches.
 Big Data now offers an unprecedented temporal frequency to capture spatial interactions in very short time frames, and understand the sequence of events to distinguish causes and consequences of these interactions.
 Identifying these causal-effect relationships is key to understand the impact of interventions and inform the development of policies aiming at generating a desired outcome.
 Inference statistical approaches are widely used in other social science disciplines, but these practices have not permeated through geography.
 Causal inference on spatial processes faces additional challenges, such as spatial dependence, spatial heterogeneity and spatial effects [@akbari2021].
-So, while adopting causal inference methods to analyse spatial interactions may not be straightforward, we believe that is a valuable endeavor to inform the design of future policy interventions.
+So, while adopting causal inference methods to analyse spatial interactions may not be straightforward, we believe that it is a valuable endeavor to inform the design of future policy interventions.
 
 Third, we propose the use of multi-model inference.
 Intuitively, multi-model inference seeks to draw conclusions from a range of theoretically-sound model specifications [@modelse2004].
 It uses model averaging to determine the direction and strength of regression predictors, and enables the generation of Akaike Information Criterion based weights from multiple models to assess the relative importance of predictors in an outcome.
-As such, inferences are not drawn from a single model, leading to more robust inferences, and offers an alternative approach to evaluate the importance of predictors that does not depend on statistical significance dicothomy.
+As such, inferences are not drawn from a single model, leading to more robust inferences, and offers an alternative approach to evaluate the importance of predictors that does not depend on statistical significance dichotomy.
 Additionally determining the relevance of factors shaping spatial flows based on multi-model inference offers an additional alternative to make inference in the context of SIMs and Big Data.
 Multi-model inference has been rarely applied to capture spatial interactions [@rowe2013].
 Yet, it is widely used in biology and ecology, and various routines exist in *R* which can be integrated with `simodels`.
@@ -434,12 +432,12 @@ Yet, it is widely used in biology and ecology, and various routines exist in *R*
 ## Integrating Data Science
 
 New methods and tools are needed to engineer and calibrate SIMs using large data sets.
-In agreement with @singleton2019, we recognise that the value of data science approaches to enable the calibration of SIMs on large data sets.
+In agreement with [@singleton2019, we recognise that the value of data science approaches to enable the calibration of SIMs on large data sets.
 We propose that data science can be beneficial on three key fronts.
 First, a key challenge is the storage, manipulation and analysis of large volumes of data.
 Large data sets cannot generally be stored and analysed on a computer's local memory.
 Traditional approaches relying on local memory capacity to calibrate SIMs are therefore sub-optimal.
-Adoption of data science approaches to Big Data storage, scalability, high performance computing and parallel computing.
+Adoption of data science approaches to Big Data storage, scalability, high performance computing and parallel computing are required.
 Training and infrastructure to integrate these approaches are needed to enable researchers to unlock the opportunities afforded by Big Data, understanding spatial interactions in real-time or near real-time at more detailed temporal and spatial granularity.
 
 Second, we propose the use of ML/AI to enhance the prediction capacity of SIMs.
@@ -457,7 +455,7 @@ Many causal methods use prediction to generate instruments or counterfactuals in
 Thus the fundamental problem of causal inference is the existence of a perfect analogue of out-of-sample performance for causal models, since counterfactual quantities are never observed.
 ML/AI models can be used to derive "better" counterfactuals and enhance inference on causality.
 At the same time, ML/AI can help scale causal effect estimation methods to SIMs based on high-dimensional data and unstructured data.
-ML/AI thus offers an opportunity to build accurate decision-support systems that estimate effect of interventions on spatial flows.
+ML/AI thus offers an opportunity to build accurate decision-support systems that estimate the effect of interventions on spatial flows.
 
 # The future of spatial interaction modelling
 
@@ -468,9 +466,3 @@ Despite considerable progress over the past fifty years, we identified key chall
 We identified four areas of future development to tackle these challenges: (1) to enable essential infrastructure to facilitate the training, calibration and reproducibility of SIMs; (2) to embrace modelling frameworks to capture spatial, temporal and population heterogeneity; (3) to enhance statistical inference to accommodate Big Data analysis; and, (4) to integrate data science approaches to enhance SIM-generated predictions and statistical inference.
 
 # References
-
-[^1]: short for spatial interaction models
-
-[^2]: the primary motivation was the need to develop SIMs to represent trips for non-commuting or non-school purposes in Ireland as part of a contract with Transport Infrastructure Ireland.
-
-[^3]: <https://github.com/Robinlovelace/simodels/issues>
