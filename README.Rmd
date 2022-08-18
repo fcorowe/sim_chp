@@ -164,7 +164,7 @@ The rise of data now offers more granular and denser volumes of data to capture 
 The adoption and adaption of more sophisticated modelling frameworks will thus be required to effectively uncover these patterns.
 
 Big Data also represent challenges for statistical inference.
-An standard practice in social sciences is to be guided by *P* values.
+A standard practice in social sciences is to be guided by *P* values.
 Regression model estimates with *P* values below 0.05 threshold are commonly considered statistically significant and thus these estimates take central stage in most analyses.
 Modelling estimates derived from large data sets, however, often render *P* values below this threshold, calling for the adoption of alternative approaches.
 Such situation aligns with more general calls for a stop to the use of P values in the conventional, dichotomous way - to decide whether a result supports or refutes a scientific hypothesis.
