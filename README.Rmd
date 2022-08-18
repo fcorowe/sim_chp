@@ -51,7 +51,7 @@ Gravity models are probably the most widely known and used form of spatial inter
 Adapted from physics, the basic gravity model assumes that the interactions $T_{i j}$ between an origin $i$ and a destination $j$ in the form of flows can be understood as a function of driving forces like masses $V_{i}$ and $W_{j}$ , and a measure of spatial separation $c_{ij}$ .
 Areas are assumed to interact in a positively reinforcing way that is multiplicative of their masses, and at the same time their interactions are expected to diminish with the intervening role of spatial separation.
 Spatial separation is generally measured by distance, cost or time involved in the interaction, and is often represented by a distance-decay function.
-In human systems the model generally also incorporates a $k$ constant ensuring that expected flows do not exceed observed totals, and $\beta$ parameter representing the deterring effect of spatial separation, or distance.
+In human systems the model generally also incorporates a constant (typically called $k$) ensuring that expected flows do not exceed observed totals, and $\beta$ parameter representing the deterring effect of spatial separation, or distance.
 The key task in a gravity model is to estimate these parameters (i.e. $k$ and $\beta$ ).
 A typical notation for the model is:
 
