@@ -381,7 +381,7 @@ This line of enquiry involves calibrating models to estimate separate parameters
 Such parameters can reflect local, temporal and population variations in the relationships producing spatial flows.
 Inference based on a set of global model parameters may lead to draw misleading conclusions due to misrepresentations of local-, temporal- and population-specific trends.
 
-Yet, as noted above, limited progress has been made on capturing these patterns of non-stationarity [\@oshan2021spatial].
+Yet, as noted above, limited progress has been made on capturing these patterns of non-stationarity [@oshan2021spatial].
 Existing approaches have been proposed to capture spatial non-stationarity.
 An approach involves subsetting the overall data set into origin- or destination-specific data sets and calibrate individual models for each data set.
 An alternative approach is to include interaction terms between a binary categorical variable identifying an origin or destination, and each of the relevant covariates in a regression model.
