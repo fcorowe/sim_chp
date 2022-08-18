@@ -164,9 +164,9 @@ The rise of data now offers more granular and denser volumes of data to capture 
 The adoption and adaption of more sophisticated modelling frameworks will thus be required to effectively uncover these patterns.
 
 Big Data also represent challenges for statistical inference.
-A standard practice in social sciences is to be guided by *P* values.
-Regression model estimates with *P* values below 0.05 threshold are commonly considered statistically significant and thus these estimates take central stage in most analyses.
-Modelling estimates derived from large data sets, however, often render *P* values below this threshold, calling for the adoption of alternative approaches.
+A standard practice in social sciences is to be guided by *p* values.
+Regression model estimates with *p* values below 0.05 threshold are commonly considered statistically significant and thus these estimates take central stage in most analyses.
+Modelling estimates derived from large data sets, however, often render *p* values below this threshold, calling for the adoption of alternative approaches.
 Such situation aligns with more general calls for a stop to the use of P values in the conventional, dichotomous way - to decide whether a result supports or refutes a scientific hypothesis.
 Additionally, Big Data offer an opportunity to embrace causal inference approaches.
 Reliance on cross-sectional data hindered the wide adoption of causal inference approaches to study the determinants of spatial interactions.
@@ -410,7 +410,7 @@ Guidelines for the implementation of GLMMs will therefore be needed to navegate 
 
 We argue new ways of approaching statistical inference in SIMs.
 First, we call for a careful use of the concept of statistical significance.
-As highlighted in Section \@ref(big-data-modelling), dichotomising estimates into 'statistically significant' and 'statistically non-significant' is unhelpful and can lead to draw misleading conclusions, particularly for models relying on large data sets as the full set of estimates in such models can render *P* values below 0.05.
+As highlighted in Section \@ref(big-data-modelling), dichotomising estimates into 'statistically significant' and 'statistically non-significant' is unhelpful and can lead to draw misleading conclusions, particularly for models relying on large data sets as the full set of estimates in such models can render *p* values below 0.05.
 An approach is embracing uncertainty, and re-conceptualing confidence intervals as 'compatibility intervals' can provide a practical solution [@amrhein2019].
 This shifts the focus to all values inside the interval and to the fact that emphasising a single point estimate may not be appropriate to draw broad conclusions about the factors underpinning spatial flows.
 
