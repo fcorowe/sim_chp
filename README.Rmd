@@ -110,7 +110,7 @@ Nevertheless, most SIM applications can still not be reproduced.
 Yet, reproducibility of SIM estimates can yield key benefits for future research, impact and training .
 Reproducible research can boots citations and facilitate comparability of research results enabling the application of existing methods to a wide range of contexts [@brunsdon2016].
 Reproducibility can also enhance accountability, validation and verification of research findings by increasing transparency [@brunsdon2016].
-By transparently sharing open data products, including reproducible code and input data [@arribas-bel2021], used in the analysis, results can be validated and lessons can be learnt from the limitations and strengths of the application of particular methods.
+By transparently sharing open data products, including reproducible code and input data, [@arribas-bel2021] used in the analysis, results can be validated and lessons can be learnt from the limitations and strengths of the application of particular methods.
 Reproducible open products can also increase the portability of existing work.
 New research can build on existing code and data focusing on addressing novel questions, and avoiding reinvention of wheels.
 Reproducible work can facilitate the generation of updates as new data become available.
