@@ -304,7 +304,8 @@ Regression model estimates with \emph{p} values below 0.05 threshold are commonl
 Modelling estimates derived from large data sets, however, often render \emph{p} values below this threshold, calling for the adoption of alternative approaches.
 Such situation aligns with more general calls for a stop to the use of P values in the conventional, dichotomous way - to decide whether a result supports or refutes a scientific hypothesis.
 Additionally, Big Data offer an opportunity to embrace causal inference approaches.
-Reliance on cross-sectional data hindered the wide adoption of causal inference approaches to study the determinants of spatial interactions.
+As described above, a key purpose of SIM applications is to identify the individual or contextual factors that lead to the formation of or changes in the intensity and direction of spatial flow interactions.
+Yet, reliance on cross-sectional data hindered the wide adoption of causal inference approaches to study the determinants of spatial interactions as the timing of events cannot be identified or explicitly modelled.
 Big Data now provides large, detailed longitudinal data sets to track spatial interactions and establish cause-and-effect relationships.
 Though, obtaining suitable time-varying data on relevant factors believed to shape the dynamics of spatial interactions may remain an obstacle.
 While data may be available, spatial integration of data may not be possible because of ethical considerations and data governance issues.
@@ -488,10 +489,6 @@ We can visualise the result using \texttt{ggplot} - see Figure \ref{fig:pubresma
 \includegraphics[width=0.8\linewidth]{README_files/figure-latex/pubresmap-1} \caption{Results of a reproducible SIM undertaken on a minimal example based on synthetic data representing hypothetical trips to 2 pubs in Leeds, UK.}\label{fig:pubresmap}
 \end{figure}
 
-\begin{verbatim}
-#>   |                                                                              |                                                                      |   0%  |                                                                              |==================                                                    |  25%  |                                                                              |===================================                                   |  50%  |                                                                              |====================================================                  |  75%  |                                                                              |======================================================================| 100%
-\end{verbatim}
-
 In the future we would like to see SIM development becoming as pain-free and intuitive as possible.
 We hope to see new open source SIM software projects being developed to reduce the `barrier to entry' to SIMs.
 Building SIM software as part of popular languages for data science such as R, Python or Julia enables reproducibility, and access to a large ecosystem, as part of the SIM development process.
@@ -579,14 +576,13 @@ ML/AI models do not require a pre-defined functional specification.
 They have the ability to uncover complex structure in the data and are rapidly deployable requiring limited human intervention.
 In the context of SIMs, the promise is that ML/AI can uncover and accommodate complex functional forms capturing patterns of spatial and temporal dependence and non-stationarity (Rowe, Mahony, and Tao 2022).
 
-Third, ML/AI are also expected to enhance the ability of SIMs to help identify causal links.
+Third, ML/AI are also expected to enhance the ability of SIMs in identifying causal links.
 ML/AI-based methods are generally focused on prediction rather than understanding and establishing causal relationships.
 However, ML/AI models can be combined with causal inference to enhance the identification of cause-and-effect relationships.
 Many causal methods use prediction to generate instruments or counterfactuals in a first stage that can be employed in a second phase to produce ``more'' reliable estimates for statistical inference.
 Thus the fundamental problem of causal inference is the existence of a perfect analogue of out-of-sample performance for causal models, since counterfactual quantities are never observed.
 ML/AI models can be used to derive ``better'' counterfactuals and enhance inference on causality.
 At the same time, ML/AI can help scale causal effect estimation methods to SIMs based on high-dimensional data and unstructured data.
-To take an example, ML approaches can identify links between a wide range of explanatory variables and the amount of flow in large datasets, going beyond the focus on trip distances and `attractiveness' in traditional SIMs, that were developed before large datasets were available.
 ML/AI thus offers an opportunity to build accurate decision-support systems that estimate the effect of interventions on spatial flows.
 
 \hypertarget{the-future-of-spatial-interaction-modelling}{%
