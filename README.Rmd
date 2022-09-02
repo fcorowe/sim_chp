@@ -46,12 +46,12 @@ SIMs have been applied in a wide range of contexts to support data analysis and 
 SIMs are generally used for two key purposes: prediction and inference.
 The *prediction* of the size and direction of spatial flows has been used to predict the impact of new service units, such as shopping stores, healthcare facilities and housing units on the potential demand for associated services and traffic patterns [e.g. @fotheringham_okelly1989]. Predictions from such analyses enable the identification of optimal locations and size for potential new service units. A second key purpose of SIMs is *inference* about the factors shaping the spatial interactions in a network of flows. SIMs have been used to determine and understand the influence of retail store on consumers' store choices and place attributes on migration decisions and commuting patterns [e.g. @rowe2022urban]. SIMs have also been used to delineate geographical areas of service and retail catchment areas [e.g. @reilly1929methods].
 
-Formally SIMs take different forms.
-Newtonian gravity models are probably the most widely known and used form of spatial interaction models in social sciences.
+SIMs take a range of forms.
+Gravity models are probably the most widely known and used form of spatial interaction models in social sciences.
 Adapted from physics, the basic gravity model assumes that the interactions $T_{i j}$ between an origin $i$ and a destination $j$ in the form of flows can be understood as a function of driving forces like masses $V_{i}$ and $W_{j}$ , and a measure of spatial separation $c_{ij}$ .
 Areas are assumed to interact in a positively reinforcing way that is multiplicative of their masses, and at the same time their interactions are expected to diminish with the intervening role of spatial separation.
 Spatial separation is generally measured by distance, cost or time involved in the interaction, and is often represented by a distance-decay function.
-In human systems the model generally also incorporates a $k$ constant ensuring that expected flows do not exceed observed totals, and $\beta$ parameter representing the deterring effect of spatial separation, or distance.
+In human systems the model generally also incorporates a constant (typically called $k$) ensuring that expected flows do not exceed observed totals, and $\beta$ parameter representing the deterring effect of spatial separation, or distance.
 The key task in a gravity model is to estimate these parameters (i.e. $k$ and $\beta$ ).
 A typical notation for the model is:
 
@@ -74,7 +74,7 @@ SIMs were originally conceptualised as a mathematical formulation to represent o
 Field-specific theories have been used to extend and develop the fundamental structure of SIMs to understand retail, trade, transport, communication, migration and mobility patterns.
 Second, more sophisticated measures to capture the influence of origins and destinations have been developed.
 The specification of SIMs has moved away from relying on population size to approximate the propulsive effect of origins and attractive force of destinations, to capture local economic, political, cultural and social differences across origins and destination, and recognise propulsive and attractive effects at play in both origins and destinations.
-Third, measures of spatial separation have been refined to more appropriately reflect the geographical, psychological and financial distance and costs between origins and destinations [@schwartz1973interpreting]. Route distances on road networks are easier to compute via routing engines and interfaces [@pereira2021, @morgan_opentripplanner_2019] and distances between human settlements can be more precisely estimate based on satellite imagery [@niedomysl2017].
+Third, measures of spatial separation have been refined to more appropriately reflect the geographical, psychological and financial distance and costs between origins and destinations [@schwartz1973interpreting]. Route distances on road networks are easier to compute via routing engines and interfaces [@pereira2021, @morgan_opentripplanner_2019] and distances between human settlements can be more precisely estimated based on satellite imagery [@niedomysl2017].
 Fourth, considerable methodological work has been done to conceptualise and operationalise the influence of spatial structure in SIMs [@oshan2021spatial].
 Five generalisable approaches have been proposed to account for spatial structure in distinctive ways: competing destination models by including an accessibility measure [@fotheringham1983]; Box--Cox transformations by using a Box--Cox functional form of distance [@tiefelsdorf2003]; spatial choice modelling by accounting for destination alternative substitution patterns [@hunt2004]; spatial econometric modelling [@lesage2008] and eigenvector spatial filtering [@chun2011] by incorporating spatial dependence or spatial autocorrelation.
 Fifth, frameworks to calibrate SIMs have evolved.
@@ -110,7 +110,7 @@ Nevertheless, most SIM applications can still not be reproduced.
 Yet, reproducibility of SIM estimates can yield key benefits for future research, impact and training .
 Reproducible research can boots citations and facilitate comparability of research results enabling the application of existing methods to a wide range of contexts [@brunsdon2016].
 Reproducibility can also enhance accountability, validation and verification of research findings by increasing transparency [@brunsdon2016].
-By transparently sharing open data products, including reproducible code and input data [@arribas-bel2021], used in the analysis, results can be validated and lessons can be learnt from the limitations and strengths of the application of particular methods.
+By transparently sharing open data products, including reproducible code and input data, [@arribas-bel2021] used in the analysis, results can be validated and lessons can be learnt from the limitations and strengths of the application of particular methods.
 Reproducible open products can also increase the portability of existing work.
 New research can build on existing code and data focusing on addressing novel questions, and avoiding reinvention of wheels.
 Reproducible work can facilitate the generation of updates as new data become available.
@@ -164,9 +164,9 @@ The rise of data now offers more granular and denser volumes of data to capture 
 The adoption and adaption of more sophisticated modelling frameworks will thus be required to effectively uncover these patterns.
 
 Big Data also represent challenges for statistical inference.
-An standard practice in social sciences is to be guided by *P* values.
-Regression model estimates with *P* values below 0.05 threshold are commonly considered statistically significant and thus these estimates take central stage in most analyses.
-Modelling estimates derived from large data sets, however, often render *P* values below this threshold, calling for the adoption of alternative approaches.
+A standard practice in social sciences is to be guided by *p* values.
+Regression model estimates with *p* values below 0.05 threshold are commonly considered statistically significant and thus these estimates take central stage in most analyses.
+Modelling estimates derived from large data sets, however, often render *p* values below this threshold, calling for the adoption of alternative approaches.
 Such situation aligns with more general calls for a stop to the use of P values in the conventional, dichotomous way - to decide whether a result supports or refutes a scientific hypothesis.
 Additionally, Big Data offer an opportunity to embrace causal inference approaches.
 Reliance on cross-sectional data hindered the wide adoption of causal inference approaches to study the determinants of spatial interactions.
@@ -381,7 +381,7 @@ This line of enquiry involves calibrating models to estimate separate parameters
 Such parameters can reflect local, temporal and population variations in the relationships producing spatial flows.
 Inference based on a set of global model parameters may lead to draw misleading conclusions due to misrepresentations of local-, temporal- and population-specific trends.
 
-Yet, as noted above, limited progress has been made on capturing these patterns of non-stationarity [\@oshan2021spatial].
+Yet, as noted above, limited progress has been made on capturing these patterns of non-stationarity [@oshan2021spatial].
 Existing approaches have been proposed to capture spatial non-stationarity.
 An approach involves subsetting the overall data set into origin- or destination-specific data sets and calibrate individual models for each data set.
 An alternative approach is to include interaction terms between a binary categorical variable identifying an origin or destination, and each of the relevant covariates in a regression model.
@@ -410,7 +410,7 @@ Guidelines for the implementation of GLMMs will therefore be needed to navegate 
 
 We argue new ways of approaching statistical inference in SIMs.
 First, we call for a careful use of the concept of statistical significance.
-As highlighted in Section \@ref(big-data-modelling), dichotomising estimates into 'statistically significant' and 'statistically non-significant' is unhelpful and can lead to draw misleading conclusions, particularly for models relying on large data sets as the full set of estimates in such models can render *P* values below 0.05.
+As highlighted in Section \@ref(big-data-modelling), dichotomising estimates into 'statistically significant' and 'statistically non-significant' is unhelpful and can lead to draw misleading conclusions, particularly for models relying on large data sets as the full set of estimates in such models can render *p* values below 0.05.
 An approach is embracing uncertainty, and re-conceptualing confidence intervals as 'compatibility intervals' can provide a practical solution [@amrhein2019].
 This shifts the focus to all values inside the interval and to the fact that emphasising a single point estimate may not be appropriate to draw broad conclusions about the factors underpinning spatial flows.
 
@@ -432,7 +432,7 @@ Yet, it is widely used in biology and ecology, and various routines exist in *R*
 ## Integrating Data Science
 
 New methods and tools are needed to engineer and calibrate SIMs using large data sets.
-In agreement with [@singleton2019, we recognise that the value of data science approaches to enable the calibration of SIMs on large data sets.
+In agreement with @singleton2019, we recognise that the value of data science approaches to enable the calibration of SIMs on large data sets.
 We propose that data science can be beneficial on three key fronts.
 First, a key challenge is the storage, manipulation and analysis of large volumes of data.
 Large data sets cannot generally be stored and analysed on a computer's local memory.
@@ -448,13 +448,14 @@ ML/AI models do not require a pre-defined functional specification.
 They have the ability to uncover complex structure in the data and are rapidly deployable requiring limited human intervention.
 In the context of SIMs, the promise is that ML/AI can uncover and accommodate complex functional forms capturing patterns of spatial and temporal dependence and non-stationarity [@rowe2022].
 
-Third, ML/AI are also expected to enhance causal inference in SIMs.
+Third, ML/AI are also expected to enhance the ability of SIMs to help identify causal links.
 ML/AI-based methods are generally focused on prediction rather than understanding and establishing causal relationships.
-Yet, ML/AI models can be combined with causal inference to enhance the identification of cause-and-effect relationships.
+However, ML/AI models can be combined with causal inference to enhance the identification of cause-and-effect relationships.
 Many causal methods use prediction to generate instruments or counterfactuals in a first stage that can be employed in a second phase to produce "more" reliable estimates for statistical inference.
 Thus the fundamental problem of causal inference is the existence of a perfect analogue of out-of-sample performance for causal models, since counterfactual quantities are never observed.
 ML/AI models can be used to derive "better" counterfactuals and enhance inference on causality.
 At the same time, ML/AI can help scale causal effect estimation methods to SIMs based on high-dimensional data and unstructured data.
+To take an example, ML approaches can identify links between a wide range of explanatory variables and the amount of flow in large datasets, going beyond the focus on trip distances and 'attractiveness' in traditional SIMs, that were developed before large datasets were available.
 ML/AI thus offers an opportunity to build accurate decision-support systems that estimate the effect of interventions on spatial flows.
 
 # The future of spatial interaction modelling
